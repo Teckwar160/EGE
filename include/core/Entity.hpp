@@ -3,7 +3,7 @@
 #define ENTITY_HPP
 
 /**Definiciones de alias*/
-using EntityId = int;
+using EntityType = int;
 
 /**Paquete*/
 namespace EGE{
@@ -12,7 +12,7 @@ namespace EGE{
      */
     class Entity{
         private:
-            EntityId id = 0;
+            EntityType type = 0;
         public:
         /**
          *@brief Método constructor vacío.
@@ -22,14 +22,20 @@ namespace EGE{
         /**
          *@brief Método constructor.
          *
-         *@param id Identificador de la entidad.
+         *@param type Identificador de la entidad.
          */
-        Entity(EntityId id);
+        Entity(EntityType type);
 
         /**
          *@brief Método destructor.
          */
         virtual ~Entity() = 0;
+    };
+
+    class EntiyBase{
+        public:
+            inline static EntityType nextType = 0;
+            
     };
 }
 

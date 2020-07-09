@@ -5,7 +5,7 @@ namespace EGE{
         /*Nada*/
     }
 
-    Entity::Entity(EntityId id){
-        this -> id = id;
+    Entity::Entity(EntityType type){
+        this -> type = type;
     }
 }
