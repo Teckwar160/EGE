@@ -7,10 +7,29 @@ using EntityType = int;
 
 /**Paquete*/
 namespace EGE{
+
+    class EntityBase{
+        public:
+            /**Atributo que identifica a las identidades*/
+            inline static EntityType nextType = 0;
+
+            /**
+             *@brief Método constructor.
+             */
+            EntityBase();
+
+            /**
+             *@brief Método destructor.
+             */
+            virtual ~EntityBase() = 0;
+
+    };
+    
     /**
      *@brief Interface de cualquier objeto del motor.
      */
-    class Entity{
+    template<class Type>
+    class Entity : public EntityBase{
         private:
             EntityType type = 0;
         public:
@@ -30,12 +49,12 @@ namespace EGE{
          *@brief Método destructor.
          */
         virtual ~Entity() = 0;
-    };
 
-    class EntiyBase{
-        public:
-            inline static EntityType nextType = 0;
-            
+        /**
+         *@brief Método que nos regresa el tipo de entidad.
+         *@return EntityType
+         */
+        static EntityType getEntityType();
     };
 }
 
