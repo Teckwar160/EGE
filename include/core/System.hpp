@@ -1,7 +1,8 @@
 #ifndef SYSTEM_HPP
 #define SYSTEM_HPP
 
-using SystemType = int;
+/**Alias*/
+#include "alias.hpp"
 
 namespace EGE{
 

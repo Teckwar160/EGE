@@ -2,9 +2,8 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
-/**Definiciones de alias*/
-using EntityType = int;
-using EntityId = int;
+/**Alias*/
+#include "alias.hpp"
 
 /**Paquete*/
 namespace EGE{
@@ -42,9 +41,9 @@ namespace EGE{
         /**
          *@brief Método constructor.
          *
-         *@param type Identificador de la entidad.
+         *@param id Identificador de la entidad.
          */
-        Entity(EntityType type);
+        Entity(EntityId id);
 
         /**
          *@brief Método destructor.

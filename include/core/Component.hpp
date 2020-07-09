@@ -2,8 +2,8 @@
 #ifndef COMPONENT_HPP
 #define COMPONENT_HPP
 
-/**Definiciones de alias*/
-using ComponentType = int;
+/**Alias*/
+#include "alias.hpp"
 
 /**Paquete*/
 namespace EGE{
