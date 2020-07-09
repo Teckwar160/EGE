@@ -7,8 +7,8 @@ namespace EGE{
     }
 
     template<class Type>
-    Entity<Type>::Entity(EntityType type){
-        this -> type = type;
+    Entity<Type>::Entity(EntityId id){
+        this -> id = id;
     }
 
     template<class Type>

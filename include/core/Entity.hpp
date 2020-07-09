@@ -4,6 +4,7 @@
 
 /**Definiciones de alias*/
 using EntityType = int;
+using EntityId = int;
 
 /**Paquete*/
 namespace EGE{
@@ -31,7 +32,7 @@ namespace EGE{
     template<class Type>
     class Entity : public EntityBase{
         private:
-            EntityType type = 0;
+            EntityId id = 0;
         public:
         /**
          *@brief Método constructor vacío.
