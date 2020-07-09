@@ -1,6 +1,7 @@
 #include <iostream>
-#include "..\include\core\Entity.hpp"
-#include "core\Entity.tpp"
+#include "../include/core/Entity.hpp"
+#include "./core/Entity.tpp"
+#include "./core/System.tpp"
 
 /**
  *@brief Clase pokemon
