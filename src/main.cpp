@@ -2,28 +2,8 @@
 #include "./core/Entity.tpp"
 #include "./core/System.tpp"
 #include "./core/Component.tpp"
-#include <unordered_map>
-#include <vector>
+#include "../include/core/Manager.hpp"
 
-/*Fabrica abstracta*/
-
-
-class GameContext{
-    public:
-
-};
-
-class manager : public GameContext{
-
-};
-
-class manager2 : public GameContext{
-
-};
-
-void actualizar(GameContext *p){
-
-}
 
 class Vida : public EGE::CORE::Component<Vida>{
     public:
@@ -34,26 +14,56 @@ class Pacman : public EGE::CORE::Entity<Pacman>{
     public:
         /*Esto estara dentro de entity*/
         std::unordered_map<EGE::CORE::ComponentType,EGE::CORE::ComponentBase*> componentes;
+        int vida;
 };
 
-class managerPacman : public GameContext{
+
+
+class fantasma : EGE::CORE::Entity<fantasma>{
     public:
-        std::vector<EGE::CORE::EntityBase*> pacmans;
-        void crearPacman(){
-            pacmans.push_back(new Pacman());
-            Vida *v = new Vida();
-            static_cast<Pacman*>(pacmans[0]) -> componentes.insert(std::make_pair(Vida::getComponentType(),v));
+        int vida = 100;
+    public:
+        void muestraVida(){
+            std::cout << vida << std::endl;
+        }
+
+};
+
+class managerFantasma : public manager<fantasma>{
+
+
+};
+
+class systemLifeGhost : public EGE::CORE::System<managerFantasma>{
+    public:
+     void update(managerFantasma *gameContext)override{
+         for(auto i : gameContext ->entities){
+             i ->vida -=2;
+         }
+     }
+};
+
+class systemPrintLifeGhost : public EGE::CORE::System<managerFantasma>{
+    public:
+        void update(managerFantasma *gameContext)override{
+            for(auto i : gameContext ->entities){
+                i ->muestraVida();
+            }           
         }
 };
 
 
 int main(){
-    Pacman p;
-    Vida *v = new Vida();
-    
-    p.addComponent<Vida>(v);
+    managerFantasma poki;
 
-    Vida *tmp = p.getComponent<Vida>();
+    poki.entities.push_back(new fantasma());
 
-    std::cout << tmp -> vida << std::endl;
+    systemLifeGhost slg;
+
+    slg.update(&poki);
+
+    systemPrintLifeGhost print;
+
+    print.update(&poki);
+
 }

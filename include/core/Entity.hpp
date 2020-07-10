@@ -28,27 +28,27 @@ namespace EGE::CORE{
             inline static EntityType nextType = 0;
 
             /**
-             *@brief Método constructor.
+             * @brief Método constructor.
              */
             EntityBase();
 
             /**
-             *@brief Método destructor.
+             * @brief Método destructor.
              */
             virtual ~EntityBase() = 0;
 
             /**
-             *@brief Método que añade un componente a components.
+             * @brief Método que añade un componente a components.
              *
-             *@param component Componente a agragar a components.
+             * @param component Componente a agragar a components.
             */
             template<typename CMP>
             void addComponent(CMP* component);
 
             /**
-             *@brief Método que nos devuelve un puntero a un componente de components.
+             * @brief Método que nos devuelve un puntero a un componente de components.
              *
-             *@return Puntero a un componente.
+             * @return Puntero a un componente.
              */
             template<typename CMP>
             CMP* getComponent();
@@ -58,7 +58,7 @@ namespace EGE::CORE{
     };
     
     /**
-     *@brief Interface de cualquier objeto del motor.
+     * @brief Interface de cualquier objeto del motor.
      */
     template<class Type>
     class Entity : public EntityBase{
@@ -66,25 +66,25 @@ namespace EGE::CORE{
             EntityId id = 0;
         public:
         /**
-         *@brief Método constructor vacío.
+         * @brief Método constructor vacío.
          */
         Entity();
 
         /**
-         *@brief Método constructor.
+         * @brief Método constructor.
          *
-         *@param id Identificador de la entidad.
+         * @param id Identificador de la entidad.
          */
         Entity(EntityId id);
 
         /**
-         *@brief Método destructor.
+         * @brief Método destructor.
          */
         virtual ~Entity() = 0;
 
         /**
-         *@brief Método que nos regresa el tipo de entidad.
-         *@return EntityType
+         * @brief Método que nos regresa el tipo de entidad.
+         * @return EntityType
          */
         static EntityType getEntityType();
 

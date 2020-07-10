@@ -14,19 +14,19 @@ namespace EGE::CORE{
             inline static ComponentType nextType = 0;
 
             /**
-             *@brief Método constructor.
+             * @brief Método constructor.
              */
             ComponentBase();
 
             /**
-             *@brief Método destructor.
+             * @brief Método destructor.
              */
             virtual ~ComponentBase() = 0;
 
     };
     
     /**
-     *@brief Interface de cualquier component del motor.
+     * @brief Interface de cualquier component del motor.
      */
     template<class Type>
     class Component : public ComponentBase{
@@ -34,25 +34,25 @@ namespace EGE::CORE{
             ComponentType idEntity = 0;
         public:
         /**
-         *@brief Método constructor vacío.
+         * @brief Método constructor vacío.
          */
         Component();
 
         /**
-         *@brief Método constructor.
+         * @brief Método constructor.
          *
-         *@param idEntity Identificador de la entidad a la que pertenece.
+         * @param idEntity Identificador de la entidad a la que pertenece.
          */
         Component(ComponentType idEntity);
 
         /**
-         *@brief Método destructor.
+         * @brief Método destructor.
          */
         virtual ~Component() = 0;
 
         /**
-         *@brief Método que nos regresa el tipo de entidad.
-         *@return ComponentType
+         * @brief Método que nos regresa el tipo de entidad.
+         * @return ComponentType
          */
         static ComponentType getComponentType();
     };

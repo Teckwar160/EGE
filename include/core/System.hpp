@@ -32,27 +32,34 @@ namespace EGE::CORE{
             SystemType type = 0;
         public:
         /**
-         *@brief Método constructor vacío.
+         * @brief Método constructor vacío.
          */
         System();
 
         /**
-         *@brief Método constructor.
+         * @brief Método constructor.
          *
-         *@param type identificador del tipo de sistema.
+         * @param type identificador del tipo de sistema.
          */
         System(SystemType type);
 
         /**
-         *@brief Método destructor.
+         * @brief Método destructor.
          */
         virtual ~System() = 0;
 
         /**
-         *@brief Método que nos regresa el identificador del tipo de sistema.
-         *@return SystemType
+         * @brief Método que nos regresa el identificador del tipo de sistema.
+         * @return SystemType
          */
         static SystemType getSystemType();
+
+        /**
+         * @brief Método que actualiza los systemas.
+         * @param gameContext Es un manager que gestiona.
+         */
+        virtual void update(Type *gameContext) = 0;
+
     };
 }
 
