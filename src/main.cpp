@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../include/core/Entity.hpp"
 #include "./core/Entity.tpp"
 #include "./core/System.tpp"
+#include "./core/Component.tpp"
 
 /**
  *@brief Clase pokemon
@@ -20,19 +20,21 @@ class digimon : public EGE::Entity<digimon>{
         }   
 };
 
+class componenteRender : public EGE::Component<componenteRender>{
+    public:
+        int x = 10,y= 11;
+
+        int suma(){return x+y;}
+};
+
+class systemaDeGestionDeRecursos : public EGE::System<systemaDeGestionDeRecursos>{
+    public:
+        void print(){
+            std::cout << "Me la pela el dark souls\n";
+        }
+};
+
 int main(){
-    pokemon poke;
-    digimon di;
-    di.print();
-    poke.print();
-    di.print();
-
-    pokemon p;
+    systemaDeGestionDeRecursos p;
     p.print();
-
-    if(di.getEntityType() == pokemon::getEntityType()){
-        std::cout << "Si jalo\n";
-    }else{
-        std::cout << "No jalo\n";
-    }
 }

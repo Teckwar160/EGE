@@ -54,6 +54,7 @@
         "thread": "cpp",
         "cstring": "cpp",
         "set": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "*.tpp": "cpp"
     }
 }

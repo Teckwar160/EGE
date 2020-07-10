@@ -1,4 +1,4 @@
-#include "..\..\include\core\Component.hpp"
+#include "../../include/core/Component.hpp"
 
 namespace EGE{
     template<class Type>
