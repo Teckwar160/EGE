@@ -1,6 +1,6 @@
 #include "../../include/core/Entity.hpp"
 
-namespace EGE{
+namespace EGE::CORE{
     template<class Type>
     Entity<Type>::Entity(){
         /*Nada*/
@@ -25,11 +25,31 @@ namespace EGE{
         return _type;
     }
 
+    /**Métodos de la clase EntityBase*/
+
     EntityBase::EntityBase(){
         /*Nada*/
     }
 
     EntityBase::~EntityBase(){
         /*Nada*/
+    }
+
+    template<typename CMP>
+    void EntityBase::addComponent(CMP *component){
+        components[component -> getComponentType()].reset(component);
+    }
+
+    template<typename CMP>
+    CMP* EntityBase::getComponent(){
+
+        auto i = components.find(CMP::getComponentType());
+
+        if(i != components.end()){
+            return static_cast<std::unique_ptr<CMP>*>(i -> second);
+        }
+
+        return nullptr;
+        
     }
 }

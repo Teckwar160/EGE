@@ -1,6 +1,6 @@
 #include "../../include/core/Component.hpp"
 
-namespace EGE{
+namespace EGE::CORE{
     template<class Type>
     Component<Type>::Component(){
         /*Nada*/

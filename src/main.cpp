@@ -25,20 +25,20 @@ void actualizar(GameContext *p){
 
 }
 
-class Vida : public EGE::Component<Vida>{
+class Vida : public EGE::CORE::Component<Vida>{
     public:
         int vida = 100;
 };
 
-class Pacman : public EGE::Entity<Pacman>{
+class Pacman : public EGE::CORE::Entity<Pacman>{
     public:
         /*Esto estara dentro de entity*/
-        std::unordered_map<EGE::ComponentType,EGE::ComponentBase*> componentes;
+        std::unordered_map<EGE::CORE::ComponentType,EGE::CORE::ComponentBase*> componentes;
 };
 
 class managerPacman : public GameContext{
     public:
-        std::vector<EGE::EntityBase*> pacmans;
+        std::vector<EGE::CORE::EntityBase*> pacmans;
         void crearPacman(){
             pacmans.push_back(new Pacman());
             Vida *v = new Vida();
@@ -48,8 +48,12 @@ class managerPacman : public GameContext{
 
 
 int main(){
-    managerPacman p;
-    p.crearPacman();
-    std::cout << static_cast<Vida*>(static_cast<Pacman*>(p.pacmans[0]) -> componentes[Vida::getComponentType()]) -> vida <<std::endl;
+    Pacman p;
+    Vida *v = new Vida();
+    
+    p.addComponent<Vida>(v);
 
+    Vida *tmp = p.getComponent<Vida>();
+
+    std::cout << tmp -> vida << std::endl;
 }

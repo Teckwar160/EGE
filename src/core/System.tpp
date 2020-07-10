@@ -1,6 +1,6 @@
 #include "../../include/core/System.hpp"
 
-namespace EGE{
+namespace EGE::CORE{
     template<class Type>
     System<Type>::System(){}
 

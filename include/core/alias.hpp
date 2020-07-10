@@ -1,9 +1,8 @@
 #ifndef ALIAS_HPP
 #define ALIAS_HPP
 
-
 /**Definiciones*/
-namespace EGE{
+namespace EGE::CORE{
     using EntityType = int;
     using EntityId = int;
     using SystemType = int;

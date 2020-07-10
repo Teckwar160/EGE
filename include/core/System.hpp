@@ -4,7 +4,7 @@
 /**Alias*/
 #include "alias.hpp"
 
-namespace EGE{
+namespace EGE::CORE{
 
     class SystemBase{
         public:

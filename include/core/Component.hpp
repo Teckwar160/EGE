@@ -6,7 +6,7 @@
 #include "alias.hpp"
 
 /**Paquete*/
-namespace EGE{
+namespace EGE::CORE{
 
     class ComponentBase{
         public:
