@@ -37,7 +37,7 @@ namespace EGE::CORE{
 
     template<typename CMP>
     void EntityBase::addComponent(CMP *component){
-        components[component -> getComponentType()].reset(component);
+        components[component -> getComponentType()] = component;
     }
 
     template<typename CMP>
@@ -46,7 +46,7 @@ namespace EGE::CORE{
         auto i = components.find(CMP::getComponentType());
 
         if(i != components.end()){
-            return static_cast<std::unique_ptr<CMP>*>(i -> second);
+            return static_cast<CMP*>(i -> second);
         }
 
         return nullptr;

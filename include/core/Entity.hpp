@@ -15,7 +15,7 @@
 namespace EGE::CORE{
 
     /**Definición*/
-    using mapComponents = std::unordered_map<ComponentType,std::unique_ptr<ComponentBase>>;
+    using mapComponents = std::unordered_map<ComponentType,ComponentBase*>;
 
     /**
      *@brief Entidad base de todas las entidades.
