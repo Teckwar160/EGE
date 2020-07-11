@@ -56,8 +56,7 @@ int main(){
     managerFantasma poki;
 
     poki.addEntity();
-    auto po = poki.getEntities();
-    po.push_back(new fantasma());
+    poki.addEntity();
 
     systemLifeGhost slg;
 
