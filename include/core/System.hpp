@@ -6,6 +6,9 @@
 
 namespace EGE::CORE{
 
+    /**
+     * @brief Clase base de todos los sistemas.
+     */
     class SystemBase{
         public:
             /**Atributo que identifica el tipo de sistema*/

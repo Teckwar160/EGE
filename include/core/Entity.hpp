@@ -22,7 +22,8 @@ namespace EGE::CORE{
      */
     class EntityBase{
         private:
-             mapComponents components;
+            /**Mapa que contendra a los componenetes de las entidades.*/
+            mapComponents components;
         public:
             /**Atributo que identifica a las identidades*/
             inline static EntityType nextType = 0;

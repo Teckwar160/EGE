@@ -8,6 +8,9 @@
 /**Paquete*/
 namespace EGE::CORE{
 
+    /**
+     * @brief Clase base de component.
+     */
     class ComponentBase{
         public:
             /**Atributo que identifica a los componentes*/

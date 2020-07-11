@@ -2,7 +2,7 @@
 #include "./core/Entity.tpp"
 #include "./core/System.tpp"
 #include "./core/Component.tpp"
-#include "../include/core/Manager.hpp"
+#include "./core/Manager.tpp"
 
 
 class Vida : public EGE::CORE::Component<Vida>{
@@ -29,24 +29,23 @@ class fantasma : EGE::CORE::Entity<fantasma>{
 
 };
 
-class managerFantasma : public manager<fantasma>{
-
+class managerFantasma : public EGE::CORE::Manager<fantasma>{
 
 };
 
 class systemLifeGhost : public EGE::CORE::System<managerFantasma>{
     public:
      void update(managerFantasma *gameContext)override{
-         for(auto i : gameContext ->entities){
-             i ->vida -=2;
-         }
+        for(auto i : gameContext->getEntities()){
+            i ->vida -=2;
+        }
      }
 };
 
 class systemPrintLifeGhost : public EGE::CORE::System<managerFantasma>{
     public:
         void update(managerFantasma *gameContext)override{
-            for(auto i : gameContext ->entities){
+            for(auto i : gameContext ->getEntities()){
                 i ->muestraVida();
             }           
         }
@@ -56,7 +55,9 @@ class systemPrintLifeGhost : public EGE::CORE::System<managerFantasma>{
 int main(){
     managerFantasma poki;
 
-    poki.entities.push_back(new fantasma());
+    poki.addEntity();
+    auto po = poki.getEntities();
+    po.push_back(new fantasma());
 
     systemLifeGhost slg;
 
