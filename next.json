@@ -1,5 +1,5 @@
 {
-    "name_project": "EGE",
+    "name_project": "Engine_test",
     "name_build": "app",
     "version_build": "1.0.0",
     "language": "C++",
@@ -16,10 +16,7 @@
     "libs_dir": "lib",
     "cc_flags": [
         "-Wall",
-        "-pedantic",
-        "-ggdb",
-        "-std=c++17",
-        "-g"
+        "-std=c++17"
     ],
     "c_flags": [
         "-Wall",
