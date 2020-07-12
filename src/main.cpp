@@ -4,7 +4,7 @@
 #include "./core/Component.tpp"
 #include "./core/Manager.tpp"
 
-
+ 
 class Vida : public EGE::CORE::Component<Vida>{
     public:
         int vida = 100;
