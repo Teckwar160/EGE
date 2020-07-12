@@ -1,8 +1,8 @@
 #include <iostream>
-#include "./core/Entity.tpp"
-#include "./core/System.tpp"
-#include "./core/Component.tpp"
-#include "./core/Manager.tpp"
+#include <core/Entity.tpp>
+#include <core/System.tpp>
+#include <core/Component.tpp>
+#include <core/Manager.tpp>
 
  
 class Vida : public EGE::CORE::Component<Vida>{

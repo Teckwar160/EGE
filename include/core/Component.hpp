@@ -3,7 +3,7 @@
 #define COMPONENT_HPP
 
 /**Alias*/
-#include "alias.hpp"
+#include <core/alias.hpp>
 
 /**Paquete*/
 namespace EGE::CORE{

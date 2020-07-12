@@ -2,7 +2,7 @@
 #define SYSTEM_HPP
 
 /**Alias*/
-#include "alias.hpp"
+#include <core/alias.hpp>
 
 namespace EGE::CORE{
 

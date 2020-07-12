@@ -5,6 +5,9 @@
 #include <unordered_map>
 #include <vector>
 
+/**Alias*/
+#include <core/alias.hpp>
+
 namespace EGE::CORE{
     /**
      * @brief Clase base de todos los managers.

@@ -1,4 +1,4 @@
-#include "../../include/core/Manager.hpp"
+#include <core/Manager.hpp>
 
 namespace EGE::CORE{
     

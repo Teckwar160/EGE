@@ -1,4 +1,4 @@
-#include "../../include/core/Entity.hpp"
+#include <core/Entity.hpp>
 
 namespace EGE::CORE{
     template<class Type>

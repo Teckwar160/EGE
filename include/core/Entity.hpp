@@ -3,12 +3,12 @@
 #define ENTITY_HPP
 
 /**Alias*/
-#include "alias.hpp"
+#include <core/alias.hpp>
 
 /**Bibliotecas necesarias*/
 #include <unordered_map>
 #include <memory>
-#include "Component.hpp"
+#include <core/Component.hpp>
 
 
 /**Paquete*/
