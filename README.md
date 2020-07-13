@@ -1,11 +1,11 @@
-# Para compilar
+# Instruccion para compilar el archivo make.cpp
 
-## Windows: en el cmd make
+g++ make.cpp -o make.(out/exe)
 
-## Linux: ./make
+## Windows:
 
-# Para ejecutar
+En el cmd despues de compilar el make.cpp ejecutar make
 
-## Windows: en el cmd main
+## Linux:
 
-## Linux: ./main
+En terminal despues de compilar el make.cpp ejecutar ./make
