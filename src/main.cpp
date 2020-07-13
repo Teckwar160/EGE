@@ -73,12 +73,15 @@ int main(){
 
     poki.addEntity(); // 0
     poki.addEntity(); // 1
+    poki.addEntity(); // 2
 
     //systemLifeGhost slg;
 
     //slg.update(&poki);
 
-    poki.applyFuntion(1,damage);
+    poki.applyFuntion(2,damage);
+
+    poki.destroyEntity(1);
 
     systemPrintLife o;
 

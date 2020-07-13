@@ -38,6 +38,11 @@ namespace EGE::CORE{
             void addEntity();
 
             /**
+             * @brief Método que destruye una entidad de entities.
+             */
+            void destroyEntity(EntityId id);
+
+            /**
              * @brief Método que aplica una función a todas las entidades.
              * @param pfun Función a aplicar a todos los elementos.
              */

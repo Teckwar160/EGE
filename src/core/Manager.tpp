@@ -4,7 +4,10 @@ namespace EGE::CORE{
     
     template<typename Type>
     void Manager<Type>::freeEntities(Type* i){
-        delete i;
+        
+        if(i != nullptr){
+            delete i;
+        }
     }
 
     template<typename Type>
@@ -19,15 +22,23 @@ namespace EGE::CORE{
     }
 
     template<typename Type>
+    void Manager<Type>::destroyEntity(EntityId id){
+        freeEntities(entities[id]);
+        entities[id] = nullptr;
+    }
+
+    template<typename Type>
     void Manager<Type>::traverse(void (*pfun)(Type*)){
         for(auto i : this -> entities){
-            pfun(i);
+            if(i != nullptr){
+                pfun(i);
+            }
         }
     }
 
     template<typename Type>
     void Manager<Type>::applyFuntion(EntityId id, void (*pfun)(Type*)){
-        if(id >= 0 && id <= numEntities){
+        if(id >= 0 && id <= numEntities && entities[id] != nullptr){
             pfun(entities[id]);
         }
     }
