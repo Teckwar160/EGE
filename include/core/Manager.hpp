@@ -21,9 +21,17 @@ namespace EGE::CORE{
             /**Contador que lleva registro de cada entidad creada en entities*/
             static inline int numEntities = 0;
 
+            /**Método que libera la memoria de entities*/
+            static void freeEntities(Type*);
+
             /**Mapa que contiene a todos los componenetes que manejara el manager*/
             std::unordered_map<EGE::CORE::ComponentType,std::vector<EGE::CORE::ComponentBase>> components;
         public:
+            /**
+             * @brief Método que destruye a las entidades de entitites
+             */
+            ~Manager();
+
             /**
              * @brief Método que agrega una entidas a entities.
              */

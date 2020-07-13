@@ -3,6 +3,17 @@
 namespace EGE::CORE{
     
     template<typename Type>
+    void Manager<Type>::freeEntities(Type* i){
+        delete i;
+    }
+
+    template<typename Type>
+    Manager<Type>::~Manager(){
+        this -> traverse(freeEntities);
+        std::cout << "\nDestructor de manager\n";
+    }
+
+    template<typename Type>
     void Manager<Type>::addEntity(){
         entities.push_back(new Type(numEntities++));
     }

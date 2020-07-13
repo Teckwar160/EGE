@@ -31,10 +31,17 @@ class fantasma : EGE::CORE::Entity<fantasma>{
 
         }
 
+        ~fantasma(){
+            /*Nada*/
+        }
+
 };
 
 class managerFantasma : public EGE::CORE::Manager<fantasma>{
-
+    public:
+        ~managerFantasma(){
+            std::cout << "\nDestructor de managerFantasma\n";
+        }
 };
 
 void damage(fantasma *i){
