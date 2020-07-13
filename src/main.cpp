@@ -27,6 +27,10 @@ class fantasma : EGE::CORE::Entity<fantasma>{
             std::cout << vida << std::endl;
         }
 
+        fantasma(int id) : Entity(id){
+
+        }
+
 };
 
 class managerFantasma : public EGE::CORE::Manager<fantasma>{
@@ -34,7 +38,11 @@ class managerFantasma : public EGE::CORE::Manager<fantasma>{
 };
 
 void damage(fantasma *i){
-    i -> vida -= 99;
+    i -> vida -= 5;
+}
+
+void print(fantasma *i){
+    std::cout << i -> vida << std::endl;
 }
 
 class systemLifeGhost : public EGE::CORE::System<managerFantasma>{
@@ -44,30 +52,31 @@ class systemLifeGhost : public EGE::CORE::System<managerFantasma>{
      }
 };
 
-class systemPrintLifeGhost : public EGE::CORE::System<managerFantasma>{
+class systemPrintLife : public EGE::CORE::System<managerFantasma>{
     public:
         void update(managerFantasma *gameContext)override{
-            for(auto i : gameContext ->getEntities()){
-                i ->muestraVida();
-            }           
+            gameContext -> traverse(print);
         }
 };
+
 
 
 int main(){
     managerFantasma poki;
 
-    poki.addEntity();
-    poki.addEntity();
+    poki.addEntity(); // 0
+    poki.addEntity(); // 1
 
-    systemLifeGhost slg;
+    //systemLifeGhost slg;
 
-    slg.update(&poki);
+    //slg.update(&poki);
 
-    systemPrintLifeGhost print;
+    poki.applyFuntion(1,damage);
 
-    print.update(&poki);
+    systemPrintLife o;
 
-    std::cout << "\n\nhola a todos\n\n";
+    o.update(&poki);
+
+    //std::cout << poki.getID() << std::endl ;
 
 }

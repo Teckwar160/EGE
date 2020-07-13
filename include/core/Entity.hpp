@@ -22,7 +22,7 @@ namespace EGE::CORE{
      */
     class EntityBase{
         private:
-            /**Mapa que contendra a los componenetes de las entidades.*/
+            /**Mapa que contendra a los componentes de las entidades.*/
             mapComponents components;
         public:
             /**Atributo que identifica a las identidades*/
