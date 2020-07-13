@@ -25,6 +25,12 @@ namespace EGE::CORE{
              */
             void addEntity();
 
+            /**
+             * @brief Método que aplica una función a todas las entidades.
+             * @param pfun Función a aplicar a todos los elementos.
+             */
+            void traverse(void (*pfun)(Type*));
+
             std::vector<Type*> getEntities(){
                 return entities;
             }

@@ -33,12 +33,14 @@ class managerFantasma : public EGE::CORE::Manager<fantasma>{
 
 };
 
+void damage(fantasma *i){
+    i -> vida -= 99;
+}
+
 class systemLifeGhost : public EGE::CORE::System<managerFantasma>{
     public:
      void update(managerFantasma *gameContext)override{
-        for(auto i : gameContext->getEntities()){
-            i ->vida -=2;
-        }
+         gameContext -> traverse(damage);
      }
 };
 
