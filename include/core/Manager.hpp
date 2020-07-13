@@ -4,7 +4,6 @@
 /**Bibliotecas necesarias*/
 #include <unordered_map>
 #include <vector>
-#include <bits/stdc++.h>
 
 /**Alias*/
 #include <core/alias.hpp>
