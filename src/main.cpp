@@ -66,4 +66,6 @@ int main(){
 
     print.update(&poki);
 
+    std::cout << "\n\nhola a todos\n\n";
+
 }
