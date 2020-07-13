@@ -13,7 +13,6 @@ namespace EGE::CORE{
     template<typename Type>
     Manager<Type>::~Manager(){
         this -> traverse(freeEntities);
-        std::cout << "\nDestructor de manager\n";
     }
 
     template<typename Type>
