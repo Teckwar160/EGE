@@ -31,10 +31,6 @@ namespace EGE::CORE{
              */
             void traverse(void (*pfun)(Type*));
 
-            std::vector<Type*> getEntities(){
-                return entities;
-            }
-
     };
 }
 
