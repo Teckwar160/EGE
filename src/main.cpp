@@ -37,14 +37,14 @@ class Vida : public EGE::CORE::Component<Vida>{
         }
 };
 
-class Defensa : public EGE::CORE::Component<Vida>{
+class Defensa : public EGE::CORE::Component<Defensa>{
     public:
         void print(){
             std::cout << "\nSoy defensa\n";
         }
 };
 
-class Poder : public EGE::CORE::Component<Vida>{
+class Poder : public EGE::CORE::Component<Poder>{
     public:
         void print(){
             std::cout << "\nSoy poder\n";
