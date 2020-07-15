@@ -77,22 +77,21 @@ int main(){
 
     fantasma tinky(0);
 
-    tinky.addComponent<Vida>();
+    Vida life;
+
+    tinky.addComponent<Vida>(&life);
 
     auto k = tinky.getComponent<Vida>();
 
     k -> print();
 
-   // tinky.deleteComponent<Vida>();
+    tinky.deleteComponent<Vida>();
 
     auto f = tinky.getComponent<Vida>();
 
     if(f == nullptr){
         std::cout << "si se elimino bien\n";
     }
-
-    delete k;
-    delete f;
 
 
 

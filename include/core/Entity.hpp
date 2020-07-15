@@ -40,9 +40,10 @@ namespace EGE::CORE{
 
             /**
              * @brief Método que añade un componente a components.
+             * @param component Componente a agragar a components.
             */
             template<typename CMP>
-            void addComponent();
+            void addComponent(CMP* component);
             
             /**
              * @brief Método que eleimina un componente de components.
