@@ -77,15 +77,13 @@ int main(){
 
     fantasma tinky(0);
 
-    Vida life;
-
-    tinky.addComponent<Vida>(&life);
+    tinky.addComponent<Vida>();
 
     auto k = tinky.getComponent<Vida>();
 
     k -> print();
 
-    tinky.deleteComponent<Vida>();
+   // tinky.deleteComponent<Vida>();
 
     auto f = tinky.getComponent<Vida>();
 
