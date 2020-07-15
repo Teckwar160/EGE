@@ -4,6 +4,11 @@
 #include <core/Component.tpp>
 #include <core/Manager.tpp>
 
+ 
+class Vida : public EGE::CORE::Component<Vida>{
+    public:
+        int vida = 100;
+};
 
 class Pacman : public EGE::CORE::Entity<Pacman>{
     public:
@@ -14,7 +19,7 @@ class Pacman : public EGE::CORE::Entity<Pacman>{
 
 
 
-class fantasma : public EGE::CORE::Entity<fantasma>{
+class fantasma : EGE::CORE::Entity<fantasma>{
     public:
         int vida = 100;
     public:
@@ -61,38 +66,27 @@ class systemPrintLife : public EGE::CORE::System<managerFantasma>{
         }
 };
 
-class Vida : public EGE::CORE::Component<Vida>{
-    public:
-        int vida = 100;
-        void print(){
-            std::cout << vida << std::endl;
-        }
-};
-
-
 
 
 int main(){
     managerFantasma poki;
 
-    fantasma tinky(0);
+    poki.addEntity(); // 0
+    poki.addEntity(); // 1
+    poki.addEntity(); // 2
 
-    Vida life;
+    //systemLifeGhost slg;
 
-    tinky.addComponent<Vida>(&life);
+    //slg.update(&poki);
 
-    auto k = tinky.getComponent<Vida>();
+    poki.applyFuntion(2,damage);
 
-    k -> print();
+    poki.destroyEntity(1);
 
-    tinky.deleteComponent<Vida>();
+    systemPrintLife o;
 
-    auto f = tinky.getComponent<Vida>();
+    o.update(&poki);
 
-    if(f == nullptr){
-        std::cout << "si se elimino bien\n";
-    }
-
-
+    //std::cout << poki.getID() << std::endl ;
 
 }

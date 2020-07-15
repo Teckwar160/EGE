@@ -40,17 +40,11 @@ namespace EGE::CORE{
 
             /**
              * @brief Método que añade un componente a components.
+             *
              * @param component Componente a agragar a components.
             */
             template<typename CMP>
             void addComponent(CMP* component);
-            
-            /**
-             * @brief Método que eleimina un componente de components.
-             * @param type Tipo de componenete a eliminar de components.
-             */
-            template<typename CMP>
-            void deleteComponent();
 
             /**
              * @brief Método que nos devuelve un puntero a un componente de components.
@@ -70,8 +64,12 @@ namespace EGE::CORE{
     template<class Type>
     class Entity : public EntityBase{
         private:
-            EntityId id;
+            EntityId id = 0;
         public:
+        /**
+         * @brief Método constructor vacío.
+         */
+        Entity();
 
         /**
          * @brief Método constructor.
@@ -90,12 +88,6 @@ namespace EGE::CORE{
          * @return EntityType
          */
         static EntityType getEntityType();
-
-        /**
-         * @brief Método que regresa el id.
-         * @return EntityId.
-         */
-        EntityId getEntityId();
 
     };
 }
