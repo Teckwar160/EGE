@@ -32,12 +32,23 @@ namespace EGE::CORE{
     }
 
     EntityBase::~EntityBase(){
-        /*Nada*/
+        components.clear();
     }
 
     template<typename CMP>
-    void EntityBase::addComponent(CMP *component){
-        components[component -> getComponentType()] = component;
+    void EntityBase::addComponent(){
+        components.insert({CMP::getComponentType(),new CMP()});
+    }
+
+    template<typename CMP>
+    void EntityBase::deleteComponent(){
+        for(auto it = components.begin(); it != components.end();){
+            if(it -> first == CMP::getComponentType()){
+                it = components.erase(it);
+            }else{
+                ++it;
+            }
+        }
     }
 
     template<typename CMP>

@@ -12,7 +12,8 @@ namespace EGE::CORE{
 
     template<typename Type>
     Manager<Type>::~Manager(){
-        this -> traverse(freeEntities);
+        //this -> traverse(freeEntities);
+        this -> entities.clear();
     }
 
     template<typename Type>
@@ -45,5 +46,31 @@ namespace EGE::CORE{
     template<typename Type>
     int Manager<Type>::getNumEntities(){
         return numEntities;
+    }
+
+    template<typename Type>
+    template<typename CMP>
+    void Manager<Type>::addComponent(EntityId id){
+        if(id >= 0 && id <= numEntities && entities[id] != nullptr){
+            entities[id] -> template addComponent<CMP>();
+        }
+    }
+
+    template<typename Type>
+    template<typename CMP>
+    void Manager<Type>::deleteComponent(EntityId id){
+        if(id >= 0 && id <= numEntities && entities[id] != nullptr){
+            entities[id] -> template deleteComponent<CMP>();
+        }
+    }
+
+    template<typename Type>
+    template<typename CMP>
+    CMP* Manager<Type>::getComponent(EntityId id){
+        if(id >= 0 && id <= numEntities && entities[id] != nullptr){
+            return entities[id] -> template getComponent<CMP>();
+        }
+
+        return nullptr;
     }
 }

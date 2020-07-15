@@ -40,22 +40,22 @@ namespace EGE::CORE{
 
             /**
              * @brief Método que añade un componente a components.
-             *
-             * @param component Componente a agragar a components.
             */
             template<typename CMP>
-            void addComponent(CMP* component);
+            void addComponent();
 
             /**
-             * @brief Método que nos devuelve un puntero a un componente de components.
-             *
-             * @return Puntero a un componente.
+             * @brief Método que elimina un component de la entity.
+             */
+            template<typename CMP>
+            void deleteComponent();
+
+            /**
+             * @brief Método que retorna un component.
+             * @return Apuntador a un component.
              */
             template<typename CMP>
             CMP* getComponent();
-
-
-
     };
     
     /**

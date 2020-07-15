@@ -61,6 +61,26 @@ namespace EGE::CORE{
              */
             int getNumEntities();
 
+            /**
+             * @brief Método que añade un componente a components.
+             * @param id Identificador de la entidad a la que se le agregara el component.
+            */
+            template<typename CMP>
+            void addComponent(EntityId id);
+
+            /**
+             * @brief Método que elimina un component de la entity.
+             */
+            template<typename CMP>
+            void deleteComponent(EntityId id);
+
+            /**
+             * @brief Método que retorna un component.
+             * @return Apuntador a un component.
+             */
+            template<typename CMP>
+            CMP* getComponent(EntityId id);
+
     };
 }
 

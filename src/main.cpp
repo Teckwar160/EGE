@@ -4,22 +4,8 @@
 #include <core/Component.tpp>
 #include <core/Manager.tpp>
 
- 
-class Vida : public EGE::CORE::Component<Vida>{
-    public:
-        int vida = 100;
-};
 
-class Pacman : public EGE::CORE::Entity<Pacman>{
-    public:
-        /*Esto estara dentro de entity*/
-        std::unordered_map<EGE::CORE::ComponentType,EGE::CORE::ComponentBase*> componentes;
-        int vida;
-};
-
-
-
-class fantasma : EGE::CORE::Entity<fantasma>{
+class fantasma : public EGE::CORE::Entity<fantasma>{
     public:
         int vida = 100;
     public:
@@ -44,25 +30,24 @@ class managerFantasma : public EGE::CORE::Manager<fantasma>{
         }
 };
 
-void damage(fantasma *i){
-    i -> vida -= 5;
-}
-
-void print(fantasma *i){
-    std::cout << i -> vida << std::endl;
-}
-
-class systemLifeGhost : public EGE::CORE::System<managerFantasma>{
+class Vida : public EGE::CORE::Component<Vida>{
     public:
-     void update(managerFantasma *gameContext)override{
-         gameContext -> traverse(damage);
-     }
+        void print(){
+            std::cout << "\nSoy vida\n";
+        }
 };
 
-class systemPrintLife : public EGE::CORE::System<managerFantasma>{
+class Defensa : public EGE::CORE::Component<Vida>{
     public:
-        void update(managerFantasma *gameContext)override{
-            gameContext -> traverse(print);
+        void print(){
+            std::cout << "\nSoy defensa\n";
+        }
+};
+
+class Poder : public EGE::CORE::Component<Vida>{
+    public:
+        void print(){
+            std::cout << "\nSoy poder\n";
         }
 };
 
@@ -71,22 +56,20 @@ class systemPrintLife : public EGE::CORE::System<managerFantasma>{
 int main(){
     managerFantasma poki;
 
-    poki.addEntity(); // 0
-    poki.addEntity(); // 1
-    poki.addEntity(); // 2
+    poki.addEntity(); //0
 
-    //systemLifeGhost slg;
+    poki.addComponent<Vida>(0);
+    poki.addComponent<Poder>(0);
+    poki.addComponent<Defensa>(0);
 
-    //slg.update(&poki);
+    poki.deleteComponent<Defensa>(0);
 
-    poki.applyFuntion(2,damage);
+    auto tmp = poki.getComponent<Defensa>(0);
 
-    poki.destroyEntity(1);
+    if(tmp == nullptr){
+        std::cout << "\nSe borro\n";
+    }
 
-    systemPrintLife o;
-
-    o.update(&poki);
-
-    //std::cout << poki.getID() << std::endl ;
+ 
 
 }
