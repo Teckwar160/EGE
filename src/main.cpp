@@ -56,15 +56,15 @@ class Poder : public EGE::CORE::Component<Poder>{
 int main(){
     managerFantasma poki;
 
-    poki.addEntity(); //0
+    auto a = poki.addEntity(); //0
+    
+    poki.addComponent<Vida>(a);
+    poki.addComponent<Poder>(a);
+    poki.addComponent<Defensa>(a);
 
-    poki.addComponent<Vida>(0);
-    poki.addComponent<Poder>(0);
-    poki.addComponent<Defensa>(0);
+    poki.deleteComponent<Defensa>(a);
 
-    poki.deleteComponent<Defensa>(0);
-
-    auto tmp = poki.getComponent<Defensa>(0);
+    auto tmp = poki.getComponent<Defensa>(a);
 
     if(tmp == nullptr){
         std::cout << "\nSe borro\n";
