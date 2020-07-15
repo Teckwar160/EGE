@@ -102,6 +102,13 @@ namespace EGE::CORE{
              */
             ManagerType getManagerType();
 
+            /**
+             * @brief Método para regresar una entidad 
+             * @return Apuntador a una entidad
+             */
+            template<typename Ent>
+            Ent* getEntity(EntityId id);
+
     };
 }
 

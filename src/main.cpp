@@ -23,6 +23,7 @@ class fantasma : public EGE::CORE::Entity<fantasma>{
 
 };
 
+
 class managerFantasma : public EGE::CORE::Manager<fantasma>{
     public:
         ~managerFantasma(){
@@ -62,10 +63,25 @@ void print2(fantasma *p){
 
 
 class Pacman : public EGE::CORE::Entity<Pacman>{
+    public:
+      int vida = 100;
+  public:
+
+      Pacman(int id) : Entity(id){
+
+      }
+
+      ~Pacman(){
+          /*Nada*/
+      }
 
 };
 
 class managerPacman : public EGE::CORE::Manager<Pacman>{
+  public:
+    ~managerPacman(){
+        std::cout << "\nDestructor de managerPacman\n";
+    }
 };
 
 
@@ -76,30 +92,27 @@ int main(){
     managerPacman p;
 
 
-    std::cout << poki.getManagerType() << std::endl;
-    std::cout << poki2.getManagerType() << std::endl;
-    std::cout << p.getManagerType() << std::endl;
+    auto a = poki.addEntity(); // 0
+    auto b = poki.addEntity(); // 1
+    auto a1 = p.addEntity(); // 0
+    auto b1 = p.addEntity(); // 1
+    auto c1 = p.addEntity(); // 2
 
-    auto a = poki.addEntity(); //0
-    auto b = poki.addEntity();
-    auto c = poki.addEntity();
-    poki.destroyEntity(b);
-
-    poki.applyFuntion(a,print2);
-
-    poki.addComponent<Vida>(c);
+    
     poki.addComponent<Poder>(a);
     poki.addComponent<Defensa>(a);
+    
+    poki.addComponent<Defensa>(b);
+    //poki.deleteComponent<Defensa>(a);
+    
+    poki.getEntity<fantasma>(1);
+    poki.getEntity<fantasma>(0);
+    p.getEntity<Pacman>(2);
+    p.getEntity<Pacman>(1);
 
-    poki.deleteComponent<Defensa>(a);
 
-    auto tmp = poki.getComponent<Vida>(c);
 
-    if(tmp == nullptr){
-        std::cout << "\nSe borro\n";
-    }
-
-    tmp -> print();
+ 
  
 
 }

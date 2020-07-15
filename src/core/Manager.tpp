@@ -88,4 +88,14 @@ namespace EGE::CORE{
 
         return nullptr;
     }
+
+    template<typename Type>
+    template<typename Ent>
+    Ent* Manager<Type>::getEntity(EntityId id){
+        if(id >= 0 && id <= numEntities){
+            std::cout << entities.find(id) -> second -> getEntityId() << std::endl;
+            //return entities.find(id) -> second;
+        }
+        return nullptr;
+    }
 }
