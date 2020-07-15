@@ -12,7 +12,7 @@ namespace EGE::CORE{
 
     template<typename Type>
     Manager<Type>::~Manager(){
-        //this -> traverse(freeEntities);
+        this -> traverse(freeEntities);
         this -> entities.clear();
     }
 

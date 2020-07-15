@@ -32,6 +32,10 @@ namespace EGE::CORE{
     }
 
     EntityBase::~EntityBase(){
+        for(auto i : components){
+            delete i.second;
+        }
+
         components.clear();
     }
 
