@@ -81,6 +81,9 @@ int main(){
     managerFantasma poki2;
     managerPacman p;
 
+    poki.addHomie<managerPacman>(&p);
+
+#if 0
     std::cout << poki.getManagerType() << std::endl;
     std::cout << poki2.getManagerType() << std::endl;
     std::cout << p.getManagerType() << std::endl;
@@ -107,7 +110,7 @@ int main(){
     }
 
     tmp -> print();
-
+#endif
  
 
 }

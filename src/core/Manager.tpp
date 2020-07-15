@@ -2,6 +2,7 @@
 
 namespace EGE::CORE{
 
+    /*Métodos de manager Base*/
     ManagerBase::ManagerBase(){
         /*Nada*/
     }
@@ -9,6 +10,19 @@ namespace EGE::CORE{
     ManagerBase::~ManagerBase(){
         /*Nada*/
     }
+
+    template<typename Type>
+    void ManagerBase::addHomie(Type *homie){
+        std::cout << Type::getManagerType() << std::endl;
+        //friends.insert({Type::getManagerType(),homie});
+    }
+
+    template<typename Type>
+    Type *ManagerBase::gethomie(){
+        return friends.find(Type::getManagerType()) -> second;
+    }
+
+    /*Métodos de manager*/
 
     template<typename Type>
     ManagerType Manager<Type>::getManagerType(){

@@ -14,6 +14,8 @@ namespace EGE::CORE{
         protected:
             /**Atributo que identifica el tipo de sistema*/
             inline static ManagerType nextType = 0;
+        private:
+            std::unordered_map<ManagerType,ManagerBase*> friends;
         public:
             /**
              *@brief Método constructor.
@@ -24,6 +26,20 @@ namespace EGE::CORE{
              *@brief Método destructor.
              */
             virtual ~ManagerBase() = 0;
+
+            /**
+             * @brief Método que agrega un amigo al manager.
+             * @param homie Referencia a otro manager.
+             */
+            template<typename Type>
+            void addHomie(Type *homie);
+
+            /**
+             * @brief Método que regresa la referencia a un manager.
+             * @return Un manager.
+             */
+            template<typename Type>
+            Type *gethomie();
 
     };
 
