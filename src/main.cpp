@@ -59,19 +59,13 @@ void print2(fantasma *p){
     std::cout << "\nSoy aplyfuntion\n";
 }
 
-class systemprint : public EGE::CORE::System<managerFantasma>{
-    public:
-        void update(managerFantasma *gameContext){
-            gameContext -> traverse(print);
-        }
-};
+
 
 class Pacman : public EGE::CORE::Entity<Pacman>{
 
 };
 
 class managerPacman : public EGE::CORE::Manager<Pacman>{
-
 };
 
 
@@ -80,8 +74,6 @@ int main(){
     managerFantasma poki;
     managerFantasma poki2;
     managerPacman p;
-
-    poki.addHomie<managerPacman>(&p);
 
 #if 0
     std::cout << poki.getManagerType() << std::endl;

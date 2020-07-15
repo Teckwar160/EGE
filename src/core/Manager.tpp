@@ -11,17 +11,6 @@ namespace EGE::CORE{
         /*Nada*/
     }
 
-    template<typename Type>
-    void ManagerBase::addHomie(Type *homie){
-        std::cout << Type::getManagerType() << std::endl;
-        //friends.insert({Type::getManagerType(),homie});
-    }
-
-    template<typename Type>
-    Type *ManagerBase::gethomie(){
-        return friends.find(Type::getManagerType()) -> second;
-    }
-
     /*Métodos de manager*/
 
     template<typename Type>
