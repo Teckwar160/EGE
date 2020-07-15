@@ -16,7 +16,8 @@ namespace EGE::CORE{
     class Manager{
         protected:
             /**Vector que contiene a todas las entidades que manejara el manager*/
-            std::vector<Type*> entities;
+            //std::vector<Type*> entities;
+            std::unordered_map<EntityId,Type*> entities;
 
             /**Contador que lleva registro de cada entidad creada en entities*/
             static inline int numEntities = 0;

@@ -51,24 +51,48 @@ class Poder : public EGE::CORE::Component<Poder>{
         }
 };
 
+void print(fantasma *p){
+    p -> muestraVida();
+}
+
+void print2(fantasma *p){
+    std::cout << "\nSoy aplyfuntion\n";
+}
+
+class systemprint : public EGE::CORE::System<managerFantasma>{
+    public:
+        void update(managerFantasma *gameContext){
+            gameContext -> traverse(print);
+        }
+};
+
 
 
 int main(){
     managerFantasma poki;
 
     auto a = poki.addEntity(); //0
-    
+    auto b = poki.addEntity();
+    auto c = poki.addEntity();
+    poki.destroyEntity(b);
+    systemprint pr;
+
+    pr.update(&poki);
+    poki.applyFuntion(a,print2);
+
     poki.addComponent<Vida>(a);
     poki.addComponent<Poder>(a);
     poki.addComponent<Defensa>(a);
 
     poki.deleteComponent<Defensa>(a);
 
-    auto tmp = poki.getComponent<Defensa>(a);
+    auto tmp = poki.getComponent<Vida>(a);
 
     if(tmp == nullptr){
         std::cout << "\nSe borro\n";
     }
+
+    tmp -> print();
 
  
 
