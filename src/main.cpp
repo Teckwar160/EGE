@@ -75,7 +75,7 @@ int main(){
     managerFantasma poki2;
     managerPacman p;
 
-#if 0
+
     std::cout << poki.getManagerType() << std::endl;
     std::cout << poki2.getManagerType() << std::endl;
     std::cout << p.getManagerType() << std::endl;
@@ -84,9 +84,7 @@ int main(){
     auto b = poki.addEntity();
     auto c = poki.addEntity();
     poki.destroyEntity(b);
-    systemprint pr;
 
-    pr.update(&poki);
     poki.applyFuntion(a,print2);
 
     poki.addComponent<Vida>(c);
@@ -102,7 +100,6 @@ int main(){
     }
 
     tmp -> print();
-#endif
  
 
 }
