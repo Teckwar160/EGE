@@ -91,6 +91,9 @@ int main(){
         std::cout << "si se elimino bien\n";
     }
 
+    delete k;
+    delete f;
+
 
 
 }
