@@ -12,10 +12,11 @@ namespace EGE::CORE{
      * @brief Clase base de component.
      */
     class ComponentBase{
-        public:
+        protected:
             /**Atributo que identifica a los componentes*/
             inline static ComponentType nextType = 0;
-
+            
+        public:
             /**
              * @brief Método constructor.
              */

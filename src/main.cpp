@@ -66,10 +66,24 @@ class systemprint : public EGE::CORE::System<managerFantasma>{
         }
 };
 
+class Pacman : public EGE::CORE::Entity<Pacman>{
+
+};
+
+class managerPacman : public EGE::CORE::Manager<Pacman>{
+
+};
+
 
 
 int main(){
     managerFantasma poki;
+    managerFantasma poki2;
+    managerPacman p;
+
+    std::cout << poki.getManagerType() << std::endl;
+    std::cout << poki2.getManagerType() << std::endl;
+    std::cout << p.getManagerType() << std::endl;
 
     auto a = poki.addEntity(); //0
     auto b = poki.addEntity();

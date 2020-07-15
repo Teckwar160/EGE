@@ -25,37 +25,39 @@ namespace EGE::CORE
     private:
         /**Mapa que contendra a los componentes de las entidades.*/
         mapComponents components;
-
-    public:
+        
+    protected:
         /**Atributo que identifica a las identidades*/
         inline static EntityType nextType = 0;
 
+    public:
+
         /**
-             * @brief Método constructor.
-             */
+         * @brief Método constructor.
+         */
         EntityBase();
 
         /**
-             * @brief Método destructor.
-             */
+         * @brief Método destructor.
+         */
         virtual ~EntityBase() = 0;
 
         /**
-             * @brief Método que añade un componente a components.
-            */
+         * @brief Método que añade un componente a components.
+         */
         template <typename CMP>
         void addComponent();
 
         /**
-             * @brief Método que elimina un component de la entity.
-             */
+         * @brief Método que elimina un component de la entity.
+         */
         template <typename CMP>
         void deleteComponent();
 
         /**
-             * @brief Método que retorna un component.
-             * @return Apuntador a un component.
-             */
+         * @brief Método que retorna un component.
+         * @return Apuntador a un component.
+         */
         template <typename CMP>
         CMP *getComponent();
     };

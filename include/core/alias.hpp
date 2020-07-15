@@ -7,6 +7,7 @@ namespace EGE::CORE{
     using EntityId = int;
     using SystemType = int;
     using ComponentType = int;
+    using ManagerType = int;
 }
 
 #endif

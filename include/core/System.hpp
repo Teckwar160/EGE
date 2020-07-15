@@ -10,10 +10,11 @@ namespace EGE::CORE{
      * @brief Clase base de todos los sistemas.
      */
     class SystemBase{
-        public:
+        protected:
             /**Atributo que identifica el tipo de sistema*/
             inline static SystemType nextType = 0;
-
+            
+        public:
             /**
              *@brief Método constructor.
              */

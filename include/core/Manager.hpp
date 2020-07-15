@@ -9,11 +9,29 @@
 #include <core/alias.hpp>
 
 namespace EGE::CORE{
+
+    class ManagerBase{
+        protected:
+            /**Atributo que identifica el tipo de sistema*/
+            inline static ManagerType nextType = 0;
+        public:
+            /**
+             *@brief Método constructor.
+             */
+            ManagerBase();
+
+            /**
+             *@brief Método destructor.
+             */
+            virtual ~ManagerBase() = 0;
+
+    };
+
     /**
      * @brief Clase base de todos los managers.
      */
     template<typename Type>
-    class Manager{
+    class Manager : public ManagerBase{
         protected:
             /**Mapa que contiene a todas las entidades que manejara el manager*/
             std::unordered_map<EntityId,Type*> entities;
@@ -78,6 +96,12 @@ namespace EGE::CORE{
              */
             template<typename CMP>
             CMP* getComponent(EntityId id);
+
+            /**
+             * @brief Método que nos regresa el tpo de manager.
+             * @return Tipo de manager.
+             */
+            ManagerType getManagerType();
 
     };
 }

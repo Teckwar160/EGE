@@ -1,6 +1,21 @@
 #include <core/Manager.hpp>
 
 namespace EGE::CORE{
+
+    ManagerBase::ManagerBase(){
+        /*Nada*/
+    }
+
+    ManagerBase::~ManagerBase(){
+        /*Nada*/
+    }
+
+    template<typename Type>
+    ManagerType Manager<Type>::getManagerType(){
+        static ManagerType _type = nextType++;
+
+        return _type;
+    }
     
     template<typename Type>
     void Manager<Type>::freeEntities(Type* i){
