@@ -17,8 +17,9 @@ namespace EGE::CORE{
     }
 
     template<typename Type>
-    void Manager<Type>::addEntity(){
+    EntityId Manager<Type>::addEntity(){
         entities.push_back(new Type(numEntities++));
+        return entities[entities.size() - 1]->getEntityId();
     }
 
     template<typename Type>
