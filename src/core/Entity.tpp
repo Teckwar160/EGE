@@ -44,7 +44,7 @@ namespace EGE::CORE{
 
     template<typename CMP>
     void EntityBase::deleteComponent(){
-        delete components[CMP::getComponentType()];
+        //delete components[CMP::getComponentType()];
         
         for(auto it = components.begin(); it != components.end();){
             if(it ->first == CMP::getComponentType()){
