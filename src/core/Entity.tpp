@@ -48,6 +48,7 @@ namespace EGE::CORE{
     void EntityBase::deleteComponent(){
         for(auto it = components.begin(); it != components.end();){
             if(it -> first == CMP::getComponentType()){
+                delete it -> second;
                 it = components.erase(it);
             }else{
                 ++it;
