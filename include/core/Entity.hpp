@@ -10,62 +10,66 @@
 #include <memory>
 #include <core/Component.hpp>
 
-
 /**Paquete*/
-namespace EGE::CORE{
+namespace EGE::CORE
+{
 
     /**Definición*/
-    using mapComponents = std::unordered_map<ComponentType,ComponentBase*>;
+    using mapComponents = std::unordered_map<ComponentType, ComponentBase *>;
 
     /**
      *@brief Entidad base de todas las entidades.
      */
-    class EntityBase{
-        private:
-            /**Mapa que contendra a los componentes de las entidades.*/
-            mapComponents components;
-        public:
-            /**Atributo que identifica a las identidades*/
-            inline static EntityType nextType = 0;
+    class EntityBase
+    {
+    private:
+        /**Mapa que contendra a los componentes de las entidades.*/
+        mapComponents components;
 
-            /**
+    public:
+        /**Atributo que identifica a las identidades*/
+        inline static EntityType nextType = 0;
+
+        /**
              * @brief Método constructor.
              */
-            EntityBase();
+        EntityBase();
 
-            /**
+        /**
              * @brief Método destructor.
              */
-            virtual ~EntityBase() = 0;
+        virtual ~EntityBase() = 0;
 
-            /**
+        /**
              * @brief Método que añade un componente a components.
             */
-            template<typename CMP>
-            void addComponent();
+        template <typename CMP>
+        void addComponent();
 
-            /**
+        /**
              * @brief Método que elimina un component de la entity.
              */
-            template<typename CMP>
-            void deleteComponent();
+        template <typename CMP>
+        void deleteComponent();
 
-            /**
+        /**
              * @brief Método que retorna un component.
              * @return Apuntador a un component.
              */
-            template<typename CMP>
-            CMP* getComponent();
+        template <typename CMP>
+        CMP *getComponent();
     };
-    
+
     /**
      * @brief Interface de cualquier objeto del motor.
      */
-    template<class Type>
-    class Entity : public EntityBase{
-        private:
-            EntityId id = 0;
-        public:
+    template <class Type>
+    class Entity : public EntityBase
+    {
+    private:
+        EntityId id = 0;
+
+    public:
         /**
          * @brief Método constructor vacío.
          */
@@ -89,7 +93,12 @@ namespace EGE::CORE{
          */
         static EntityType getEntityType();
 
+        /**
+         * @brief Método que nos regresa el id de entidad.
+         * @return EntityId
+         */
+        EntityId getEntityId();
     };
-}
+} // namespace EGE::CORE
 
 #endif
