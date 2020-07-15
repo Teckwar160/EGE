@@ -80,13 +80,13 @@ int main(){
     pr.update(&poki);
     poki.applyFuntion(a,print2);
 
-    poki.addComponent<Vida>(a);
+    poki.addComponent<Vida>(c);
     poki.addComponent<Poder>(a);
     poki.addComponent<Defensa>(a);
 
     poki.deleteComponent<Defensa>(a);
 
-    auto tmp = poki.getComponent<Vida>(a);
+    auto tmp = poki.getComponent<Vida>(c);
 
     if(tmp == nullptr){
         std::cout << "\nSe borro\n";

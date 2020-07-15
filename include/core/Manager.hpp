@@ -15,8 +15,7 @@ namespace EGE::CORE{
     template<typename Type>
     class Manager{
         protected:
-            /**Vector que contiene a todas las entidades que manejara el manager*/
-            //std::vector<Type*> entities;
+            /**Mapa que contiene a todas las entidades que manejara el manager*/
             std::unordered_map<EntityId,Type*> entities;
 
             /**Contador que lleva registro de cada entidad creada en entities*/
@@ -25,8 +24,6 @@ namespace EGE::CORE{
             /**Método que libera la memoria de entities*/
             static void freeEntities(Type*);
 
-            /**Mapa que contiene a todos los componenetes que manejara el manager*/
-            std::unordered_map<EGE::CORE::ComponentType,std::vector<EGE::CORE::ComponentBase>> components;
         public:
             /**
              * @brief Método que destruye a las entidades de entitites

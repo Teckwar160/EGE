@@ -4,11 +4,6 @@ namespace EGE::CORE{
     
     template<typename Type>
     void Manager<Type>::freeEntities(Type* i){
-        /*
-        if(i != nullptr){
-            delete i;
-        }
-        */
        delete i;
     }
 
@@ -20,7 +15,6 @@ namespace EGE::CORE{
 
     template<typename Type>
     EntityId Manager<Type>::addEntity(){
-        //entities.push_back(new Type(numEntities++));
         entities.insert({numEntities,new Type(numEntities)});
         numEntities++;
         return entities[entities.size() - 1]->getEntityId();
@@ -35,11 +29,6 @@ namespace EGE::CORE{
     template<typename Type>
     void Manager<Type>::traverse(void (*pfun)(Type*)){
         for(auto i : this -> entities){
-            /*
-            if(i != nullptr){
-                pfun(i);
-            }
-            */
            pfun(i.second);
         }
     }
@@ -47,7 +36,6 @@ namespace EGE::CORE{
     template<typename Type>
     void Manager<Type>::applyFuntion(EntityId id, void (*pfun)(Type*)){
         if(id >= 0 && id <= numEntities){
-            //pfun(entities[id]);
             pfun(entities.find(id) -> second);
         }
     }
@@ -61,7 +49,6 @@ namespace EGE::CORE{
     template<typename CMP>
     void Manager<Type>::addComponent(EntityId id){
         if(id >= 0 && id <= numEntities){
-            //entities[id] -> template addComponent<CMP>();
             entities.find(id) -> second -> template addComponent<CMP>();
         }
     }
@@ -70,7 +57,6 @@ namespace EGE::CORE{
     template<typename CMP>
     void Manager<Type>::deleteComponent(EntityId id){
         if(id >= 0 && id <= numEntities){
-            //entities[id] -> template deleteComponent<CMP>();
             entities.find(id) -> second -> template deleteComponent<CMP>();
         }
     }
