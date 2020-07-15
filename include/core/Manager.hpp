@@ -35,7 +35,7 @@ namespace EGE::CORE{
             /**
              * @brief Método que agrega una entidas a entities.
              */
-            void addEntity();
+            EntityId addEntity();
 
             /**
              * @brief Método que destruye una entidad de entities.
