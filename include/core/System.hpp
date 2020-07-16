@@ -30,7 +30,7 @@ namespace EGE::CORE{
     /**
      *@brief Interface de cualquier sistema que se necesite del motor.
      */
-    template<class Type>
+    template<typename... Type>
     class System : public SystemBase{
         private:
             SystemType type = 0;
@@ -62,7 +62,7 @@ namespace EGE::CORE{
          * @brief Método que actualiza los systemas.
          * @param gameContext Es un manager que gestiona.
          */
-        virtual void update(Type *gameContext) = 0;
+        virtual void update(Type*... gameContext) = 0;
 
     };
 }

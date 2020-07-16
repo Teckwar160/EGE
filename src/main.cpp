@@ -85,7 +85,15 @@ class managerPacman : public EGE::CORE::Manager<Pacman>{
     }
 };
 
+class systemCollision : public EGE::CORE::System<managerPacman, managerFantasma>{
+    public:
+    void update(managerPacman* mPacman, managerFantasma* mFantasma) override {
+
+    }
+};
+
 int main(){
+    /*
     EGE::CORE::TERMINAL::WINDOWS::Terminal *p;
     EGE::CORE::TERMINAL::WINDOWS::Terminal *w;
     EGE::CORE::TERMINAL::WINDOWS::Terminal *i;
@@ -96,4 +104,10 @@ int main(){
     i -> pintarLimites();
 
     delete i;
+    */
+   managerFantasma mFantsma;
+   managerPacman mPacman;
+   systemCollision sysCollision;
+   sysCollision.update(&mPacman, &mFantsma);
+   return 0;
 }
