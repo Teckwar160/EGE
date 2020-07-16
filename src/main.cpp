@@ -3,7 +3,7 @@
 #include <core/System.tpp>
 #include <core/Component.tpp>
 #include <core/Manager.tpp>
-#include <STD/WindowsTerminal.tpp>
+#include <std/WindowsTerminal.tpp>
 
 
 class fantasma : public EGE::CORE::Entity<fantasma>{
