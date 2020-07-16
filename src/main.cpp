@@ -88,7 +88,6 @@ class managerPacman : public EGE::CORE::Manager<Pacman>{
 
 int main(){
     managerFantasma poki;
-    managerFantasma poki2;
     managerPacman p;
 
 
@@ -105,14 +104,15 @@ int main(){
     poki.addComponent<Defensa>(b);
     //poki.deleteComponent<Defensa>(a);
     
-    poki.getEntity<fantasma>(1);
-    poki.getEntity<fantasma>(0);
-    p.getEntity<Pacman>(2);
-    p.getEntity<Pacman>(1);
+    auto fantasmaB = poki.getEntity<fantasma>(1);
+    auto fantasmaA = poki.getEntity<fantasma>(0);
+    auto pacmanC1  = p.getEntity<Pacman>(2);
+    auto pacmanB1  = p.getEntity<Pacman>(1);
 
-
-
+    int fantasmaid = fantasmaB -> getEntityId(); // 1
+    int pacmanID2 = pacmanC1 -> getEntityId(); // 2
  
- 
+    std::cout << fantasmaid << std::endl;
+    std::cout << pacmanID2 << std::endl;
 
 }
