@@ -115,4 +115,7 @@ int main(){
     std::cout << fantasmaid << std::endl;
     std::cout << pacmanID2 << std::endl;
 
+    std::cout << fantasmaA -> getEntityType() << std::endl;
+    std::cout << pacmanC1 -> getEntityType() << std::endl;
+
 }
