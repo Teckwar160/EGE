@@ -17,34 +17,31 @@ namespace EGE::CORE::TERMINAL::WINDOWS{
 		/**Tamaño en y del tablero*/
 		int alto;
 
-		/**Caracter de las lineas horizontales del tablero*/
-		char cHorizontal;
+		/**Instancia de Terminal*/
+		static inline Terminal *terminal = nullptr;
 
-		/**Caracter de las lineas verticales del tablero*/
-		char cVertical;
-
-		/**Caracter de la esquina superior izquierda del tablero*/
-		char cEsquina1;
-
-		/**Caracter de la esquina superior derecha del tablero*/
-		char cEsquina2;
-
-		/**Caracter de la esquina inferiro izquierda del tablero*/
-		char cEsquina3;
-
-		/**Carcter de la esquina inferiro derecha del tablero*/
-		char cEsquina4;
-
-        public:
 		/**
 		 *@brief Método constructor del tablero,
-		 *si se desea se pueden colocar unicamente los parametros de largo y alto y
-		 *se creara un tablero por default, si se desea personalizar usar los demas paramatros.
-		 *
 		 *@param largo Tamaño en x del tablero.
 		 *@param alto Tamaño en y del tablero.
 		 */
 		Terminal(int largo, int alto);
+
+        public:
+
+		/**
+		 * @brief Método que regresa una instancia de Terminal.
+		 * @param x Tamaño en horizontal del tablero.
+		 * @param y Tamaño en vertical del tablero.
+		 * @return Instancia unica de terminal.
+		 */
+		static Terminal *getTerminal(int x,int y);
+
+		/**
+		 * @brief Método que regresa una instancia de Terminal.
+		 * @return Instancia unica de terminal.
+		 */
+		static Terminal *getTerminal();
 
 		/**
 		 *@brief Método destructor de la clase.
@@ -77,11 +74,6 @@ namespace EGE::CORE::TERMINAL::WINDOWS{
 		int getLargo();
 
 		int getAlto();
-    };
-
-    class managerTerminal : public EGE::CORE::Manager<Terminal>{
-        public:
-            EntityId addEntity(int x, int y);
     };
 }
 

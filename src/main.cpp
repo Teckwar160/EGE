@@ -86,21 +86,14 @@ class managerPacman : public EGE::CORE::Manager<Pacman>{
 };
 
 int main(){
-    managerFantasma poki;
-    managerPacman p;
-
-    EGE::CORE::TERMINAL::WINDOWS::managerTerminal mt;
-
-    auto tablero = mt.addEntity(50,30);
-
-    auto tableroObjeto = mt.getEntity<EGE::CORE::TERMINAL::WINDOWS::Terminal>(tablero);
-
+    EGE::CORE::TERMINAL::WINDOWS::Terminal *p;
+    EGE::CORE::TERMINAL::WINDOWS::Terminal *w;
+    EGE::CORE::TERMINAL::WINDOWS::Terminal *i;
+    p = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal(10,10);
+    w = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal(100,100);
+    i = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal();
     system("cls");
-    tableroObjeto -> pintarLimites();
+    i -> pintarLimites();
 
-    tableroObjeto ->ocultarCursor();
-    while(true){
-
-    }
-
+    delete i;
 }

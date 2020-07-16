@@ -8,8 +8,21 @@ namespace EGE::CORE::TERMINAL::WINDOWS{
         this -> alto = alto;
     }
 
+    Terminal *Terminal::getTerminal(int x,int y){
+        if(terminal != nullptr){
+            return terminal;
+        }else{
+            terminal = new Terminal(x,y);
+            return terminal;
+        }
+    }
+
+    Terminal *Terminal::getTerminal(){
+        return terminal;
+    }
+
     Terminal::~Terminal(){
-        /*Nada por el momento*/
+        delete terminal;
     }
 
     void Terminal::gotoxy(int x, int y){
@@ -62,11 +75,5 @@ namespace EGE::CORE::TERMINAL::WINDOWS{
             
     int Terminal::getAlto(){
         return this -> alto;
-    }
-
-    EntityId managerTerminal::addEntity(int x, int y){
-        entities.insert({numEntities,new Terminal(x,y)});
-        numEntities++;
-        return entities[entities.size() - 1]->getEntityId();
     }
 }
