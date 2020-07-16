@@ -1,5 +1,6 @@
 #ifndef WINDOWSTERMINAL
 #define WINDOWSTERMINAL
+#if defined(_WIN32)
 
 #include <core/Entity.hpp>
 #include <core/Manager.hpp>
@@ -76,5 +77,5 @@ namespace EGE::CORE::TERMINAL::WINDOWS{
 		int getAlto();
     };
 }
-
+#endif
 #endif

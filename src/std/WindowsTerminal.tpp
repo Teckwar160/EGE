@@ -1,3 +1,4 @@
+#if defined(_WIN32)
 /**!<Bibliotecas necesarias*/
 #include <core/WindowsTerminal.hpp>
 
@@ -77,3 +78,4 @@ namespace EGE::CORE::TERMINAL::WINDOWS{
         return this -> alto;
     }
 }
+#endif
