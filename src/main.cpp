@@ -93,21 +93,19 @@ class systemCollision : public EGE::CORE::System<managerPacman, managerFantasma>
 };
 
 int main(){
-    /*
-    EGE::CORE::TERMINAL::WINDOWS::Terminal *p;
+    [[maybe_unused]]EGE::CORE::TERMINAL::WINDOWS::Terminal *tp;
     EGE::CORE::TERMINAL::WINDOWS::Terminal *w;
-    EGE::CORE::TERMINAL::WINDOWS::Terminal *i;
-    p = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal(10,10);
-    w = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal(100,100);
-    i = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal();
-    system("cls");
-    i -> pintarLimites();
 
-    delete i;
-    */
-   managerFantasma mFantsma;
-   managerPacman mPacman;
-   systemCollision sysCollision;
-   sysCollision.update(&mPacman, &mFantsma);
-   return 0;
+    tp = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
+
+    w = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal();
+
+
+
+    system("cls");
+    w -> pintarLimites();
+    w -> ocultarCursor();
+    while(true){
+
+    }
 }
