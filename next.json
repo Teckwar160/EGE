@@ -1,0 +1,34 @@
+{
+    "name_project": "Engine_test",
+    "name_build": "next",
+    "version_build": "1.0.0",
+    "language": "C++",
+    "version_language": "C++20",
+    "compiler_CC": "g++",
+    "compiler_C": "gcc",
+    "main_file": "src/main.cpp",
+    "test_file": "test/test.cpp",
+    "source_dir": "src",
+    "test_dir": "test",
+    "object_dir": "obj",
+    "binary_dir": "bin",
+    "include_dir": "include",
+    "linker_dirs": [
+        "include",
+        "src"
+    ],
+    "libs_dir": "lib",
+    "cc_flags": [
+        "-Wall",
+        "-pedantic",
+        "-ggdb",
+        "-std=c++17",
+        "-g"
+    ],
+    "c_flags": [
+        "-Wall",
+        "-pedantic",
+        "-std=c99"
+    ],
+    "libs_flags": []
+}
