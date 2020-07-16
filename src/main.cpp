@@ -3,7 +3,14 @@
 #include <core/System.tpp>
 #include <core/Component.tpp>
 #include <core/Manager.tpp>
-#include <STD/WindowsTerminal.tpp>
+
+#if defined(unix) \
+|| defined(__unix__) \
+|| defined(__unix)
+  
+#else
+  #include <STD/WindowsTerminal.tpp>
+#endif
 
 
 class fantasma : public EGE::CORE::Entity<fantasma>{
