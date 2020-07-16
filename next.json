@@ -1,6 +1,6 @@
 {
     "name_project": "Engine_test",
-    "name_build": "next",
+    "name_build": "main",
     "version_build": "1.0.0",
     "language": "C++",
     "version_language": "C++20",
