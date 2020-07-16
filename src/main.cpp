@@ -7,7 +7,7 @@
 #if defined(unix) \
 || defined(__unix__) \
 || defined(__unix)
-  
+
 #else
   #include <STD/WindowsTerminal.tpp>
 #endif
@@ -96,7 +96,7 @@ int main(){
     managerFantasma poki;
     managerPacman p;
 
-    EGE::CORE::TERMINAL::WINDOWS::managerTerminal mt;
+    /* EGE::CORE::TERMINAL::WINDOWS::managerTerminal mt;
 
     auto tablero = mt.addEntity(50,30);
 
@@ -108,6 +108,6 @@ int main(){
     tableroObjeto ->ocultarCursor();
     while(true){
 
-    }
+    } */
 
 }
