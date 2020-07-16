@@ -3,6 +3,7 @@
 #include <core/System.tpp>
 #include <core/Component.tpp>
 #include <core/Manager.tpp>
+#include <STD/WindowsTerminal.tpp>
 
 
 class fantasma : public EGE::CORE::Entity<fantasma>{
@@ -84,38 +85,22 @@ class managerPacman : public EGE::CORE::Manager<Pacman>{
     }
 };
 
-
-
 int main(){
     managerFantasma poki;
     managerPacman p;
 
+    EGE::CORE::TERMINAL::WINDOWS::managerTerminal mt;
 
-    auto a = poki.addEntity(); // 0
-    auto b = poki.addEntity(); // 1
-    auto a1 = p.addEntity(); // 0
-    auto b1 = p.addEntity(); // 1
-    auto c1 = p.addEntity(); // 2
+    auto tablero = mt.addEntity(50,30);
 
-    
-    poki.addComponent<Poder>(a);
-    poki.addComponent<Defensa>(a);
-    
-    poki.addComponent<Defensa>(b);
-    //poki.deleteComponent<Defensa>(a);
-    
-    auto fantasmaB = poki.getEntity<fantasma>(1);
-    auto fantasmaA = poki.getEntity<fantasma>(0);
-    auto pacmanC1  = p.getEntity<Pacman>(2);
-    auto pacmanB1  = p.getEntity<Pacman>(1);
+    auto tableroObjeto = mt.getEntity<EGE::CORE::TERMINAL::WINDOWS::Terminal>(tablero);
 
-    int fantasmaid = fantasmaB -> getEntityId(); // 1
-    int pacmanID2 = pacmanC1 -> getEntityId(); // 2
- 
-    std::cout << fantasmaid << std::endl;
-    std::cout << pacmanID2 << std::endl;
+    system("cls");
+    tableroObjeto -> pintarLimites();
 
-    std::cout << fantasmaA -> getEntityType() << std::endl;
-    std::cout << pacmanC1 -> getEntityType() << std::endl;
+    tableroObjeto ->ocultarCursor();
+    while(true){
+
+    }
 
 }
