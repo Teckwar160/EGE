@@ -1,6 +1,6 @@
 #ifndef SPRITE_HPP
 #define SPRITE_HPP
-
+#if defined(_WIN32)
 #include <iostream>
 #include <fstream>
 #include <core/Manager.hpp>
@@ -96,4 +96,5 @@ namespace EGE::STD::WINDOWS{
 
 }
 
+#endif
 #endif

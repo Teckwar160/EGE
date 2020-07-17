@@ -1,3 +1,4 @@
+#if defined(_WIN32)
 #include <core/Sprite.hpp>
 
 namespace EGE::STD::WINDOWS{
@@ -220,3 +221,4 @@ namespace EGE::STD::WINDOWS{
     }
 
 }
+#endif
