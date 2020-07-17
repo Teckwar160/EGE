@@ -2,7 +2,7 @@
 /**!<Bibliotecas necesarias*/
 #include <core/WindowsTerminal.hpp>
 
-namespace EGE::CORE::TERMINAL::WINDOWS{
+namespace EGE::STD::TERMINAL::WINDOWS{
 
     Terminal::Terminal(int largo, int alto){
         this -> largo = largo;

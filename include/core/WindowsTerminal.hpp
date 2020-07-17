@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-namespace EGE::CORE::TERMINAL::WINDOWS{
+namespace EGE::STD::TERMINAL::WINDOWS{
     class Terminal : public EGE::CORE::Entity<Terminal>{
         private:
 		/**Tamaño en x del tablero*/

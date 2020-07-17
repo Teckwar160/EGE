@@ -4,6 +4,7 @@
 #include <core/Component.tpp>
 #include <core/Manager.tpp>
 #include <std/WindowsTerminal.tpp>
+#include <std/Sprite.tpp>
 
 
 class fantasma : public EGE::CORE::Entity<fantasma>{
@@ -93,19 +94,32 @@ class systemCollision : public EGE::CORE::System<managerPacman, managerFantasma>
 };
 
 int main(){
-    [[maybe_unused]]EGE::CORE::TERMINAL::WINDOWS::Terminal *tp;
-    EGE::CORE::TERMINAL::WINDOWS::Terminal *w;
+    EGE::STD::TERMINAL::WINDOWS::Terminal *w;
 
-    tp = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
+    EGE::STD::WINDOWS::Sprite nave(3,2,2,"nave",true);
 
-    w = EGE::CORE::TERMINAL::WINDOWS::Terminal::getTerminal();
+
+    w = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
 
 
 
     system("cls");
     w -> pintarLimites();
     w -> ocultarCursor();
-    while(true){
+    bool sigue = true;
+    while(sigue){
+        w -> ocultarCursor();
+        if(kbhit()){
+            char tecla = getch();
+
+            nave.mover(tecla,w);
+
+            if(tecla == 'c'){
+                sigue = false;
+            }
+        }
+        nave.visualizar(w);
 
     }
+    system("cls");
 }
