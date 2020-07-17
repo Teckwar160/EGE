@@ -72,8 +72,16 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		 */
 		void pintarLimites(char cHorizontal = 205, char cVertical = 186, char cEsquina1 = 201, char cEsquina2 = 187, char cEsquina3 = 200, char cEsquina4 = 188);
 
+		/**
+		 * @brief Método que regresa el largo del tablero.
+		 * @return Largo del tablero.
+		 */
 		int getLargo();
 
+		/**
+		 * @brief Método que regresa el alto de ltablero.
+		 * @return Alto del tablero.
+		 */
 		int getAlto();
     };
 }

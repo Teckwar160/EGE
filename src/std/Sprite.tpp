@@ -34,9 +34,9 @@ namespace EGE::STD::WINDOWS{
         return this -> y;
     }
 
-    void Controles::movimiento(char Tecla, int *x, int *y, bool flechas){
+    void Controles::movimiento(char Tecla, int *x, int *y){
 
-        if(flechas){
+        if(usarFlechas){
             switch(Tecla){
                 case ARRIBA:
                     *y-=1;
@@ -213,7 +213,7 @@ namespace EGE::STD::WINDOWS{
             y = this -> sprite[i].getY();
 
             /*Las asctualizamos*/
-            this -> movimiento(Tecla,&x,&y,this -> usarFlechas);
+            this -> movimiento(Tecla,&x,&y);
 
             sprite[i].setX(x);
             sprite[i].setY(y);
