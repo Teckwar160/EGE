@@ -1,6 +1,6 @@
 #if defined(_WIN32)
 /**!<Bibliotecas necesarias*/
-#include <core/WindowsTerminal.hpp>
+#include <std/WindowsTerminal.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
@@ -49,7 +49,12 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
     void Terminal::pintarLimites(char cHorizontal, char cVertical, char cEsquina1, char cEsquina2, char cEsquina3, char cEsquina4){
 
-        /*Puede el usuario determinar el caracter de borde*/
+        /**Modifica el tamaño de la terminal*/
+        std::string primera = "mode con:cols=" + std::to_string(largo +2);
+        std::string segunda = " lines=" + std::to_string(alto+1);
+        std::string limites = primera + segunda;
+
+        system(limites.c_str());
 
         /*Pinta las lineas horizontales*/
         for(int i = 0; i<largo; i++){
@@ -77,5 +82,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     int Terminal::getAlto(){
         return this -> alto;
     }
+
+    EGE::CORE::EntityId managerTerminal::addEntity(int x, int y){
+        entities.insert({numEntities,EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(x,y)});
+        numEntities++;
+        return entities[entities.size() - 1]->getEntityId();
+    };
 }
 #endif

@@ -8,6 +8,8 @@
 #include <windows.h>
 #include <stdio.h>
 #include <conio.h>
+#include <iostream>
+#include <string>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
     class Terminal : public EGE::CORE::Entity<Terminal>{
@@ -84,6 +86,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		 */
 		int getAlto();
     };
+
+	class managerTerminal : public EGE::CORE::Manager<Terminal>{
+		public:
+			EGE::CORE::EntityId addEntity(int x, int y);
+	};
 }
 #endif
 #endif

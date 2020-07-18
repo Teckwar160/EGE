@@ -5,7 +5,7 @@
 #include <fstream>
 #include <core/Manager.hpp>
 #include <core/alias.hpp>
-#include <core/WindowsTerminal.hpp>
+#include <std/WindowsTerminal.hpp>
 
 /**!<Definiciones de las flechas del teclado*/
 #define ARRIBA 72
@@ -144,6 +144,11 @@ namespace EGE::STD::WINDOWS{
              * @param caracterAIgnorar Caracterer que se ignorara del sprite.
              */
             Sprite(int n, int pX, int pY, std::string nombre, bool usarFlechas = false,char caracterAIgnorar = '*');
+
+            /**
+             * @brief Método constructor vacío.
+             */
+            Sprite();
 
             /**
              * @brief Método destructor del sprite.

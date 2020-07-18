@@ -1,5 +1,5 @@
 #if defined(_WIN32)
-#include <core/Sprite.hpp>
+#include <std/Sprite.hpp>
 
 namespace EGE::STD::WINDOWS{
     Pixel::Pixel(){
@@ -164,6 +164,10 @@ namespace EGE::STD::WINDOWS{
         /*Convertimos la matriz a un vector*/
         this -> convertidorDeR2aR();
 
+    }
+
+    Sprite::Sprite(){
+        
     }
 
     Sprite::~Sprite(){

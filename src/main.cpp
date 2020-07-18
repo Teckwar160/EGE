@@ -6,7 +6,6 @@
 #include <std/WindowsTerminal.tpp>
 #include <std/Sprite.tpp>
 
-
 class fantasma : public EGE::CORE::Entity<fantasma>{
     public:
         int vida = 100;
@@ -99,9 +98,7 @@ int main(){
     EGE::STD::WINDOWS::Sprite nave(3,2,2,"nave",true);
 
 
-    w = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
-
-
+    w = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(80,30);
 
     system("cls");
     w -> pintarLimites();
@@ -122,4 +119,5 @@ int main(){
 
     }
     system("cls");
+    delete w;
 }
