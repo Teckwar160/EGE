@@ -167,7 +167,7 @@ namespace EGE::STD::WINDOWS{
     }
 
     Sprite::Sprite(){
-        
+
     }
 
     Sprite::~Sprite(){
@@ -222,6 +222,48 @@ namespace EGE::STD::WINDOWS{
             sprite[i].setX(x);
             sprite[i].setY(y);
         }
+    }
+
+    void Sprite::inicializarSprite(int n, int pX, int pY, std::string nombre, bool usarFlechas, char caracterAIgnorar){
+        /*Guardamos datos basicos*/
+        this -> n = n;
+        this -> nombre = nombre;
+        this -> usarFlechas = usarFlechas;
+        this -> caracterAIgnorar = caracterAIgnorar;
+
+
+        /*Creamos al contenedor del Sprite*/
+        this -> contenedor = new Pixel*[this -> n];
+
+        for(int i = 0; i<this -> n; i++){
+            this -> contenedor[i] = new Pixel[this -> n];
+        }	
+
+        /*Carga al sprite al molde*/
+        this -> cargadorDeSprite(this -> nombre);
+
+
+        /*Definimos las coordenadas de cada pixel*/
+        for(int i = 0; i<this -> n; i++){
+            for(int j = 0; j<this -> n; j++){
+                this -> contenedor[i][j].setX(pX +j);
+                this -> contenedor[i][j].setY(pY+i);
+            }
+        }
+
+        /*Creamos el vector que contendra el sprite*/
+        this -> sprite = new Pixel[this -> dimensionReal];
+
+        /*Convertimos la matriz a un vector*/
+        this -> convertidorDeR2aR();  
+    }
+
+    int Sprite::getDimensionReal(){
+        return this -> dimensionReal;
+    }
+
+    Pixel *Sprite::getSprite(){
+        return this -> sprite;
     }
 
 }

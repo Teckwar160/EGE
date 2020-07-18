@@ -169,6 +169,12 @@ namespace EGE::STD::WINDOWS{
              */
             void mover(char Tecla, EGE::STD::TERMINAL::WINDOWS::Terminal *tablero);
 
+            void inicializarSprite(int n, int pX, int pY, std::string nombre, bool usarFlechas = false,char caracterAIgnorar = '*');
+
+            int getDimensionReal();
+
+            Pixel *getSprite();
+
     };
 
 }
