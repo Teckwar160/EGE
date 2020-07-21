@@ -39,7 +39,6 @@ class Mnave : public EGE::CORE::Manager<nave>{
 };
 
 int main(){
-#if 1
     TerminalType *tm = TerminalType::getTerminal(50,30);
 
     Mnave base;
@@ -58,19 +57,4 @@ int main(){
     base.mostrarSprite(tm,Nave1);
 
     delete tm;
-#endif
-#if 0
-    EGE::STD::TERMINAL::Sprite nave;
-
-    nave.spriteInitializer(3,"nave");
-
-    auto n =nave.getN();
-
-    for(int i=0; i<n; i++){
-        for(int j = 0; j<n; j++){
-            std::cout << nave.contenedor[i][j];
-        }
-        std::cout << std::endl;
-    }
-#endif
 }
