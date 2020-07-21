@@ -107,9 +107,7 @@ namespace EGE::STD::TERMINAL{
                }
                k++;
             }
-            std::cout<< std::endl;
         }
-
     }
 
     int Sprite::getN(){
