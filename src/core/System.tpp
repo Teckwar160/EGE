@@ -1,3 +1,5 @@
+#ifndef SYSTEM_TPP
+#define SYSTEM_TPP
 #include <core/System.hpp>
 
 namespace EGE::CORE{
@@ -31,3 +33,4 @@ namespace EGE::CORE{
         /*Nada*/
     }
 }
+#endif

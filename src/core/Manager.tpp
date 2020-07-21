@@ -1,3 +1,5 @@
+#ifndef MANAGER_TPP
+#define MANAGER_TPP
 #include <core/Manager.hpp>
 
 namespace EGE::CORE{
@@ -98,3 +100,4 @@ namespace EGE::CORE{
         return nullptr;
     }
 }
+#endif

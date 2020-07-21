@@ -108,7 +108,6 @@ namespace EGE::CORE{
              */
             template<typename Ent>
             Ent* getEntity(EntityId id);
-
     };
 }
 

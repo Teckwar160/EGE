@@ -1,3 +1,5 @@
+#ifndef COMPONENT_TPP
+#define COMPONENT_TPP
 #include <core/Component.hpp>
 
 namespace EGE::CORE{
@@ -33,3 +35,4 @@ namespace EGE::CORE{
         /*Nada*/
     }
 }
+#endif

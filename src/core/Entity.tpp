@@ -1,3 +1,5 @@
+#ifndef ENTITY_TPP
+#define ENTITY_TPP
 #include <core/Entity.hpp>
 
 namespace EGE::CORE
@@ -90,3 +92,4 @@ namespace EGE::CORE
         return nullptr;
     }
 } // namespace EGE::CORE
+#endif
