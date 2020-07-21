@@ -91,14 +91,13 @@ namespace EGE::STD::TERMINAL{
 
     }
     void Sprite::visualize(TerminalType *cursor, EGE::STD::TERMINAL::Posicion coordenadas, bool mostrar){
+        int k = 0;
         auto vectorDePosiciones = coordenadas.getPosition();
-
-        
         cursor -> gotoxy(std::get<0>(vectorDePosiciones[0]),std::get<1>(vectorDePosiciones[0]));
 
         for(int i = 0; i<this -> n; i++){
             for(int j = 0; j<this -> n; j++){
-               cursor -> gotoxy(std::get<0>(vectorDePosiciones[i]),std::get<1>(vectorDePosiciones[i])); 
+               cursor -> gotoxy(std::get<0>(vectorDePosiciones[k]),std::get<1>(vectorDePosiciones[k])); 
 
                if(mostrar){
                    if(this -> contenedor[i][j] != this -> caracterAIgnorar){
@@ -107,6 +106,7 @@ namespace EGE::STD::TERMINAL{
                }else{
                    std::cout << " ";
                }
+               k++;
             }
         }
     }
