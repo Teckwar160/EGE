@@ -94,9 +94,10 @@ namespace EGE::STD::TERMINAL{
         int k = 0;
         auto vectorDePosiciones = coordenadas.getPosition();
         cursor -> gotoxy(std::get<0>(vectorDePosiciones[0]),std::get<1>(vectorDePosiciones[0]));
-
+  
         for(int i = 0; i<this -> n; i++){
             for(int j = 0; j<this -> n; j++){
+                
                cursor -> gotoxy(std::get<0>(vectorDePosiciones[k]),std::get<1>(vectorDePosiciones[k])); 
 
                if(mostrar){
@@ -108,7 +109,9 @@ namespace EGE::STD::TERMINAL{
                }
                k++;
             }
+            std::cout<< std::endl;
         }
+
     }
 
     int Sprite::getN(){
