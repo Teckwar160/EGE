@@ -7,10 +7,10 @@ namespace EGE::STD::TERMINAL{
 
     /**Métodos privados*/
 
-    void Sprite::cargadorDeSprite(std::string nombre){
+    void Sprite::cargadorDeSprite(){
         this -> dimensionReal = this -> n*this -> n;
 
-        std::string direccion = "resources\\sprites\\"+ nombre + ".txt";
+        std::string direccion = "resources\\sprites\\"+ this -> nombre + ".txt";
 
         std::ifstream archivo;
 
@@ -34,7 +34,20 @@ namespace EGE::STD::TERMINAL{
         for(int i =0; i<this -> n; i++){
             for(int j=0; j< this -> n; j++){
                 if(this -> contenedor[i][j] == this -> caracterAIgnorar){
-                    
+                    this -> dimensionReal -=1;
+                }
+            }
+        }
+    }
+
+    void Sprite::convertidorDeR2aR(){
+        int k =0;
+
+        for(int i = 0; i< this -> n; i++){
+            for(int j = 0; j<this -> n; j++){
+                if(this ->contenedor[i][j] != this -> caracterAIgnorar){
+                    this -> sprite[k] = this -> contenedor[i][j];
+                    k++;
                 }
             }
         }
@@ -46,10 +59,19 @@ namespace EGE::STD::TERMINAL{
     }
 
     Sprite::~Sprite(){
+        if(this ->estado){
+            for(int i =0; i< this -> n; i++){
+                delete this ->contenedor[i];
+            }
 
+            delete[] this -> contenedor;
+
+            delete[] this -> sprite;
+        }
     }
 
     void Sprite::inicializarSprite(int n, std::string nombre){
+        this -> estado = true;
         this -> n = n;
         this -> nombre = nombre;
 
@@ -59,9 +81,16 @@ namespace EGE::STD::TERMINAL{
             this -> contenedor[i] = new char[this -> n];
         }
 
+        this -> cargadorDeSprite();
+
+        this -> sprite = new char[this -> dimensionReal];
+
+        this -> convertidorDeR2aR();
+
 
     }
-    void Sprite::visualizar(bool mostrar){
+    void Sprite::visualizar(Terminal *cursor, Posicion coordenadas, bool mostrar){
+
 
     }
 
