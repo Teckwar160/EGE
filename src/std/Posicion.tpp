@@ -5,13 +5,9 @@
 
 namespace EGE::STD::TERMINAL{
 
-    Posicion::Posicion(){
+    Posicion::Posicion(){ }
 
-    }
-
-    Posicion::~Posicion(){
-
-    }
+    Posicion::~Posicion(){ }
 
     void Posicion::positionInitializer(int tam, int x, int y){
         for(int i = 0; i < tam; ++i){
