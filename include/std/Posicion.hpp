@@ -14,13 +14,17 @@ namespace EGE:: STD:: TERMINAL{
      */
     class Posicion : public EGE::CORE::Component<Posicion>{
         private: 
-        
+
             /**Tamaño de elarreglo*/
             int tam;
             /**Vector de las tuplas de posicion de la entidad*/
             std::vector<std::tuple<int,int>> posicion;
 
         public:
+
+            Posicion();
+
+            ~Posicion();
 
             /**
              * @brief Metodo para iniciar la posicion del sprite.
@@ -30,21 +34,21 @@ namespace EGE:: STD:: TERMINAL{
              * @param int Posición inicial de la entidad en y.
              * 
              */
-            void inicializadorDePosicion(int,int,int);
+            void positionInitializer(int,int,int);
 
             /**
              * @brief Método para obtener la posición de la entidad
              * 
              * @return Vector con las coordenas de la entidad
              */
-            std::vector<std::tuple<int,int>> getPosicion();
+            std::vector<std::tuple<int,int>> getPosition();
 
             /**
              * @brief Método para asignarle una posisición a la entidad.
              * 
-             * @param void* Función para cambiar la posicion del elemento.
+             * @param void Función para cambiar la posicion del elemento.
              */
-            void setPosition(void (*pFun)(std::tuple<int,int>));
+            void setPosition(void (*pFun)(std::tuple<int,int>*));
     };
 }
 
