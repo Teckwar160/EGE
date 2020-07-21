@@ -41,18 +41,56 @@ namespace EGE::STD::TERMINAL{
             /**Caracter que se ignorara del contenedor en bruto*/
             char caracterAIgnorar;
 
+            /**Estado de la memoria solicitada*/
             bool estado = false;
 
+            /**
+             * @brief Método que se encarga de leer un archivo y cargar al contendor el sprite.
+             */
             void cargadorDeSprite();
 
+            /**
+             * @brief Método encargado de convertir una matriz de R2 a R
+             */
             void convertidorDeR2aR();
 
         public:
+
+            /**
+             * @brief Método constructor de sprite.
+             */
             Sprite();
+
+            /**
+             * @brief Método destructor de sprite.
+             */
             ~Sprite();
+
+            /**
+             * @brief Método encargado de inicializar a un sprite.
+             * @param n Tamaño de la matriz del sprite.
+             * @param nombre Nombre del archivo que contiene al sprite.
+             */
             void inicializarSprite(int n, std::string nombre);
+
+            /**
+             * @brief Método que se encarga de visualizar al sprite.
+             * @param cursor Solo para uso de gotoxy de la terminal.
+             * @param coordenadas Sera de donde se saquen las coordenadas para el gotoxy.
+             * @param mostrar Si se muesta el sprite o se oculta.
+             */
             void visualizar(Terminal *cursor, Posicion coordenadas,bool mostrar = true);
+
+            /**
+             * @brief Método que devuelve el grado de la matriz.
+             * @return Grado de la matriz.
+             */
             int getN();
+
+            /**
+             * @brief Método que devuelve el tamaño real del sprite.
+             * @return Tamaño real del sprite.
+             */
             int getDimensionReal();
 
     };
