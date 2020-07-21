@@ -33,7 +33,7 @@ namespace EGE::STD::TERMINAL{
             std::string nombre;
 
             /**Contenedor del sprite en bruto*/
-            char **contenedor;
+            public: char **contenedor;
 
             /**Contenedor del sprite ya pulido*/
             char *sprite;
