@@ -6,7 +6,7 @@
 #include <vector>
 #include <tuple>
 
-namespace EGE:: STD:: TERMINAL{
+namespace EGE::STD::TERMINAL{
 
 
     /**

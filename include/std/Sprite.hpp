@@ -3,7 +3,7 @@
 
 #if defined (_WIN32)
 #include <std/WindowsTerminal.hpp>
-#define Terminal EGE::STD::TERMINAL::WINDOWS::Terminal
+#define TerminalType EGE::STD::TERMINAL::WINDOWS::Terminal
 #else
 #include <std/LinuxTerminal.hpp>
 #define Terminal EGE::STD::TERMINAL::LINUX::Terminal
@@ -14,7 +14,7 @@
 #include <std/Posicion.hpp>
 #include <fstream>
 #include <iostream>
-#define Posicion EGE::STD::TERMINAL::Posicion
+//#define Posicion EGE::STD::TERMINAL::Posicion
 
 namespace EGE::STD::TERMINAL{
 
@@ -71,7 +71,7 @@ namespace EGE::STD::TERMINAL{
              * @param n Tamaño de la matriz del sprite.
              * @param nombre Nombre del archivo que contiene al sprite.
              */
-            void spriteInitializer(int n, std::string nombre);
+            void spriteInitializer(int n, std::string nombre, char caracterAIgnortar = '*');
 
             /**
              * @brief Método que se encarga de visualizar al sprite.
@@ -79,7 +79,7 @@ namespace EGE::STD::TERMINAL{
              * @param coordenadas Sera de donde se saquen las coordenadas para el gotoxy.
              * @param mostrar Si se muesta el sprite o se oculta.
              */
-            void visualize(Terminal *cursor, Posicion coordenadas,bool mostrar = true);
+            void visualize(TerminalType *cursor, EGE::STD::TERMINAL::Posicion coordenadas,bool mostrar = true);
 
             /**
              * @brief Método que devuelve el grado de la matriz.
