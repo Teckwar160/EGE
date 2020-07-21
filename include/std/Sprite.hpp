@@ -47,7 +47,7 @@ namespace EGE::STD::TERMINAL{
             /**
              * @brief Método que se encarga de leer un archivo y cargar al contendor el sprite.
              */
-            void cargadorDeSprite();
+            void spriteLoader();
 
             /**
              * @brief Método encargado de convertir una matriz de R2 a R
@@ -71,7 +71,7 @@ namespace EGE::STD::TERMINAL{
              * @param n Tamaño de la matriz del sprite.
              * @param nombre Nombre del archivo que contiene al sprite.
              */
-            void inicializarSprite(int n, std::string nombre);
+            void spriteInitializer(int n, std::string nombre);
 
             /**
              * @brief Método que se encarga de visualizar al sprite.
@@ -79,7 +79,7 @@ namespace EGE::STD::TERMINAL{
              * @param coordenadas Sera de donde se saquen las coordenadas para el gotoxy.
              * @param mostrar Si se muesta el sprite o se oculta.
              */
-            void visualizar(Terminal *cursor, Posicion coordenadas,bool mostrar = true);
+            void visualize(Terminal *cursor, Posicion coordenadas,bool mostrar = true);
 
             /**
              * @brief Método que devuelve el grado de la matriz.

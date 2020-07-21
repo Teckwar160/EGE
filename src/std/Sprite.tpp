@@ -7,7 +7,7 @@ namespace EGE::STD::TERMINAL{
 
     /**Métodos privados*/
 
-    void Sprite::cargadorDeSprite(){
+    void Sprite::spriteLoader(){
         this -> dimensionReal = this -> n*this -> n;
 
         std::string direccion = "resources\\sprites\\"+ this -> nombre + ".txt";
@@ -70,7 +70,7 @@ namespace EGE::STD::TERMINAL{
         }
     }
 
-    void Sprite::inicializarSprite(int n, std::string nombre){
+    void Sprite::spriteInitializer(int n, std::string nombre){
         this -> estado = true;
         this -> n = n;
         this -> nombre = nombre;
@@ -81,7 +81,7 @@ namespace EGE::STD::TERMINAL{
             this -> contenedor[i] = new char[this -> n];
         }
 
-        this -> cargadorDeSprite();
+        this -> spriteLoader();
 
         this -> sprite = new char[this -> dimensionReal];
 
@@ -89,7 +89,7 @@ namespace EGE::STD::TERMINAL{
 
 
     }
-    void Sprite::visualizar(Terminal *cursor, Posicion coordenadas, bool mostrar){
+    void Sprite::visualize(Terminal *cursor, Posicion coordenadas, bool mostrar){
 
 
     }
