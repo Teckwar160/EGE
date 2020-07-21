@@ -8,7 +8,7 @@ namespace EGE::STD::TERMINAL{
     void Posicion::positionInitializer(int tam, int x, int y){
         for(size_t i = 0; i < tam; ++i){
             for(size_t j = 0; j < tam; ++j){
-               posicion.push_back(std::make_pair(i,j));
+               posicion.push_back(std::make_pair(x+i,y+j));
             }
         }
     }
