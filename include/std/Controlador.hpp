@@ -12,14 +12,14 @@
 
 #include <core/Component.hpp>
 #include <std/Entrada.hpp>
+#include <std/Posicion.hpp>
 
 namespace EGE::STD::TERMINAL{
 
     class Controller : public EGE::CORE::Component<Controller>{
-        private:
-            char Teclas[] = {'w','W','a','A','s','S','d','D',ARRIBA,IZQUIERDA,ABAJO,DERECHA};
         public:
-            char moveFilter(char Tecla);
+            void move(char Tecla,Posicion *position);
+            
     };
 }
 

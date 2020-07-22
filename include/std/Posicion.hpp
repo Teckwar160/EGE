@@ -43,12 +43,14 @@ namespace EGE::STD::TERMINAL{
              */
             std::vector<std::tuple<int,int>> getPosition();
 
+            std::tuple<int,int> *getPositionInit();
+
             /**
              * @brief Método para asignarle una posisición a la entidad.
              * 
              * @param void Función para cambiar la posicion del elemento.
              */
-            void setPosition(void (*pFun)(std::tuple<int,int>*));
+            void updatePosition();
     };
 }
 

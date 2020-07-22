@@ -6,6 +6,7 @@
 #include <std/WindowsTerminal.tpp>
 #include <std/Sprite.tpp>
 #include <std/Posicion.tpp>
+#include <std/Controlador.tpp>
 
 class nave :public EGE::CORE::Entity<nave>{
     public:
@@ -36,7 +37,7 @@ class visualizeSprite : public EGE::CORE::System<Mnave>{
         void update(Mnave *gameContext){
             /*Nada*/
         }
-        
+
         void update(int id, Mnave *gameContext){
             auto sprite = gameContext -> getComponent<EGE::STD::TERMINAL::Sprite>(id);
             auto posicion = gameContext -> getComponent<EGE::STD::TERMINAL::Posicion>(id);
@@ -46,6 +47,7 @@ class visualizeSprite : public EGE::CORE::System<Mnave>{
 };
 
 int main(){
+    #if 0
     TerminalType *tm = TerminalType::getTerminal(50,30);
     visualizeSprite vSprite;
     Mnave base;
@@ -64,4 +66,30 @@ int main(){
     vSprite.update(Nave1,&base);
 
     delete tm;
+    #endif
+
+    EGE::STD::TERMINAL::Posicion p;
+    EGE::STD::TERMINAL::Controller c;
+
+    p.positionInitializer(2,2,2);
+
+    auto tuplas = p.getPosition();
+
+    for(auto i : tuplas){
+        std::cout << "x: " << std::get<0>(i) << std::endl;
+        std::cout << "y: " << std::get<1>(i) << std::endl;
+    }
+
+    c.move('w',&p);
+
+    p.updatePosition();
+    auto tuplas2 = p.getPosition();
+    std::cout << "-----------------------" << std::endl;
+    
+    for(auto i : tuplas2){
+        std::cout << "x: " << std::get<0>(i) << std::endl;
+        std::cout << "y: " << std::get<1>(i) << std::endl;
+    }
+
+
 }
