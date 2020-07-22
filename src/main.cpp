@@ -29,18 +29,25 @@ class Mnave : public EGE::CORE::Manager<nave>{
             posicion -> positionInitializer(sprite -> getN(),x,y);
 
         }
+};
 
-        void mostrarSprite(EGE::STD::TERMINAL::WINDOWS::Terminal *cursor,int id){
-            auto sprite = getComponent<EGE::STD::TERMINAL::Sprite>(id);
-            auto posicion = getComponent<EGE::STD::TERMINAL::Posicion>(id);
-
-            sprite -> visualize(cursor,*posicion);
+class visualizeSprite : public EGE::CORE::System<Mnave>{
+    public:
+        void update(Mnave *gameContext){
+            /*Nada*/
+        }
+        
+        void update(int id, Mnave *gameContext){
+            auto sprite = gameContext -> getComponent<EGE::STD::TERMINAL::Sprite>(id);
+            auto posicion = gameContext -> getComponent<EGE::STD::TERMINAL::Posicion>(id);
+            TerminalType *tm = TerminalType::getTerminal();
+            sprite -> visualize(tm,*posicion);
         }
 };
 
 int main(){
     TerminalType *tm = TerminalType::getTerminal(50,30);
-
+    visualizeSprite vSprite;
     Mnave base;
 
     auto Nave1 = base.addEntity();
@@ -54,7 +61,7 @@ int main(){
     tm -> pintarLimites();
     tm -> ocultarCursor();
 
-    base.mostrarSprite(tm,Nave1);
+    vSprite.update(Nave1,&base);
 
     delete tm;
 }
