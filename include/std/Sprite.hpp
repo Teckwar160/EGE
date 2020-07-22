@@ -6,7 +6,7 @@
 #define TerminalType EGE::STD::TERMINAL::WINDOWS::Terminal
 #else
 #include <std/LinuxTerminal.hpp>
-#define Terminal EGE::STD::TERMINAL::LINUX::Terminal
+#define TerminalType EGE::STD::TERMINAL::LINUX::Terminal
 #endif
 
 
