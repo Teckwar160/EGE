@@ -12,7 +12,7 @@ namespace EGE::STD::TERMINAL{
     void Posicion::positionInitializer(int tam, int x, int y){
         for(int i = 0; i < tam; ++i){
             for(int j = 0; j <tam; ++j){
-               posicion.push_back(std::make_pair(x+i,y+j));
+               posicion.push_back(std::make_pair(x+j,y+i));
             }
         }
     }

@@ -101,8 +101,8 @@ namespace EGE::STD::TERMINAL{
                cursor -> gotoxy(std::get<0>(vectorDePosiciones[k]),std::get<1>(vectorDePosiciones[k])); 
 
                if(mostrar){
-                   if(this -> contenedor[j][i] != this -> caracterAIgnorar){
-                       std::cout << this -> contenedor[j][i];
+                   if(this -> contenedor[i][j] != this -> caracterAIgnorar){
+                       std::cout << this -> contenedor[i][j];
                    }
                }
                k++;
