@@ -11,7 +11,7 @@
 
 
 #include <core/Component.hpp>
-#include <std/Posicion.hpp>
+#include <std/Position.hpp>
 #include <fstream>
 #include <iostream>
 //#define Posicion EGE::STD::TERMINAL::Posicion
@@ -26,33 +26,22 @@ namespace EGE::STD::TERMINAL{
             /**Tamaño de la matriz que tiene el dibujo del sprite*/
             int n;
 
-            /**Dimension real del sprite es decir ya sin apoyos*/
-            int dimensionReal;
-
             /**Nombre del archivo que tiene al dibujo del sprite*/
-            std::string nombre;
+            std::string name;
 
-            /**Contenedor del sprite en bruto*/
-            char **contenedor;
-
-            /**Contenedor del sprite ya pulido*/
-            char *sprite;
+            /**Contenedor del sprite*/
+            char **sprite;
 
             /**Caracter que se ignorara del contenedor en bruto*/
-            char caracterAIgnorar;
+            char charToIgnore;
 
             /**Estado de la memoria solicitada*/
-            bool estado = false;
+            bool state = false;
 
             /**
              * @brief Método que se encarga de leer un archivo y cargar al contendor el sprite.
              */
             void spriteLoader();
-
-            /**
-             * @brief Método encargado de convertir una matriz de R2 a R
-             */
-            void convertidorDeR2aR();
 
         public:
 
@@ -71,7 +60,7 @@ namespace EGE::STD::TERMINAL{
              * @param n Tamaño de la matriz del sprite.
              * @param nombre Nombre del archivo que contiene al sprite.
              */
-            void spriteInitializer(int n, std::string nombre, char caracterAIgnortar = '*');
+            void spriteInitializer(int n, std::string name, char charToIgnore = '*');
 
             /**
              * @brief Método que se encarga de visualizar al sprite.
@@ -79,20 +68,13 @@ namespace EGE::STD::TERMINAL{
              * @param coordenadas Sera de donde se saquen las coordenadas para el gotoxy.
              * @param mostrar Si se muesta el sprite o se oculta.
              */
-            void visualize(TerminalType *cursor, EGE::STD::TERMINAL::Posicion coordenadas,bool mostrar = true);
+            void visualize(TerminalType *cursor, EGE::STD::TERMINAL::Position coordinates,bool view = true);
 
             /**
              * @brief Método que devuelve el grado de la matriz.
              * @return Grado de la matriz.
              */
             int getN();
-
-            /**
-             * @brief Método que devuelve el tamaño real del sprite.
-             * @return Tamaño real del sprite.
-             */
-            int getDimensionReal();
-
     };
 
 }

@@ -15,20 +15,20 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     class Terminal : public EGE::CORE::Entity<Terminal>{
         private:
 		/**Tamaño en x del tablero*/
-		int largo;
+		int width;
 
 		/**Tamaño en y del tablero*/
-		int alto;
+		int tall;
 
 		/**Instancia de Terminal*/
 		static inline Terminal *terminal = nullptr;
 
 		/**
 		 *@brief Método constructor del tablero,
-		 *@param largo Tamaño en x del tablero.
-		 *@param alto Tamaño en y del tablero.
+		 *@param width Tamaño en x del tablero.
+		 *@param tall Tamaño en y del tablero.
 		 */
-		Terminal(int largo, int alto);
+		Terminal(int width, int tall);
 
         public:
 
@@ -65,29 +65,29 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
 		/**
 		 *@brief Métdodo que pinta los limites del tablero.
-		 *@param cHorizontal Caracter de las lineas horizontales del tablero.
-		 *@param cVertical Caracter de las lineas verticales del tablero.
-		 *@param cEsquina1 Caracter de la esquina superior izquierda del tablero.
-		 *@param cEsquina2 Caracter de la esquina superior derecha del tablero.
-		 *@param cEsquina3 Caracter de la esquina inferiro izquierda del tablero.
-		 *@param cEsquina4 Carcter de la esquina inferiro derecha del tablero.
+		 *@param charHorizontal Caracter de las lineas horizontales del tablero.
+		 *@param charVertical Caracter de las lineas verticales del tablero.
+		 *@param charCorner1 Caracter de la esquina superior izquierda del tablero.
+		 *@param charCorner2 Caracter de la esquina superior derecha del tablero.
+		 *@param charCorner3 Caracter de la esquina inferiro izquierda del tablero.
+		 *@param charCorner4 Carcter de la esquina inferiro derecha del tablero.
 		 */
-		void pintarLimites(char cHorizontal = 205, char cVertical = 186, char cEsquina1 = 201, char cEsquina2 = 187, char cEsquina3 = 200, char cEsquina4 = 188);
+		void pintarLimites(char charHorizontal = 205, char charVertical = 186, char charCorner1 = 201, char charCorner2 = 187, char charCorner3 = 200, char charCorner4 = 188);
 
 		/**
 		 * @brief Método que regresa el largo del tablero.
 		 * @return Largo del tablero.
 		 */
-		int getLargo();
+		int getWidth();
 
 		/**
 		 * @brief Método que regresa el alto de ltablero.
 		 * @return Alto del tablero.
 		 */
-		int getAlto();
+		int getTall();
     };
 
-	class managerTerminal : public EGE::CORE::Manager<Terminal>{
+	class mTerminal : public EGE::CORE::Manager<Terminal>{
 		public:
 			EGE::CORE::EntityId addEntity(int x, int y);
 	};

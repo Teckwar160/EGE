@@ -4,9 +4,9 @@
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
-    Terminal::Terminal(int largo, int alto){
-        this -> largo = largo;
-        this -> alto = alto;
+    Terminal::Terminal(int width, int tall){
+        this -> width = width;
+        this -> tall = tall;
     }
 
     Terminal *Terminal::getTerminal(int x,int y){
@@ -47,43 +47,43 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         SetConsoleCursorInfo(hcon,&cursor);		
     }
 
-    void Terminal::pintarLimites(char cHorizontal, char cVertical, char cEsquina1, char cEsquina2, char cEsquina3, char cEsquina4){
+    void Terminal::pintarLimites(char charHorizontal, char charVertical, char charCorner1, char charCorner2, char charCorner3, char charCorner4){
 
         /**Modifica el tamaño de la terminal*/
-        std::string primera = "mode con:cols=" + std::to_string(largo +2);
-        std::string segunda = " lines=" + std::to_string(alto+1);
+        std::string primera = "mode con:cols=" + std::to_string(this -> width +2);
+        std::string segunda = " lines=" + std::to_string(this -> tall+1);
         std::string limites = primera + segunda;
 
         system(limites.c_str());
 
         /*Pinta las lineas horizontales*/
-        for(int i = 0; i<largo; i++){
-            this -> gotoxy(i,0); printf("%c",cHorizontal);
-            this -> gotoxy(i,alto); printf("%c",cHorizontal);
+        for(int i = 0; i<this -> width; i++){
+            this -> gotoxy(i,0); printf("%c",charHorizontal);
+            this -> gotoxy(i,this -> tall); printf("%c",charHorizontal);
         }
 
         /*Pinta las lineas verticales*/
-        for(int i = 0; i<alto; i++){
-            this -> gotoxy(0,i); printf("%c",cVertical);
-            this -> gotoxy(largo,i); printf("%c",cVertical);
+        for(int i = 0; i<tall; i++){
+            this -> gotoxy(0,i); printf("%c",charVertical);
+            this -> gotoxy(this -> width,i); printf("%c",charVertical);
         }
 
         /*Pinta las esquinas*/
-        this -> gotoxy(0,0); printf("%c",cEsquina1);
-        this -> gotoxy(largo,0); printf("%c",cEsquina2);
-        this -> gotoxy(0,alto); printf("%c",cEsquina3);
-        this -> gotoxy(largo,alto); printf("%c",cEsquina4);	
+        this -> gotoxy(0,0); printf("%c",charCorner1);
+        this -> gotoxy(this -> width,0); printf("%c",charCorner2);
+        this -> gotoxy(0,this -> tall); printf("%c",charCorner3);
+        this -> gotoxy(this -> width,this -> tall); printf("%c",charCorner4);	
     }
 
-    int Terminal::getLargo(){
-        return this -> largo;
+    int Terminal::getWidth(){
+        return this -> width;
     }
             
-    int Terminal::getAlto(){
-        return this -> alto;
+    int Terminal::getTall(){
+        return this -> tall;
     }
 
-    EGE::CORE::EntityId managerTerminal::addEntity(int x, int y){
+    EGE::CORE::EntityId mTerminal::addEntity(int x, int y){
         entities.insert({numEntities,EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(x,y)});
         numEntities++;
         return entities[entities.size() - 1]->getEntityId();

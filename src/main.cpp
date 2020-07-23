@@ -5,8 +5,9 @@
 #include <core/Manager.tpp>
 #include <std/WindowsTerminal.tpp>
 #include <std/Sprite.tpp>
-#include <std/Posicion.tpp>
-#include <std/Controlador.tpp>
+#include <std/Position.tpp>
+#include <std/Controller.tpp>
+#include <std/Input.tpp>
 
 class nave :public EGE::CORE::Entity<nave>{
     public:
@@ -25,7 +26,7 @@ class Mnave : public EGE::CORE::Manager<nave>{
 
         void inicializarPosicion(int id,int x, int y){
             auto sprite = getComponent<EGE::STD::TERMINAL::Sprite>(id);
-            auto posicion = getComponent<EGE::STD::TERMINAL::Posicion>(id);
+            auto posicion = getComponent<EGE::STD::TERMINAL::Position>(id);
 
             posicion -> positionInitializer(sprite -> getN(),x,y);
 
@@ -40,14 +41,19 @@ class visualizeSprite : public EGE::CORE::System<Mnave>{
 
         void update(int id, Mnave *gameContext){
             auto sprite = gameContext -> getComponent<EGE::STD::TERMINAL::Sprite>(id);
-            auto posicion = gameContext -> getComponent<EGE::STD::TERMINAL::Posicion>(id);
+            auto posicion = gameContext -> getComponent<EGE::STD::TERMINAL::Position>(id);
             TerminalType *tm = TerminalType::getTerminal();
             sprite -> visualize(tm,*posicion);
         }
 };
+#if 0
+template<typename type>
+class ManagerSprite : public EGE::CORE::Manager<sprite>{
 
+};
+#endif
 int main(){
-    #if 0
+    #if 1
     TerminalType *tm = TerminalType::getTerminal(50,30);
     visualizeSprite vSprite;
     Mnave base;
@@ -55,7 +61,7 @@ int main(){
     auto Nave1 = base.addEntity();
 
     base.addComponent<EGE::STD::TERMINAL::Sprite>(Nave1);
-    base.addComponent<EGE::STD::TERMINAL::Posicion>(Nave1);
+    base.addComponent<EGE::STD::TERMINAL::Position>(Nave1);
 
     base.inicializarSprite(Nave1,3,"nave");
     base.inicializarPosicion(Nave1,2,2);
@@ -67,10 +73,10 @@ int main(){
 
     delete tm;
     #endif
-
-    EGE::STD::TERMINAL::Posicion p;
+#if 0
+    EGE::STD::TERMINAL::Position p;
     EGE::STD::TERMINAL::Controller c;
-
+    EGE::STD::TERMINAL::systemInput s;
     p.positionInitializer(2,2,2);
 
     auto tuplas = p.getPosition();
@@ -80,9 +86,7 @@ int main(){
         std::cout << "y: " << std::get<1>(i) << std::endl;
     }
 
-    c.move('w',&p);
-
-    p.updatePosition();
+    c.move('d',&p);
     auto tuplas2 = p.getPosition();
     std::cout << "-----------------------" << std::endl;
     
@@ -90,6 +94,6 @@ int main(){
         std::cout << "x: " << std::get<0>(i) << std::endl;
         std::cout << "y: " << std::get<1>(i) << std::endl;
     }
-
+#endif
 
 }

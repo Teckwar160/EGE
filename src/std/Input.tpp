@@ -1,7 +1,7 @@
-#ifndef ENTRADA_TPP
-#define ENTRADA_TPP
+#ifndef INPUT_TPP
+#define INPUT_TPP
 
-#include <std/Entrada.hpp>
+#include <std/Input.hpp>
 
 namespace EGE::STD::TERMINAL{
 

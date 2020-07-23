@@ -1,5 +1,5 @@
-#ifndef POSICION_HPP
-#define POSICION_HPP
+#ifndef POSITION_HPP
+#define POSITION_HPP
 
 #include <core/Component.hpp>
 #include <iostream>
@@ -12,29 +12,29 @@ namespace EGE::STD::TERMINAL{
     /**
      * @class Componente de posición para una entidad.
      */
-    class Posicion : public EGE::CORE::Component<Posicion>{
+    class Position : public EGE::CORE::Component<Position>{
         private: 
 
-            /**Tamaño de elarreglo*/
-            int tam;
+            /**Tamaño del arreglo*/
+            int size;
             /**Vector de las tuplas de posicion de la entidad*/
-            std::vector<std::tuple<int,int>> posicion;
+            std::vector<std::tuple<int,int>> position;
 
         public:
 
-            Posicion();
+            Position();
 
-            ~Posicion();
+            ~Position();
 
             /**
              * @brief Metodo para iniciar la posicion del sprite.
              * 
-             * @param int Tamaño del arreglo de posiciones.
-             * @param int Posición inicial de la entidad en x.
-             * @param int Posición inicial de la entidad en y.
+             * @param size Tamaño del arreglo de posiciones.
+             * @param x Posición inicial de la entidad en x.
+             * @param y Posición inicial de la entidad en y.
              * 
              */
-            void positionInitializer(int,int,int);
+            void positionInitializer(int size,int x,int y);
 
             /**
              * @brief Método para obtener la posición de la entidad
@@ -54,4 +54,4 @@ namespace EGE::STD::TERMINAL{
     };
 }
 
-#endif //Posicion.hpp
+#endif //Position.hpp

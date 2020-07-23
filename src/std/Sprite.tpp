@@ -8,49 +8,27 @@ namespace EGE::STD::TERMINAL{
     /**Métodos privados*/
 
     void Sprite::spriteLoader(){
-        this -> dimensionReal = this -> n*this -> n;
 
-        std::string direccion = "resources\\sprites\\"+ this -> nombre + ".txt";
+        std::string address = "resources\\sprites\\"+ this -> name + ".txt";
 
-        std::ifstream archivo;
+        std::ifstream archive;
 
-        archivo.open(direccion,std::ios::in);
+        archive.open(address,std::ios::in);
 
-        char caracterTemporal;
+        char charTemporary;
 
-        if(!archivo.fail()){
+        if(!archive.fail()){
             for(int i = 0; i< this -> n; i++){
                 for(int j = 0; j<this -> n; j++){
-                    archivo >> caracterTemporal;
-                    this -> contenedor[i][j] = caracterTemporal;
+                    archive >> charTemporary;
+                    this -> sprite[i][j] = charTemporary;
                 }
             }
         }else{
             std::cout << "Fallo #0" << std::endl;
         }
 
-        archivo.close();
-
-        for(int i =0; i<this -> n; i++){
-            for(int j=0; j< this -> n; j++){
-                if(this -> contenedor[i][j] == this -> caracterAIgnorar){
-                    this -> dimensionReal -=1;
-                }
-            }
-        }
-    }
-
-    void Sprite::convertidorDeR2aR(){
-        int k =0;
-
-        for(int i = 0; i< this -> n; i++){
-            for(int j = 0; j<this -> n; j++){
-                if(this ->contenedor[i][j] != this -> caracterAIgnorar){
-                    this -> sprite[k] = this -> contenedor[i][j];
-                    k++;
-                }
-            }
-        }
+        archive.close();
     }
 
     /**Métodos publicos*/
@@ -59,51 +37,45 @@ namespace EGE::STD::TERMINAL{
     }
 
     Sprite::~Sprite(){
-        if(this ->estado){
+        if(this ->state){
             for(int i =0; i< this -> n; i++){
-                delete this ->contenedor[i];
+                delete this ->sprite[i];
             }
-
-            delete[] this -> contenedor;
-
             delete[] this -> sprite;
         }
     }
 
-    void Sprite::spriteInitializer(int n, std::string nombre, char caracterAIgnorar){
-        this -> estado = true;
+    void Sprite::spriteInitializer(int n, std::string name, char charToIgnore){
+        this -> state = true;
         this -> n = n;
-        this -> nombre = nombre;
-        this -> caracterAIgnorar = caracterAIgnorar;
+        this -> name = name;
+        this -> charToIgnore = charToIgnore;
 
-        this -> contenedor = new char*[this -> n];
+        this -> sprite = new char*[this -> n];
 
         for(int i = 0; i<this -> n; i++){
-            this -> contenedor[i] = new char[this -> n];
+            this -> sprite[i] = new char[this -> n];
         }
 
         this -> spriteLoader();
-
-        this -> sprite = new char[this -> dimensionReal];
-
-        this -> convertidorDeR2aR();
-
-
     }
-    void Sprite::visualize(TerminalType *cursor, EGE::STD::TERMINAL::Posicion coordenadas, bool mostrar){
+
+    void Sprite::visualize(TerminalType *cursor, EGE::STD::TERMINAL::Position coordinates,bool view){
         int k = 0;
-        auto vectorDePosiciones = coordenadas.getPosition();
-        cursor -> gotoxy(std::get<0>(vectorDePosiciones[0]),std::get<1>(vectorDePosiciones[0]));
-  
+        auto positionsVector = coordinates.getPosition();
+
+        cursor -> gotoxy(std::get<0>(positionsVector[0]),std::get<1>(positionsVector[0]));
         for(int i = 0; i<this -> n; i++){
             for(int j = 0; j<this -> n; j++){
                 
-               cursor -> gotoxy(std::get<0>(vectorDePosiciones[k]),std::get<1>(vectorDePosiciones[k])); 
+               cursor -> gotoxy(std::get<0>(positionsVector[k]),std::get<1>(positionsVector[k])); 
 
-               if(mostrar){
-                   if(this -> contenedor[i][j] != this -> caracterAIgnorar){
-                       std::cout << this -> contenedor[i][j];
+               if(view){
+                   if(this -> sprite[i][j] != this -> charToIgnore){
+                       std::cout << this -> sprite[i][j];
                    }
+               }else{
+                   std::cout << " ";
                }
                k++;
             }
@@ -112,10 +84,6 @@ namespace EGE::STD::TERMINAL{
 
     int Sprite::getN(){
         return this -> n;
-    }
-
-    int Sprite::getDimensionReal(){
-        return this -> dimensionReal;
     }
 }
 
