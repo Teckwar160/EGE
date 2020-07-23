@@ -10,7 +10,7 @@ namespace EGE::STD::TERMINAL{
     }
 
     template<typename mType>
-    void visualizeEntity<mType>::updated(TerminalType *cursor,int id,mType *gameContext, bool view){
+    void visualizeEntity<mType>::updated(TerminalType *cursor,EGE::CORE::EntityId id,mType *gameContext, bool view){
         auto sprite = gameContext ->  template getComponent<Sprite>(id);
         auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::Position>(id);
         sprite -> visualize(cursor,*position,view);

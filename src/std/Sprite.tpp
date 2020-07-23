@@ -87,13 +87,13 @@ namespace EGE::STD::TERMINAL{
     }
 
     template<typename mType>
-    void mSprite<mType>::spriteInitializer(int id,int n,std::string nombre){
+    void mSprite<mType>::spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre){
         auto sprite = this -> template getComponent<Sprite>(id);
         sprite -> spriteInitializer(n,nombre);
     }
 
     template<typename mType>
-    void mSprite<mType>::positionInitializer(int id,int x, int y){
+    void mSprite<mType>::positionInitializer(EGE::CORE::EntityId id,int x, int y){
         auto sprite = this -> template getComponent<Sprite>(id);
         auto posicion = this -> template getComponent<EGE::STD::TERMINAL::Position>(id);
         posicion -> positionInitializer(sprite -> getN(),x,y);

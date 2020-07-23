@@ -10,7 +10,7 @@ namespace EGE::STD::TERMINAL{
     }
 
     template<typename mType>
-    void moveEntity<mType>::updated(char tecla,int id,mType *gameContext){
+    void moveEntity<mType>::updated(char tecla,EGE::CORE::EntityId id,mType *gameContext){
         auto controller = gameContext -> template getComponent<EGE::STD::TERMINAL::Controller>(id);
         auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::Position>(id);
         controller ->move(tecla,position);

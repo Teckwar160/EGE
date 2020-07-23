@@ -4,7 +4,7 @@
 
 #include <core/Entity.hpp>
 #include <core/Manager.hpp>
-#include <core/alias.hpp>
+#include <core/Alias.hpp>
 #include <windows.h>
 #include <stdio.h>
 #include <conio.h>

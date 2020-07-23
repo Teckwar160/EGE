@@ -1,6 +1,14 @@
 #ifndef SPRITE_HPP
 #define SPRITE_HPP
 
+#include <core/Component.tpp>
+#include <std/Position.hpp>
+#include <core/Manager.tpp>
+#include <std/Controller.tpp>
+#include <core/Alias.hpp>
+#include <fstream>
+#include <iostream>
+
 #if defined (_WIN32)
 #include <std/WindowsTerminal.hpp>
 #define TerminalType EGE::STD::TERMINAL::WINDOWS::Terminal
@@ -8,15 +16,6 @@
 #include <std/LinuxTerminal.hpp>
 #define TerminalType EGE::STD::TERMINAL::LINUX::Terminal
 #endif
-
-
-#include <core/Component.tpp>
-#include <std/Position.hpp>
-#include <core/Manager.tpp>
-#include <std/Controller.tpp>
-#include <fstream>
-#include <iostream>
-
 
 namespace EGE::STD::TERMINAL{
 
@@ -62,7 +61,7 @@ namespace EGE::STD::TERMINAL{
              * @param n Tamaño de la matriz del sprite.
              * @param nombre Nombre del archivo que contiene al sprite.
              */
-            void spriteInitializer(int n, std::string name, char charToIgnore = '*');
+            void spriteInitializer(EGE::CORE::EntityId n, std::string name, char charToIgnore = '*');
 
             /**
              * @brief Método que se encarga de visualizar al sprite.
@@ -82,8 +81,8 @@ namespace EGE::STD::TERMINAL{
     template<typename mType>
     class mSprite : public EGE::CORE::Manager<mType>{
         public:
-            void spriteInitializer(int id,int n,std::string nombre);
-            void positionInitializer(int id,int x, int y);
+            void spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre);
+            void positionInitializer(EGE::CORE::EntityId id,int x, int y);
             int addEntity();
     };
 

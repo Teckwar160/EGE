@@ -3,7 +3,7 @@
 #define ENTITY_HPP
 
 /**Alias*/
-#include <core/alias.hpp>
+#include <core/Alias.hpp>
 
 /**Bibliotecas necesarias*/
 #include <unordered_map>
