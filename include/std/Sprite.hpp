@@ -87,19 +87,5 @@ namespace EGE::STD::TERMINAL{
             int addEntity();
     };
 
-    template<typename mType>
-    class visualizeSprite : public EGE::CORE::System<mType>{
-        public: 
-            void update(mType *gameContext);
-            void updated(TerminalType *cursor,int id,mType *gameContext,bool view = true);
-    };
-
-    template<typename mType>
-    class moveSprite : public EGE::CORE::System<mType>{
-        public: 
-            void update(mType *gameContext);
-            void updated(char tecla, int id,mType *gameContext);
-    };
-
 }
 #endif

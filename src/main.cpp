@@ -8,6 +8,8 @@
 #include <std/Position.tpp>
 #include <std/Controller.tpp>
 #include <std/Input.tpp>
+#include <std/visualizeEntity.tpp>
+#include <std/moveEntity.tpp>
 
 class nave :public EGE::CORE::Entity<nave>{
     public:
@@ -26,12 +28,13 @@ int main(){
 
     auto Nave1 = base.addEntity();
 
+    base.addComponent<EGE::STD::TERMINAL::Controller>(Nave1);
     base.spriteInitializer(Nave1,3,"nave");
     base.positionInitializer(Nave1,2,2);
 
-    EGE::STD::TERMINAL::visualizeSprite<Mnave> view;
+    EGE::STD::TERMINAL::visualizeEntity<Mnave> view;
     EGE::STD::TERMINAL::systemInput entrada;
-    EGE::STD::TERMINAL::moveSprite<Mnave> move;
+    EGE::STD::TERMINAL::moveEntity<Mnave> move;
 
     tm -> pintarLimites();
     tm -> ocultarCursor();
@@ -43,7 +46,6 @@ int main(){
         if(Tecla == 'w' || Tecla == 'a' || Tecla == 's' ||Tecla == 'd'){
             view.updated(tm,Nave1,&base,false);
             move.updated(Tecla,Nave1,&base);
-           // view.updated(tm,Nave1,&base,true);
            
         }
         view.updated(tm,Nave1,&base);
