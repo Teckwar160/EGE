@@ -11,9 +11,9 @@ namespace EGE::STD::TERMINAL{
 
     char systemInput::update(){
         if(kbhit()){
-            Tecla = getch();
+            return getch();
         }
-        return Tecla;
+        return 0;
     }
 }
 

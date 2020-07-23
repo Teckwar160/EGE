@@ -10,10 +10,6 @@ namespace EGE::STD::TERMINAL{
      * @class Clase encargada de atarapar las teclas pulsadas.
      */
     class systemInput : public EGE::CORE::System<int>{
-
-        private:
-            /**Ultima tecla pulsada*/
-            char Tecla = 0;
         public:
             /**
              * @brief Método heredado no seusara.

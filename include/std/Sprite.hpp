@@ -84,13 +84,14 @@ namespace EGE::STD::TERMINAL{
         public:
             void spriteInitializer(int id,int n,std::string nombre);
             void positionInitializer(int id,int x, int y);
+            int addEntity();
     };
 
     template<typename mType>
     class visualizeSprite : public EGE::CORE::System<mType>{
         public: 
             void update(mType *gameContext);
-            void updated(TerminalType cursor,int id,mType *gameContext,bool view = true);
+            void updated(TerminalType *cursor,int id,mType *gameContext,bool view = true);
     };
 
     template<typename mType>

@@ -100,15 +100,25 @@ namespace EGE::STD::TERMINAL{
     }
 
     template<typename mType>
+    int mSprite<mType>::addEntity(){
+        auto id = EGE::CORE::Manager<mType>::addEntity();
+
+        this -> template addComponent<Sprite>(id);
+        this -> template addComponent<EGE::STD::TERMINAL::Position>(id);
+        this -> template addComponent<EGE::STD::TERMINAL::Controller>(id);
+        return id;
+    }
+
+    template<typename mType>
     void visualizeSprite<mType>::update(mType *gameContext){
         /*Nada*/
     }
 
     template<typename mType>
-    void visualizeSprite<mType>::updated(TerminalType cursor,int id,mType *gameContext, bool view){
+    void visualizeSprite<mType>::updated(TerminalType *cursor,int id,mType *gameContext, bool view){
         auto sprite = gameContext ->  template getComponent<Sprite>(id);
         auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::Position>(id);
-        sprite -> visualize(&cursor,*position,view);
+        sprite -> visualize(cursor,*position,view);
     }
 
     template<typename mType>
