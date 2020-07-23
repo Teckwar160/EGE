@@ -18,9 +18,22 @@ class nave :public EGE::CORE::Entity<nave>{
         }
 };
 
+class perro :public EGE::CORE::Entity<perro>{
+    public:
+        perro(int id): Entity(id){
+
+        }
+};
+
 class Mnave : public EGE::STD::TERMINAL::mSprite<nave>{
 
 };
+
+class mPerro : public EGE::STD::TERMINAL::mPosition<perro>{
+
+};
+
+
 
 int main(){
     TerminalType *tm = TerminalType::getTerminal(50,30);

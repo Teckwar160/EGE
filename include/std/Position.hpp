@@ -2,6 +2,8 @@
 #define POSITION_HPP
 
 #include <core/Component.hpp>
+#include <core/Manager.hpp>
+#include <core/Alias.hpp>
 #include <iostream>
 #include <vector>
 #include <tuple>
@@ -32,7 +34,6 @@ namespace EGE::STD::TERMINAL{
              * @param size Tamaño del arreglo de posiciones.
              * @param x Posición inicial de la entidad en x.
              * @param y Posición inicial de la entidad en y.
-             * 
              */
             void positionInitializer(int size,int x,int y);
 
@@ -52,6 +53,13 @@ namespace EGE::STD::TERMINAL{
              */
             void updatePosition();
     };
+
+    template <typename mType>
+    class mPosition : public EGE::CORE::Manager<mType>{
+        public:
+            void positionInitializer(EGE::CORE::EntityId id,int x, int y);
+            int addEntity();
+    }; 
 }
 
 #endif //Position.hpp

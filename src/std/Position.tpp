@@ -38,6 +38,19 @@ namespace EGE::STD::TERMINAL{
             }
         }
     }
+
+    template<typename mType>
+    void mPosition<mType>::positionInitializer(EGE::CORE::EntityId id, int x, int y){
+        auto posicion = this -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        posicion -> positionInitializer(1,x,y);
+    }
+
+    template<typename mType>
+    int mPosition<mType>::addEntity(){
+        auto id = EGE::CORE::Manager<mType>::addEntity();
+        this -> template addComponent<Position>(id);
+        return id;
+    }
 }
 
 #endif //Posicion.tpp
