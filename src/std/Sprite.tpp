@@ -85,6 +85,43 @@ namespace EGE::STD::TERMINAL{
     int Sprite::getN(){
         return this -> n;
     }
+
+    template<typename mType>
+    void mSprite<mType>::spriteInitializer(int id,int n,std::string nombre){
+        auto sprite = this -> template getComponent<Sprite>(id);
+        sprite -> spriteInitializer(n,nombre);
+    }
+
+    template<typename mType>
+    void mSprite<mType>::positionInitializer(int id,int x, int y){
+        auto sprite = this -> template getComponent<Sprite>(id);
+        auto posicion = this -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        posicion -> positionInitializer(sprite -> getN(),x,y);
+    }
+
+    template<typename mType>
+    void visualizeSprite<mType>::update(mType *gameContext){
+        /*Nada*/
+    }
+
+    template<typename mType>
+    void visualizeSprite<mType>::updated(TerminalType cursor,int id,mType *gameContext, bool view){
+        auto sprite = gameContext ->  template getComponent<Sprite>(id);
+        auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        sprite -> visualize(&cursor,*position,view);
+    }
+
+    template<typename mType>
+    void moveSprite<mType>::update(mType *gameContext){
+        /*Nada*/
+    }
+
+    template<typename mType>
+    void moveSprite<mType>::updated(char tecla,int id,mType *gameContext){
+        auto controller = gameContext -> template getComponent<EGE::STD::TERMINAL::Controller>(id);
+        auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        controller ->move(tecla,position);
+    }
 }
 
 #endif

@@ -10,11 +10,13 @@
 #endif
 
 
-#include <core/Component.hpp>
+#include <core/Component.tpp>
 #include <std/Position.hpp>
+#include <core/Manager.tpp>
+#include <std/Controller.tpp>
 #include <fstream>
 #include <iostream>
-//#define Posicion EGE::STD::TERMINAL::Posicion
+
 
 namespace EGE::STD::TERMINAL{
 
@@ -75,6 +77,27 @@ namespace EGE::STD::TERMINAL{
              * @return Grado de la matriz.
              */
             int getN();
+    };
+
+    template<typename mType>
+    class mSprite : public EGE::CORE::Manager<mType>{
+        public:
+            void spriteInitializer(int id,int n,std::string nombre);
+            void positionInitializer(int id,int x, int y);
+    };
+
+    template<typename mType>
+    class visualizeSprite : public EGE::CORE::System<mType>{
+        public: 
+            void update(mType *gameContext);
+            void updated(TerminalType cursor,int id,mType *gameContext,bool view = true);
+    };
+
+    template<typename mType>
+    class moveSprite : public EGE::CORE::System<mType>{
+        public: 
+            void update(mType *gameContext);
+            void updated(char tecla, int id,mType *gameContext);
     };
 
 }
