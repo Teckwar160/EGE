@@ -7,7 +7,7 @@
 namespace EGE::STD::TERMINAL{
 
     /**
-     * @class Clase encargada de atarapar las teclas pulsadas.
+     * @class Clase encargada de atrapar las teclas pulsadas.
      */
     class systemInput : public EGE::CORE::System<int>{
         public:

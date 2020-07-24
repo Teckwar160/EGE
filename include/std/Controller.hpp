@@ -19,6 +19,7 @@ namespace EGE::STD::TERMINAL{
      */
     class Controller : public EGE::CORE::Component<Controller>{
         public:
+            
             /**
              * @brief Método encargado de mover a una entidad.
              * @param key Tecla puslada por el usuario.

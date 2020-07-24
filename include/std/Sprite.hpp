@@ -78,11 +78,33 @@ namespace EGE::STD::TERMINAL{
             int getN();
     };
 
+    /**
+     * @class Manager para inicializar una entidad.
+     */
     template<typename mType>
     class mSprite : public EGE::CORE::Manager<mType>{
         public:
+            /**
+             * @brief Método encargado de inicializar a un sprite.
+             * 
+             * @param id Id de la entidad creada.
+             * @param n Tamaño de la matriz del sprite.
+             * @param nombre Nombre del archivo que contiene al sprite.
+             */
             void spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre);
+
+            /**
+             * @brief Metodo para iniciar la posicion del sprite.
+             * 
+             * @param size Tamaño del arreglo de posiciones.
+             * @param x Posición inicial de la entidad en x.
+             * @param y Posición inicial de la entidad en y.
+             */
             void positionInitializer(EGE::CORE::EntityId id,int x, int y);
+
+            /**
+             * @brief Método que agrega una entidas a entities.
+             */
             int addEntity();
     };
 

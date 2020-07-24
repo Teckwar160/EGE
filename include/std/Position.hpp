@@ -54,10 +54,25 @@ namespace EGE::STD::TERMINAL{
             void updatePosition();
     };
 
+    /**
+     * @class Clase de posición para objertos sin sprite.
+     */
     template <typename mType>
     class mPosition : public EGE::CORE::Manager<mType>{
         public:
+
+            /**
+             * @brief Metodo para iniciar la posicion del sprite.
+             * 
+             * @param size Tamaño del arreglo de posiciones.
+             * @param x Posición inicial de la entidad en x.
+             * @param y Posición inicial de la entidad en y.
+             */
             void positionInitializer(EGE::CORE::EntityId id,int x, int y);
+
+            /**
+             * @brief Método que agrega una entidas a entities.
+             */
             int addEntity();
     }; 
 }
