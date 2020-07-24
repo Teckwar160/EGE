@@ -49,8 +49,8 @@ int main(){
     EGE::STD::TERMINAL::systemInput entrada;
     EGE::STD::TERMINAL::moveEntity<Mnave> move;
 
-    tm -> pintarLimites();
-    tm -> ocultarCursor();
+    tm -> drawLimits();
+    tm -> hideCursor();
     char Tecla = 0;
 
     while(Tecla != 'c'){

@@ -36,7 +36,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         SetConsoleCursorPosition(hcon,dwPos);
     }
 
-    void Terminal::ocultarCursor(){
+    void Terminal::hideCursor(){
         HANDLE hcon;
         hcon = GetStdHandle(STD_OUTPUT_HANDLE);
         CONSOLE_CURSOR_INFO cursor;
@@ -47,7 +47,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         SetConsoleCursorInfo(hcon,&cursor);		
     }
 
-    void Terminal::pintarLimites(char charHorizontal, char charVertical, char charCorner1, char charCorner2, char charCorner3, char charCorner4){
+    void Terminal::drawLimits(char charHorizontal, char charVertical, char charCorner1, char charCorner2, char charCorner3, char charCorner4){
 
         /**Modifica el tamaño de la terminal*/
         std::string primera = "mode con:cols=" + std::to_string(this -> width +2);

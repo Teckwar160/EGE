@@ -61,7 +61,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		/**
 		 *@brief Método que oculta el cursor de la terminal.
 		 */
-		void ocultarCursor();
+		void hideCursor();
 
 		/**
 		 *@brief Métdodo que pinta los limites del tablero.
@@ -72,7 +72,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		 *@param charCorner3 Caracter de la esquina inferiro izquierda del tablero.
 		 *@param charCorner4 Carcter de la esquina inferiro derecha del tablero.
 		 */
-		void pintarLimites(char charHorizontal = 205, char charVertical = 186, char charCorner1 = 201, char charCorner2 = 187, char charCorner3 = 200, char charCorner4 = 188);
+		void drawLimits(char charHorizontal = 205, char charVertical = 186, char charCorner1 = 201, char charCorner2 = 187, char charCorner3 = 200, char charCorner4 = 188);
 
 		/**
 		 * @brief Método que regresa el largo del tablero.
