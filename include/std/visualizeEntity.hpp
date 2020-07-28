@@ -29,7 +29,7 @@ namespace EGE::STD::TERMINAL{
              * @param *gameContext Manager de la entidad.
              * @param view Indicador si la entidad se debe de ver o no.
              */
-            void updated(TerminalType *cursor,EGE::CORE::EntityId id,mType *gameContext,bool view = true);
+            void updated(EGE::CORE::EntityId id,mType *gameContext,bool view = true);
     };
 }
 #endif
