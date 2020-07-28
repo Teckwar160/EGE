@@ -60,9 +60,10 @@ namespace EGE::STD::TERMINAL{
         this -> spriteLoader();
     }
 
-    void Sprite::visualize(EGE::STD::TERMINAL::WINDOWS::Terminal *cursor, EGE::STD::TERMINAL::Position coordinates,bool view){
+    void Sprite::visualize(EGE::STD::TERMINAL::Position coordinates,bool view){
         int k = 0;
         auto positionsVector = coordinates.getPosition();
+        EGE::STD::TERMINAL::WINDOWS::Terminal *cursor = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal();
 
         cursor -> gotoxy(std::get<0>(positionsVector[0]),std::get<1>(positionsVector[0]));
         for(int i = 0; i<this -> n; i++){

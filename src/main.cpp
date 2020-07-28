@@ -48,9 +48,8 @@ int main(){
 
     EGE::STD::TERMINAL::visualizeEntity<Mnave> view;
     EGE::STD::TERMINAL::systemInput entrada;
-    //EGE::STD::TERMINAL::moveEntity<Mnave> move;
     EGE::STD::TERMINAL::displacementEntity<Mnave> dp;
-#if 1
+
     tm -> terminalInit();
     char Tecla = 0;
 
@@ -58,16 +57,13 @@ int main(){
         
         Tecla = entrada.update();
         if(Tecla == 'w' || Tecla == 'a' || Tecla == 's' ||Tecla == 'd'){
-            //view.updated(Nave1,&base,false);
-            //move.updated(Tecla,Nave1,&base);
-            dp.updated(Tecla,Nave1,&base);
-           
+            dp.updated(Tecla,Nave1,&base);   
         }
         view.updated(Nave1,&base);
         
 
         Sleep(10);
     }
-#endif
-    //delete tm;
+
+    delete tm;
 }
