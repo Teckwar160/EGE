@@ -56,12 +56,11 @@ int main(){
     while(Tecla != 'c'){
         
         Tecla = entrada.update();
-        if(Tecla == 'w' || Tecla == 'a' || Tecla == 's' ||Tecla == 'd'){
-            dp.updated(Tecla,Nave1,&base);   
-        }
+
+        dp.updated(Tecla,Nave1,&base,ARROWS);  
+
         view.updated(Nave1,&base);
         
-
         Sleep(10);
     }
 

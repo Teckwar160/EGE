@@ -5,6 +5,8 @@
 #define LEFT 75
 #define RIGHT 77
 #define DOWN 80
+#define WASD 1
+#define ARROWS 2
 
 /**Definiciones*/
 namespace EGE::CORE{
@@ -13,6 +15,7 @@ namespace EGE::CORE{
     using SystemType = int;
     using ComponentType = int;
     using ManagerType = int;
+    using ControlType = char;
 }
 
 #endif

@@ -10,39 +10,59 @@ namespace EGE::STD::TERMINAL{
     }
 
     template<typename mType>
-    void displacementEntity<mType>::updated(char tecla,EGE::CORE::EntityId id,mType *gameContext){
+    void displacementEntity<mType>::updated(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
         EGE::STD::TERMINAL::collitionTerminal<mType> collition;
         EGE::STD::TERMINAL::visualizeEntity<mType> view;
         EGE::STD::TERMINAL::moveEntity<mType> move;
+        bool flag = false;
 
-        view.updated(id,gameContext,false);
-        move.updated(tecla,id,gameContext);
+        if(control == WASD){
+            for(auto i : this -> wasd){
+                if(key == i){
+                    flag = true;
+                    break;
+                }
+            }
+        }else if(control == ARROWS){
+            for(auto i : this -> arrows){
+                if(key == i){
+                    flag = true;
+                    break;
+                }
+            }           
+        }
 
-        if(collition.updated(id,gameContext)){
 
-            switch(tecla){
-                case 'w':
-                case 'W':
-                case UP:
-                        tecla = DOWN;
-                    break;
-                case 'a':
-                case 'A':
-                case LEFT:
-                        tecla = RIGHT;
-                    break;
-                case 's':
-                case 'S':
-                case DOWN:
-                        tecla = UP;
-                    break;
-                case 'd':
-                case 'D':
-                case RIGHT:
-                        tecla = LEFT;
-                    break;
-            };
-            move.updated(tecla,id,gameContext);
+        if(flag){
+            view.updated(id,gameContext,false);
+            move.updated(key,id,gameContext);
+
+            if(collition.updated(id,gameContext)){
+
+                switch(key){
+                    case 'w':
+                    case 'W':
+                    case UP:
+                            key = DOWN;
+                        break;
+                    case 'a':
+                    case 'A':
+                    case LEFT:
+                            key = RIGHT;
+                        break;
+                    case 's':
+                    case 'S':
+                    case DOWN:
+                            key = UP;
+                        break;
+                    case 'd':
+                    case 'D':
+                    case RIGHT:
+                            key = LEFT;
+                        break;
+                };
+                move.updated(key,id,gameContext);
+            }
         }
     }
 }
