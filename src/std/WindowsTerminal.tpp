@@ -83,6 +83,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return this -> tall;
     }
 
+    void Terminal::terminalInit(){
+        this -> hideCursor();
+        this -> drawLimits(205,186,201,187,200,188);
+    }
+
     EGE::CORE::EntityId mTerminal::addEntity(int x, int y){
         entities.insert({numEntities,EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(x,y)});
         numEntities++;

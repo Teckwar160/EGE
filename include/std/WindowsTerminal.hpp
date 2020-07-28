@@ -24,6 +24,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		static inline Terminal *terminal = nullptr;
 
 		/**
+		 *@brief Método que oculta el cursor de la terminal.
+		 */
+		void hideCursor();
+
+		/**
 		 *@brief Método constructor del tablero,
 		 *@param width Tamaño en x del tablero.
 		 *@param tall Tamaño en y del tablero.
@@ -59,11 +64,6 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		void gotoxy(int x, int y);
 
 		/**
-		 *@brief Método que oculta el cursor de la terminal.
-		 */
-		void hideCursor();
-
-		/**
 		 *@brief Métdodo que pinta los limites del tablero.
 		 *@param charHorizontal Caracter de las lineas horizontales del tablero.
 		 *@param charVertical Caracter de las lineas verticales del tablero.
@@ -72,7 +72,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		 *@param charCorner3 Caracter de la esquina inferiro izquierda del tablero.
 		 *@param charCorner4 Carcter de la esquina inferiro derecha del tablero.
 		 */
-		void drawLimits(char charHorizontal = 205, char charVertical = 186, char charCorner1 = 201, char charCorner2 = 187, char charCorner3 = 200, char charCorner4 = 188);
+		void drawLimits(char charHorizontal,char charVertical, char charCorner1, char charCorner2, char charCorner3, char charCorner4);
 
 		/**
 		 * @brief Método que regresa el largo del tablero.
@@ -85,6 +85,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		 * @return Alto del tablero.
 		 */
 		int getTall();
+
+		/**
+		 * @brief Método que ejecuta funciones de rutina, con paramtros base.
+		 */
+		void terminalInit();
     };
 
 	class mTerminal : public EGE::CORE::Manager<Terminal>{

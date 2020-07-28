@@ -11,6 +11,7 @@
 #include <std/visualizeEntity.tpp>
 #include <std/moveEntity.tpp>
 
+
 class nave :public EGE::CORE::Entity<nave>{
     public:
         nave(int id): Entity(id){
@@ -48,9 +49,8 @@ int main(){
     EGE::STD::TERMINAL::visualizeEntity<Mnave> view;
     EGE::STD::TERMINAL::systemInput entrada;
     EGE::STD::TERMINAL::moveEntity<Mnave> move;
-
-    tm -> drawLimits();
-    tm -> hideCursor();
+#if 1
+    tm -> terminalInit();
     char Tecla = 0;
 
     while(Tecla != 'c'){
@@ -66,6 +66,6 @@ int main(){
 
         Sleep(10);
     }
-
-    delete tm;
+#endif
+    //delete tm;
 }
