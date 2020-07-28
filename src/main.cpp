@@ -37,7 +37,7 @@ class mPerro : public EGE::STD::TERMINAL::mPosition<perro>{
 
 
 int main(){
-    TerminalType *tm = TerminalType::getTerminal(50,30);
+    EGE::STD::TERMINAL::WINDOWS::Terminal *tm = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
     Mnave base;
 
     auto Nave1 = base.addEntity();

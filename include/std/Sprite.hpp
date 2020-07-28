@@ -5,17 +5,10 @@
 #include <std/Position.hpp>
 #include <core/Manager.tpp>
 #include <std/Controller.tpp>
+#include <std/WindowsTerminal.hpp>
 #include <core/Alias.hpp>
 #include <fstream>
 #include <iostream>
-
-#if defined (_WIN32)
-#include <std/WindowsTerminal.hpp>
-#define TerminalType EGE::STD::TERMINAL::WINDOWS::Terminal
-#else
-#include <std/LinuxTerminal.hpp>
-#define TerminalType EGE::STD::TERMINAL::LINUX::Terminal
-#endif
 
 namespace EGE::STD::TERMINAL{
 
@@ -69,7 +62,7 @@ namespace EGE::STD::TERMINAL{
              * @param coordenadas Sera de donde se saquen las coordenadas para el gotoxy.
              * @param mostrar Si se muesta el sprite o se oculta.
              */
-            void visualize(TerminalType *cursor, EGE::STD::TERMINAL::Position coordinates,bool view = true);
+            void visualize(EGE::STD::TERMINAL::WINDOWS::Terminal *cursor, EGE::STD::TERMINAL::Position coordinates,bool view = true);
 
             /**
              * @brief Método que devuelve el grado de la matriz.

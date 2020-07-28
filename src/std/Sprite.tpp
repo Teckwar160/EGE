@@ -60,7 +60,7 @@ namespace EGE::STD::TERMINAL{
         this -> spriteLoader();
     }
 
-    void Sprite::visualize(TerminalType *cursor, EGE::STD::TERMINAL::Position coordinates,bool view){
+    void Sprite::visualize(EGE::STD::TERMINAL::WINDOWS::Terminal *cursor, EGE::STD::TERMINAL::Position coordinates,bool view){
         int k = 0;
         auto positionsVector = coordinates.getPosition();
 

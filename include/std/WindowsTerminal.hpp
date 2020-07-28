@@ -1,6 +1,5 @@
 #ifndef WINDOWSTERMINAL
 #define WINDOWSTERMINAL
-#if defined(_WIN32)
 
 #include <core/Entity.hpp>
 #include <core/Manager.hpp>
@@ -97,5 +96,4 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 			EGE::CORE::EntityId addEntity(int x, int y);
 	};
 }
-#endif
 #endif
