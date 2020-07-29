@@ -4,7 +4,8 @@
 #include <core/System.hpp>
 #include <core/Alias.hpp>
 #include <std/Position.tpp>
-namespace EGE::STD::TERMINAL{
+
+namespace EGE::STD::TERMINAL::WINDOWS{
     template<typename mType>
     class collitionTerminal : public EGE::CORE::System<mType>{
         public:

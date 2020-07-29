@@ -3,7 +3,7 @@
 
 #include <std/moveEntity.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
     template<typename mType>
     void moveEntity<mType>::update(mType *gameContext){
         /*Nada*/
@@ -11,8 +11,8 @@ namespace EGE::STD::TERMINAL{
 
     template<typename mType>
     void moveEntity<mType>::updated(char tecla,EGE::CORE::EntityId id,mType *gameContext){
-        auto controller = gameContext -> template getComponent<EGE::STD::TERMINAL::Controller>(id);
-        auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        auto controller = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(id);
+        auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
         controller ->move(tecla,position);
     }
 }

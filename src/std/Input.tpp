@@ -3,7 +3,7 @@
 
 #include <std/Input.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
 
     void systemInput::update(int *gameContext){
         /*Nada*/

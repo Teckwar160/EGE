@@ -3,7 +3,7 @@
 
 #include <std/displacementEntity.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
     template<typename mType>
     void displacementEntity<mType>::update(mType *gameContext){
 
@@ -11,9 +11,9 @@ namespace EGE::STD::TERMINAL{
 
     template<typename mType>
     void displacementEntity<mType>::updated(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
-        EGE::STD::TERMINAL::collitionTerminal<mType> collition;
-        EGE::STD::TERMINAL::visualizeEntity<mType> view;
-        EGE::STD::TERMINAL::moveEntity<mType> move;
+        EGE::STD::TERMINAL::WINDOWS::collitionTerminal<mType> collition;
+        EGE::STD::TERMINAL::WINDOWS::visualizeEntity<mType> view;
+        EGE::STD::TERMINAL::WINDOWS::moveEntity<mType> move;
         bool flag = false;
 
         if(control == WASD){

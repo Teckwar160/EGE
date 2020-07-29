@@ -4,7 +4,7 @@
 #include <core/System.hpp>
 #include <core/Alias.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
     /**
      * @class Sistema encargado de otorgar movimiento a una entidad
      */

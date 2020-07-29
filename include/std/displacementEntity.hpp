@@ -7,7 +7,7 @@
 #include <std/visualizeEntity.tpp>
 #include <core/Alias.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
     template<typename mType>
     class displacementEntity : public EGE::CORE::System<mType>{
         private:

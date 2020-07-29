@@ -19,20 +19,11 @@ class nave :public EGE::CORE::Entity<nave>{
         }
 };
 
-class perro :public EGE::CORE::Entity<perro>{
-    public:
-        perro(int id): Entity(id){
-
-        }
-};
-
-class Mnave : public EGE::STD::TERMINAL::mSprite<nave>{
+class Mnave : public EGE::STD::TERMINAL::WINDOWS::mSprite<nave>{
 
 };
 
-class mPerro : public EGE::STD::TERMINAL::mPosition<perro>{
 
-};
 
 
 
@@ -42,13 +33,13 @@ int main(){
 
     auto Nave1 = base.addEntity();
 
-    base.addComponent<EGE::STD::TERMINAL::Controller>(Nave1);
+    base.addComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(Nave1);
     base.spriteInitializer(Nave1,3,"nave");
     base.positionInitializer(Nave1,2,2);
 
-    EGE::STD::TERMINAL::visualizeEntity<Mnave> view;
-    EGE::STD::TERMINAL::systemInput entrada;
-    EGE::STD::TERMINAL::displacementEntity<Mnave> dp;
+    EGE::STD::TERMINAL::WINDOWS::visualizeEntity<Mnave> view;
+    EGE::STD::TERMINAL::WINDOWS::systemInput entrada;
+    EGE::STD::TERMINAL::WINDOWS::displacementEntity<Mnave> dp;
 
     tm -> terminalInit();
     char Tecla = 0;

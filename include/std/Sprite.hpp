@@ -10,7 +10,7 @@
 #include <fstream>
 #include <iostream>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
 
     /**
      * @class Parte visual de una entity.
@@ -62,7 +62,7 @@ namespace EGE::STD::TERMINAL{
              * @param coordenadas Sera de donde se saquen las coordenadas para el gotoxy.
              * @param mostrar Si se muesta el sprite o se oculta.
              */
-            void visualize(EGE::STD::TERMINAL::Position coordinates,bool view = true);
+            void visualize(EGE::STD::TERMINAL::WINDOWS::Position coordinates,bool view = true);
 
             /**
              * @brief Método que devuelve el grado de la matriz.

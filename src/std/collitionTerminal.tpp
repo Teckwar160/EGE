@@ -3,7 +3,7 @@
 
 #include <std/collitionTerminal.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename mType>
     void collitionTerminal<mType>::update(mType *gameContext){
@@ -13,7 +13,7 @@ namespace EGE::STD::TERMINAL{
     template<typename mType>
     bool collitionTerminal<mType>::updated(EGE::CORE::EntityId id,mType *gameContext){
         auto tm = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal();
-        auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
 
         int tall = tm -> getTall();
         int width = tm -> getWidth();

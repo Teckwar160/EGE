@@ -4,7 +4,7 @@
 #include <std/Controller.hpp>
 #include <tuple>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
 
     void Controller::move(char key,Position *position){
         auto firstTuple = position -> getPositionInit();

@@ -5,7 +5,7 @@
 #include <core/Component.hpp>
 #include <std/Position.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
     /**
      * @class Se encarga de dotar de controles a una entidad.
      */

@@ -3,7 +3,7 @@
 
 #include <std/Position.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
 
     Position::Position(){ }
 
@@ -41,7 +41,7 @@ namespace EGE::STD::TERMINAL{
 
     template<typename mType>
     void mPosition<mType>::positionInitializer(EGE::CORE::EntityId id, int x, int y){
-        auto posicion = this -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        auto posicion = this -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
         posicion -> positionInitializer(1,x,y);
     }
 

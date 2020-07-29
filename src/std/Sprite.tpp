@@ -3,7 +3,7 @@
 
 #include <std/Sprite.hpp>
 
-namespace EGE::STD::TERMINAL{
+namespace EGE::STD::TERMINAL::WINDOWS{
 
     /**Métodos privados*/
 
@@ -60,7 +60,7 @@ namespace EGE::STD::TERMINAL{
         this -> spriteLoader();
     }
 
-    void Sprite::visualize(EGE::STD::TERMINAL::Position coordinates,bool view){
+    void Sprite::visualize(EGE::STD::TERMINAL::WINDOWS::Position coordinates,bool view){
         int k = 0;
         auto positionsVector = coordinates.getPosition();
         EGE::STD::TERMINAL::WINDOWS::Terminal *cursor = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal();
@@ -96,7 +96,7 @@ namespace EGE::STD::TERMINAL{
     template<typename mType>
     void mSprite<mType>::positionInitializer(EGE::CORE::EntityId id,int x, int y){
         auto sprite = this -> template getComponent<Sprite>(id);
-        auto posicion = this -> template getComponent<EGE::STD::TERMINAL::Position>(id);
+        auto posicion = this -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
         posicion -> positionInitializer(sprite -> getN(),x,y);
     }
 
@@ -105,7 +105,7 @@ namespace EGE::STD::TERMINAL{
         auto id = EGE::CORE::Manager<mType>::addEntity();
 
         this -> template addComponent<Sprite>(id);
-        this -> template addComponent<EGE::STD::TERMINAL::Position>(id);
+        this -> template addComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
         return id;
     }
 }
