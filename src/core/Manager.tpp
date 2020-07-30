@@ -99,5 +99,10 @@ namespace EGE::CORE{
         }
         return nullptr;
     }
+
+    template<typename Type>
+    std::unordered_map<EntityId,Type*> Manager<Type>::getEntities(){
+        return this -> entities;
+    }
 }
 #endif

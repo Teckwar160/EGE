@@ -108,6 +108,12 @@ namespace EGE::CORE{
              */
             template<typename Ent>
             Ent* getEntity(EntityId id);
+
+            /**
+             * @brief Método que regresa una copia del mapa de entidades.
+             * @return Mapa de netidades.
+             */
+            std::unordered_map<EntityId,Type*> getEntities();
     };
 }
 
