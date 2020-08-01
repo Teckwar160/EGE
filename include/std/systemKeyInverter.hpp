@@ -6,6 +6,9 @@
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
+    /**
+     * @class Sistema que se encarga de invertir la tecla pulsada, se especializo en las de movimiento.
+     */
     class systemKeyInverter : public EGE::CORE::System<char>{
         public:
             char update(char key);

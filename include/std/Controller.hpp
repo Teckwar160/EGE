@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_HPP
 #define CONTROLLER_HPP
 
-#include <core/Alias.hpp>
+#include <std/keyDefinition.hpp>
 #include <core/Component.hpp>
 #include <std/Position.hpp>
 

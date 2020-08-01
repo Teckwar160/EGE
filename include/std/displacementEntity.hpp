@@ -6,6 +6,7 @@
 #include <std/moveEntity.tpp>
 #include <std/visualizeEntity.tpp>
 #include <core/Alias.hpp>
+#include <std/keyDefinition.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
