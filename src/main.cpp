@@ -72,7 +72,7 @@ class systemGenericCollition : public EGE::CORE::System<Mnave,mEnemy>{
 
 
 int main(){
-    #if 0
+    #if 1
     /*Se crea el tablero del juego*/
     EGE::STD::TERMINAL::WINDOWS::Terminal *tm = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
 
@@ -142,6 +142,4 @@ int main(){
     /*Liberamos memoria*/
     delete tm;
     #endif
-    EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
-    std::cout << inverter.update(UP);
 }

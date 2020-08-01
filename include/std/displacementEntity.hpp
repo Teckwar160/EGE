@@ -6,7 +6,7 @@
 #include <std/moveEntity.tpp>
 #include <std/visualizeEntity.tpp>
 #include <core/Alias.hpp>
-#include <std/keyDefinition.hpp>
+#include <std/systemKeyInverter.tpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

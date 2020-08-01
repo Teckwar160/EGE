@@ -10,6 +10,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         EGE::STD::TERMINAL::WINDOWS::collitionTerminal<mType> collition;
         EGE::STD::TERMINAL::WINDOWS::visualizeEntity<mType> view;
         EGE::STD::TERMINAL::WINDOWS::moveEntity<mType> move;
+        EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
         bool flag = false;
 
         if(control == WASD){
@@ -34,30 +35,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             move.update(key,id,gameContext);
 
             if(collition.update(id,gameContext)){
-
-                switch(key){
-                    case 'w':
-                    case 'W':
-                    case UP:
-                            key = DOWN;
-                        break;
-                    case 'a':
-                    case 'A':
-                    case LEFT:
-                            key = RIGHT;
-                        break;
-                    case 's':
-                    case 'S':
-                    case DOWN:
-                            key = UP;
-                        break;
-                    case 'd':
-                    case 'D':
-                    case RIGHT:
-                            key = LEFT;
-                        break;
-                };
-                move.update(key,id,gameContext);
+                move.update(inverter.update(key),id,gameContext);
             }
         }
     }
