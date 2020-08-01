@@ -11,7 +11,7 @@
 #include <std/visualizeEntity.tpp>
 #include <std/displacementEntity.tpp>
 #include <std/systemGenericCollition.tpp>
-
+#include <std/systemKeyInverter.tpp>
 
 class nave :public EGE::CORE::Entity<nave>{
     public:
@@ -72,6 +72,7 @@ class systemGenericCollition : public EGE::CORE::System<Mnave,mEnemy>{
 
 
 int main(){
+    #if 0
     /*Se crea el tablero del juego*/
     EGE::STD::TERMINAL::WINDOWS::Terminal *tm = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
 
@@ -140,4 +141,7 @@ int main(){
 
     /*Liberamos memoria*/
     delete tm;
+    #endif
+    EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
+    std::cout << inverter.update(UP);
 }
