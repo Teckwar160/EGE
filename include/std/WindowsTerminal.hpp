@@ -23,11 +23,6 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		static inline Terminal *terminal = nullptr;
 
 		/**
-		 *@brief Método que oculta el cursor de la terminal.
-		 */
-		void hideCursor();
-
-		/**
 		 *@brief Método constructor del tablero,
 		 *@param width Tamaño en x del tablero.
 		 *@param tall Tamaño en y del tablero.
@@ -54,6 +49,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		 *@brief Método destructor de la clase.
 		 */
 		~Terminal();
+
+		/**
+		 *@brief Método que oculta el cursor de la terminal.
+		 */
+		void hideCursor();
 
 		/**
 		 *@brief Método que mueve el cursor en la temrinal.
@@ -88,12 +88,18 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		/**
 		 * @brief Método que ejecuta funciones de rutina, con paramtros base.
 		 */
-		void terminalInit();
+		void init();
     };
 
 	class mTerminal : public EGE::CORE::Manager<Terminal>{
+		private:
+			/**Bandera que indica si ya se creo la terminal*/
+			bool isCreated = false;
 		public:
 			EGE::CORE::EntityId addEntity(int x, int y);
+			void terminalDefault(EGE::CORE::EntityId id);
+			void terminalPersonalized(EGE::CORE::EntityId id,char charHorizontal = 205,char charVertical = 186, char charCorner1 = 201, char charCorner2 = 187, char charCorner3 = 200, char charCorner4 = 188);
+
 	};
 }
 #endif

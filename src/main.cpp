@@ -74,8 +74,9 @@ class systemGenericCollition : public EGE::CORE::System<Mnave,mEnemy>{
 int main(){
     #if 1
     /*Se crea el tablero del juego*/
-    EGE::STD::TERMINAL::WINDOWS::Terminal *tm = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(50,30);
-
+    EGE::STD::TERMINAL::WINDOWS::mTerminal tm;
+    auto terminal = tm.addEntity(50,30);
+    
     /*Creamos los manager de las entidades del juego*/
     Mnave base;
     mEnemy nodriza;
@@ -108,7 +109,8 @@ int main(){
 
 
     /*Inicalizamos a la  terminal y al metedo de salida del juego*/
-    tm -> terminalInit();
+    tm.terminalPersonalized(terminal,'-','|');
+
     char Tecla = 0;
 
     /*Bucle del juego*/
@@ -138,8 +140,5 @@ int main(){
         /*Espera del juego*/
         Sleep(10);
     }
-
-    /*Liberamos memoria*/
-    delete tm;
     #endif
 }

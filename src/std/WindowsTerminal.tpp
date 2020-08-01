@@ -83,15 +83,30 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return this -> tall;
     }
 
-    void Terminal::terminalInit(){
+    void Terminal::init(){
         this -> hideCursor();
         this -> drawLimits(205,186,201,187,200,188);
     }
 
     EGE::CORE::EntityId mTerminal::addEntity(int x, int y){
-        entities.insert({numEntities,EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(x,y)});
-        numEntities++;
+        if(!this -> isCreated){
+            this -> isCreated = true;
+            entities.insert({numEntities,EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal(x,y)});
+            numEntities++;
+        }
         return entities[entities.size() - 1]->getEntityId();
+
     };
+
+    void mTerminal::terminalDefault(EGE::CORE::EntityId id){
+        auto terminal = entities.find(id);
+        terminal -> second -> init();
+    }
+
+    void mTerminal::terminalPersonalized(EGE::CORE::EntityId id,char charHorizontal,char charVertical, char charCorner1, char charCorner2, char charCorner3, char charCorner4){
+        auto terminal = entities.find(id);
+        terminal -> second -> hideCursor();
+        terminal -> second ->drawLimits(charHorizontal,charVertical,charCorner1,charCorner2,charCorner3,charCorner4);
+    }
 }
 #endif
