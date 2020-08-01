@@ -9,14 +9,8 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     /**
      * @class Clase encargada de atrapar las teclas pulsadas.
      */
-    class systemInput : public EGE::CORE::System<int>{
+    class systemInput : public EGE::CORE::System<char>{
         public:
-            /**
-             * @brief Método heredado no seusara.
-             * @param gameContext No importa que sea.
-             */
-            void update(int *gameContext);
-
             /**
              * @brief Método encargado de atrapar las teclas pulsadas.
              * @return Ultima tecla pulsada.

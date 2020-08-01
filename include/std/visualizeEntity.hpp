@@ -13,14 +13,6 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     template<typename mType>
     class visualizeEntity : public EGE::CORE::System<mType>{
         public: 
-
-            /**
-             * @brief Método que actualiza los sistemas.
-             * 
-             * @param gameContext Es un manager que gestiona.
-             */
-            void update(mType *gameContext);
-
             /**
              * @brief Método para actualizar la imagen de la entidad en pantalla.
              * 
@@ -29,7 +21,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param *gameContext Manager de la entidad.
              * @param view Indicador si la entidad se debe de ver o no.
              */
-            void updated(EGE::CORE::EntityId id,mType *gameContext,bool view = true);
+            void update(EGE::CORE::EntityId id,mType *gameContext,bool view = true);
     };
 }
 #endif

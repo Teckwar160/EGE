@@ -57,13 +57,6 @@ namespace EGE::CORE{
          * @return SystemType
          */
         static SystemType getSystemType();
-
-        /**
-         * @brief Método que actualiza los systemas.
-         * @param gameContext Es un manager que gestiona.
-         */
-        virtual void update(Type*... gameContext) = 0;
-
     };
 }
 

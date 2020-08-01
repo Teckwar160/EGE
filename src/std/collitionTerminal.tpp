@@ -6,12 +6,7 @@
 namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename mType>
-    void collitionTerminal<mType>::update(mType *gameContext){
-
-    }
-
-    template<typename mType>
-    bool collitionTerminal<mType>::updated(EGE::CORE::EntityId id,mType *gameContext){
+    bool collitionTerminal<mType>::update(EGE::CORE::EntityId id,mType *gameContext){
         auto tm = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal();
         auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
 

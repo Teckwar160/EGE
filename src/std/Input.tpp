@@ -5,10 +5,6 @@
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
-    void systemInput::update(int *gameContext){
-        /*Nada*/
-    }
-
     char systemInput::update(){
         if(kbhit()){
             return getch();

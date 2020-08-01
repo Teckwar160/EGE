@@ -4,13 +4,9 @@
 #include <std/displacementEntity.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
-    template<typename mType>
-    void displacementEntity<mType>::update(mType *gameContext){
-
-    }
 
     template<typename mType>
-    void displacementEntity<mType>::updated(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
+    void displacementEntity<mType>::update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
         EGE::STD::TERMINAL::WINDOWS::collitionTerminal<mType> collition;
         EGE::STD::TERMINAL::WINDOWS::visualizeEntity<mType> view;
         EGE::STD::TERMINAL::WINDOWS::moveEntity<mType> move;
@@ -34,10 +30,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
 
         if(flag){
-            view.updated(id,gameContext,false);
-            move.updated(key,id,gameContext);
+            view.update(id,gameContext,false);
+            move.update(key,id,gameContext);
 
-            if(collition.updated(id,gameContext)){
+            if(collition.update(id,gameContext)){
 
                 switch(key){
                     case 'w':
@@ -61,7 +57,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
                             key = LEFT;
                         break;
                 };
-                move.updated(key,id,gameContext);
+                move.update(key,id,gameContext);
             }
         }
     }

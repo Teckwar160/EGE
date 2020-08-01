@@ -47,7 +47,7 @@ class systemGenericCollition : public EGE::CORE::System<Mnave,mEnemy>{
 
         }
 
-        bool updated(EGE::CORE::EntityId  idPlayer, EGE::CORE::EntityId idEnemy, Mnave *player, mEnemy *enemies){
+        bool update(EGE::CORE::EntityId  idPlayer, EGE::CORE::EntityId idEnemy, Mnave *player, mEnemy *enemies){
             auto positionPlayer = player -> getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(idPlayer);
             auto vectorPosition = positionPlayer -> getPosition();
 
@@ -117,21 +117,21 @@ int main(){
         Tecla = entrada.update();
 
         /*Movemos al jugador*/
-        dp.updated(Tecla,Nave1,&base,ARROWS);  
+        dp.update(Tecla,Nave1,&base,ARROWS);  
 
         /*Uso del sistema de colision*/
         if(Tecla != 0){
-            if(col.updated(Nave1,&base,&nodriza)){
-                dp.updated(LEFT,Nave1,&base,ARROWS); 
+            if(col.update(Nave1,&base,&nodriza)){
+                dp.update(LEFT,Nave1,&base,ARROWS); 
             }
         }
 
         /*Pintamos al jugador*/
-        view.updated(Nave1,&base);
+        view.update(Nave1,&base);
 
         /*Movemos y pintamos al enemigo*/
-        dp2.updated(Tecla,enemy,&nodriza,WASD);  
-        view2.updated(enemy,&nodriza);
+        dp2.update(Tecla,enemy,&nodriza,WASD);  
+        view2.update(enemy,&nodriza);
 
 
         /*Espera del juego*/

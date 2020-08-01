@@ -19,13 +19,6 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             char  wasd[8] = {'w','W','a','A','s','S','d','D'};
             char arrows[4] = {UP,LEFT,DOWN,RIGHT};
         public:
-
-            /**
-             * @brief Métdodo heredado no usar.
-             * @param gameContext Manager de la entidad en cuestión.
-             */
-            void update(mType *gameContext);
-
             /**
              * @brief Método que mueve a una entidad visible.
              * @param key Tecla pulsada.
@@ -33,7 +26,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param gameContext Manager de la entidad en cuestión.
              * @param control Sistema de teclas que se usara para mover a la entidad.
              */
-            void updated(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control);
+            void update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control);
     };
 }
 #endif
