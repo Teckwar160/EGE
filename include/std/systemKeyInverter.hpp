@@ -12,7 +12,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
      */
     class systemKeyInverter : public EGE::CORE::System<char>{
         public:
-            char update(char key);
+            char update(char key,EGE::CORE::ControlType control);
     };
 }
 

@@ -106,7 +106,7 @@ int main(){
 
     /*Creamos el sistema de colision entre las entidades*/
     EGE::STD::TERMINAL::WINDOWS::systemGenericCollition<Mnave,mEnemy> col;
-
+    EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
 
     /*Inicalizamos a la  terminal y al metedo de salida del juego*/
     tm.terminalPersonalized(terminal,'-','|');
@@ -125,7 +125,7 @@ int main(){
         /*Uso del sistema de colision*/
         if(Tecla != 0){
             if(col.update(Nave1,&base,&nodriza)){
-                dp.update(LEFT,Nave1,&base,ARROWS); 
+                dp.update(inverter.update(Tecla,ARROWS),Nave1,&base,ARROWS); 
             }
         }
 

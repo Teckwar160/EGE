@@ -4,27 +4,31 @@
 #include <std/systemKeyInverter.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
-    char systemKeyInverter::update(char key){
+    char systemKeyInverter::update(char key,EGE::CORE::ControlType control){
         switch(key){
             case 'w':
             case 'W':
             case UP:
-                key = 's';
+                if(control == WASD) key = 's';
+                if(control ==  ARROWS) key = DOWN;
                 break;
             case 'a':
             case 'A':
             case LEFT:
-                key = 'd';
+                if(control == WASD) key = 'd';
+                if(control ==  ARROWS) key = RIGHT;
                 break;
             case 's':
             case 'S':
             case DOWN:
-                key = 'w';
+                if(control == WASD) key = 'w';
+                if(control ==  ARROWS) key = UP;
                 break;
             case 'd':
             case 'D':
             case RIGHT:
-                key = 'a';
+                if(control == WASD) key = 'a';
+                if(control ==  ARROWS) key = LEFT;
                 break;
         }
         return key;

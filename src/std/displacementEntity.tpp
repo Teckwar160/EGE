@@ -35,7 +35,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             move.update(key,id,gameContext);
 
             if(collition.update(id,gameContext)){
-                move.update(inverter.update(key),id,gameContext);
+                move.update(inverter.update(key,control),id,gameContext);
             }
         }
     }
