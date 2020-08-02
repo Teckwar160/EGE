@@ -88,10 +88,10 @@ int main(){
     /*Agregamos e inicializamos sus componentes*/
     base.addComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(Nave1);
     base.spriteInitializer(Nave1,3,"nave");
-    base.positionInitializer(Nave1,2,2);
+    base.positionInitializer(Nave1,11,11);
 
     nodriza.addComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(enemy);
-    nodriza.spriteInitializer(enemy,5,"enemigo");
+    nodriza.spriteInitializer(enemy,10,"tablero");
     nodriza.positionInitializer(enemy,10,10);
 
     /*Creamos el sistema de entrada*/
@@ -124,8 +124,8 @@ int main(){
 
         /*Uso del sistema de colision*/
         if(Tecla != 0){
-            if(col.update(Nave1,&base,&nodriza)){
-                dp.update(inverter.update(Tecla,ARROWS),Nave1,&base,ARROWS); 
+            if(col.collitionSprite(Nave1,&base,&nodriza)){
+                dp.update(inverter.update(Tecla,ARROWS),Nave1,&base,ARROWS);
             }
         }
 

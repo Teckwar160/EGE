@@ -87,6 +87,14 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return this -> n;
     }
 
+    char **Sprite::getSprite(){
+        return this -> sprite;
+    }
+
+    char Sprite::getCharToIgnore(){
+        return this -> charToIgnore;
+    }
+
     template<typename mType>
     void mSprite<mType>::spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre){
         auto sprite = this -> template getComponent<Sprite>(id);

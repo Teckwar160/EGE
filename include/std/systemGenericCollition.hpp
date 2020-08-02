@@ -19,7 +19,9 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param mEntities Manager de entidades.
              * @return True si choco el juagor en caso contrario false.
              */
-            bool update(EGE::CORE::EntityId id,m1 *mPlayer, m2 *mEntities);
+            bool collitionEntity(EGE::CORE::EntityId id,m1 *mPlayer, m2 *mEntities);
+
+            bool collitionSprite(EGE::CORE::EntityId id,m1 *mPlayer, m2 *mEntities);
     };
 };
 

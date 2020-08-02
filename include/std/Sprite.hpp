@@ -69,6 +69,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @return Grado de la matriz.
              */
             int getN();
+
+            char **getSprite();
+
+            char getCharToIgnore();
     };
 
     /**
