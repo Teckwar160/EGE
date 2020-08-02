@@ -104,8 +104,8 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     template<typename mType>
     void mSprite<mType>::positionInitializer(EGE::CORE::EntityId id,int x, int y){
         auto sprite = this -> template getComponent<Sprite>(id);
-        auto posicion = this -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
-        posicion -> positionInitializer(sprite -> getN(),x,y);
+        auto position = this -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
+        position -> positionInitializer(sprite -> getN(),x,y);
     }
 
     template<typename mType>

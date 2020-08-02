@@ -70,8 +70,16 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              */
             int getN();
 
+            /**
+             * @brief Método que regresa a la matriz que contiene al sprite.
+             * @return Matriz que contiene al sprite.
+             */
             char **getSprite();
 
+            /**
+             * @brief Método que retorna el caracter a ignorar del sprite.
+             * @return Caracter a ignorar del sprite.
+             */
             char getCharToIgnore();
     };
 

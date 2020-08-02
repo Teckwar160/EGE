@@ -56,7 +56,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
                 auto componentSpriteEntity = i.second -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Sprite>();
                 auto spriteEntity = componentSpriteEntity -> getSprite();
 
-                /*Interadores la P es pla player y la E es para entidad*/
+                /*Interadores la P es player y la E es para entidad*/
                 int kP = 0;
                 int kE = 0;
 
