@@ -2,11 +2,12 @@
 #define SPRITE_HPP
 
 #include <core/Component.tpp>
-#include <std/Position.hpp>
+#include <std/Pixel.tpp>
 #include <core/Manager.tpp>
 #include <std/Controller.tpp>
 #include <std/WindowsTerminal.hpp>
 #include <core/Alias.hpp>
+#include <vector>
 #include <fstream>
 #include <iostream>
 
@@ -24,18 +25,19 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             std::string name;
 
             /**Contenedor del sprite*/
-            char **sprite;
+            char **container;
+
+            std::vector<Pixel> sprite;
 
             /**Caracter que se ignorara del contenedor en bruto*/
             char charToIgnore;
-
-            /**Estado de la memoria solicitada*/
-            bool state = false;
 
             /**
              * @brief Método que se encarga de leer un archivo y cargar al contendor el sprite.
              */
             void spriteLoader();
+
+            void converterR2ToR();
 
         public:
 
@@ -54,7 +56,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param n Tamaño de la matriz del sprite.
              * @param nombre Nombre del archivo que contiene al sprite.
              */
-            void spriteInitializer(EGE::CORE::EntityId n, std::string name, char charToIgnore = '*');
+            void spriteInitializer(EGE::CORE::EntityId n, std::string name, char charToIgnore);
 
             /**
              * @brief Método que se encarga de visualizar al sprite.
@@ -68,13 +70,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @brief Método que devuelve el grado de la matriz.
              * @return Grado de la matriz.
              */
-            int getN();
-
-            /**
-             * @brief Método que regresa a la matriz que contiene al sprite.
-             * @return Matriz que contiene al sprite.
-             */
-            char **getSprite();
+            int getSizeSprite();
 
             /**
              * @brief Método que retorna el caracter a ignorar del sprite.
@@ -96,7 +92,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param n Tamaño de la matriz del sprite.
              * @param nombre Nombre del archivo que contiene al sprite.
              */
-            void spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre);
+            void spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre, char charToIgnore = '*');
 
             /**
              * @brief Metodo para iniciar la posicion del sprite.

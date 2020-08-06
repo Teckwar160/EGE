@@ -16,7 +16,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             char getPixel();
             int getX();
             int getY();
-    }
+    };
 }
 
 #endif

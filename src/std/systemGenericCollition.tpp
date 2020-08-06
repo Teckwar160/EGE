@@ -38,7 +38,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename m1, typename m2>
     bool systemGenericCollition<m1,m2>::collitionSprite(EGE::CORE::EntityId id, m1 *mPlayer, m2 *mEntities){
-
+#if 0
             /*Obtenemos el vector de posición y al sprite del jugador*/
             auto componentPositionPlayer = mPlayer -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
             auto vectorPositionPlayer = componentPositionPlayer -> getPosition();
@@ -92,6 +92,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             }
             
             return false;
+#endif
     }
 }
 

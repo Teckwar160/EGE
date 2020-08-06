@@ -1,5 +1,5 @@
-#ifndef PIXEL_HPP
-#define PIXEL_HPP
+#ifndef PIXEL_TPP
+#define PIXEL_TPP
 
 #include <std/Pixel.hpp>
 
