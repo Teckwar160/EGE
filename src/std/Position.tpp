@@ -19,6 +19,14 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         }
     }
 
+    void Position::positionInitiaizerSprite(int size, std::vector<Pixel> sprite, int x, int y){
+        this -> size = size;
+
+        for(int i = 0; i<this -> size; i++){
+            position.push_back(std::make_pair(sprite[i].getX() + x,sprite[i].getY()+y));
+        }
+    }
+
     std::vector<std::tuple<int,int>> Position::getPosition(){
         return this -> position; 
     }

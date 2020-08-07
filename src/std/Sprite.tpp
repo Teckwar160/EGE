@@ -81,10 +81,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         auto positionsVector = coordinates.getPosition();
         EGE::STD::TERMINAL::WINDOWS::Terminal *cursor = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal();
 
-        //cursor -> gotoxy(this ->sprite[0]::get<0>(positionsVector[0]),std::get<1>(positionsVector[0]));
+       // cursor -> gotoxy(this ->sprite[0].getX() + std::get<0>(positionsVector[0]),this ->sprite[0].getY() + std::get<1>(positionsVector[0]));
 
         for(int i=0; i<this -> getSizeSprite(); i++){
-            cursor -> gotoxy(this -> sprite[i].getX() + std::get<0>(positionsVector[i]),this -> sprite[i].getY() + std::get<1>(positionsVector[i]));
+            cursor -> gotoxy(std::get<0>(positionsVector[i]),std::get<1>(positionsVector[i]));
 
             if(view){
                 std::cout << this -> sprite[i].getPixel();
@@ -102,6 +102,14 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return this -> charToIgnore;
     }
 
+    int Sprite::getN(){
+        return this -> n;
+    }
+
+    std::vector<Pixel> Sprite::getSprite(){
+        return this -> sprite;
+    }
+
     template<typename mType>
     void mSprite<mType>::spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre,char charToIgnore){
         auto sprite = this -> template getComponent<Sprite>(id);
@@ -112,7 +120,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     void mSprite<mType>::positionInitializer(EGE::CORE::EntityId id,int x, int y){
         auto sprite = this -> template getComponent<Sprite>(id);
         auto position = this -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
-        position -> positionInitializer(sprite -> getSizeSprite(),x,y);
+        position -> positionInitiaizerSprite(sprite ->getSizeSprite(),sprite -> getSprite(),x,y);
     }
 
     template<typename mType>

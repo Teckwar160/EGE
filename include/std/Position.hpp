@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <tuple>
+#include <std/Pixel.tpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
@@ -36,6 +37,8 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param y Posición inicial de la entidad en y.
              */
             void positionInitializer(int size,int x,int y);
+
+            void positionInitiaizerSprite(int size,std::vector<Pixel> sprite,int x, int y);
 
             /**
              * @brief Método para obtener la posición de la entidad

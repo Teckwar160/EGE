@@ -77,6 +77,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @return Caracter a ignorar del sprite.
              */
             char getCharToIgnore();
+
+            int getN();
+
+            std::vector<Pixel> getSprite();
     };
 
     /**
