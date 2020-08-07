@@ -80,8 +80,6 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         auto positionsVector = coordinates.getPosition();
         EGE::STD::TERMINAL::WINDOWS::Terminal *cursor = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal();
 
-       // cursor -> gotoxy(this ->sprite[0].getX() + std::get<0>(positionsVector[0]),this ->sprite[0].getY() + std::get<1>(positionsVector[0]));
-
         for(int i=0; i<this -> getSizeSprite(); i++){
             cursor -> gotoxy(std::get<0>(positionsVector[i]),std::get<1>(positionsVector[i]));
 

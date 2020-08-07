@@ -35,42 +35,6 @@ class mEnemy : public EGE::STD::TERMINAL::WINDOWS::mSprite<enemy>{
 
 };
 
-/*
-    Este es una prueba de un sistema de colisio nque busca especificamente
-    dos entidades en el tablero y ve si estas chocaron.
-    Funciona pero ya no lo volvi un sistema formal.
-*/
-#if 0
-class systemGenericCollition : public EGE::CORE::System<Mnave,mEnemy>{
-    public:
-        void update(Mnave *p, mEnemy *q){
-
-        }
-
-        bool update(EGE::CORE::EntityId  idPlayer, EGE::CORE::EntityId idEnemy, Mnave *player, mEnemy *enemies){
-            auto positionPlayer = player -> getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(idPlayer);
-            auto vectorPosition = positionPlayer -> getPosition();
-
-            auto positionEnemy = enemies -> getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(idEnemy);
-            auto vectorEnemy = positionEnemy -> getPosition();
-
-            for(auto i : vectorPosition){
-                for(auto j: vectorEnemy){
-
-                    if(std::get<0>(i) == std::get<0>(j)){
-                        if(std::get<1>(i) == std::get<1>(j)){
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-};
-#endif
-
-
-
 int main(){
     #if 1
     /*Se crea el tablero del juego*/
