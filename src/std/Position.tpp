@@ -37,19 +37,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return &this -> firstPosition;
     }
 
-    void Position::updatePosition(){
-
-        auto newPosition = position[0];
-        this -> position.clear();
-
-        for(int i = 0; i<this -> size; i++){
-            for(int j=0; j<this -> size; j++){
-                this -> position.push_back(std::make_pair(std::get<0>(newPosition)+j,std::get<1>(newPosition)+i));
-            }
-        }
-    }
-
-    void Position::updatePositionSprite(std::vector<Pixel> sprite){
+    void Position::updatePosition(std::vector<Pixel> sprite){
 
         this -> position.clear();
 

@@ -18,8 +18,6 @@ namespace EGE::STD::TERMINAL::WINDOWS{
      */
     class Sprite : public EGE::CORE::Component<Sprite>{
         private:
-            /**Tamaño de la matriz que tiene el dibujo del sprite*/
-            int n;
 
             /**Nombre del archivo que tiene al dibujo del sprite*/
             std::string name;
@@ -34,10 +32,15 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
             /**
              * @brief Método que se encarga de leer un archivo y cargar al contendor el sprite.
+             * @param n Tamaño de la matriz que contiene al sprite.
              */
-            void spriteLoader();
+            void spriteLoader(int n);
 
-            void converterR2ToR();
+            /**
+             * @brief Método que se encarga de convertir a una matriz cuadrada a un vector.
+             * @param n Grado de la matriz.
+             */
+            void converterR2ToR(int n);
 
         public:
 
@@ -54,21 +57,20 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             /**
              * @brief Método encargado de inicializar a un sprite.
              * @param n Tamaño de la matriz del sprite.
-             * @param nombre Nombre del archivo que contiene al sprite.
+             * @param name Nombre del archivo que contiene al sprite.
              */
             void spriteInitializer(EGE::CORE::EntityId n, std::string name, char charToIgnore);
 
             /**
              * @brief Método que se encarga de visualizar al sprite.
-             * @param cursor Solo para uso de gotoxy de la terminal.
-             * @param coordenadas Sera de donde se saquen las coordenadas para el gotoxy.
-             * @param mostrar Si se muesta el sprite o se oculta.
+             * @param coordinates Sera de donde se saquen las coordenadas para el gotoxy.
+             * @param view Si se muesta el sprite o se oculta.
              */
             void visualize(EGE::STD::TERMINAL::WINDOWS::Position coordinates,bool view = true);
 
             /**
-             * @brief Método que devuelve el grado de la matriz.
-             * @return Grado de la matriz.
+             * @brief Método que devuelve el tamaño del vector que contiene a sprite.
+             * @return Tamaño del vector que contiene a sprite..
              */
             int getSizeSprite();
 
@@ -78,8 +80,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              */
             char getCharToIgnore();
 
-            int getN();
-
+            /**
+             * @brief Método que retorna una copia del sprite.
+             * @return Vector de tipo sprite.
+             */
             std::vector<Pixel> getSprite();
     };
 
@@ -95,6 +99,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param id Id de la entidad creada.
              * @param n Tamaño de la matriz del sprite.
              * @param nombre Nombre del archivo que contiene al sprite.
+             * @param charToIgnore Caracter que se ignorara al momento de cargar al sprite.
              */
             void spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre, char charToIgnore = '*');
 

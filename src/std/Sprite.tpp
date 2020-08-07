@@ -7,7 +7,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
     /**Métodos privados*/
 
-    void Sprite::spriteLoader(){
+    void Sprite::spriteLoader(int n){
 
         std::string address = "resources\\sprites\\"+ this -> name + ".txt";
 
@@ -18,8 +18,8 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         char charTemporary;
 
         if(!archive.fail()){
-            for(int i = 0; i< this -> n; i++){
-                for(int j = 0; j<this -> n; j++){
+            for(int i = 0; i<n; i++){
+                for(int j = 0; j<n; j++){
                     archive >> charTemporary;
                     this -> container[i][j] = charTemporary;
                 }
@@ -31,9 +31,9 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         archive.close();
     }
 
-    void Sprite::converterR2ToR(){
-        for(int i=0; i<this ->n; i++){
-            for(int j = 0; j<this ->n; j++){
+    void Sprite::converterR2ToR(int n){
+        for(int i=0; i<n; i++){
+            for(int j = 0; j<n; j++){
                 if(this -> container[i][j] != this -> charToIgnore){
                     Pixel tmpPixel;
                     tmpPixel.setPixel(this -> container[i][j]);
@@ -51,26 +51,25 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     }
 
     Sprite::~Sprite(){
-
+        /*Nada*/
     }
 
     void Sprite::spriteInitializer(int n, std::string name, char charToIgnore){
-        this -> n = n;
         this -> name = name;
         this -> charToIgnore = charToIgnore;
 
-        this -> container = new char*[this -> n];
+        this -> container = new char*[n];
 
-        for(int i = 0; i<this -> n; i++){
-            this -> container[i] = new char[this -> n];
+        for(int i = 0; i<n; i++){
+            this -> container[i] = new char[n];
         }
 
-        this -> spriteLoader();
+        this -> spriteLoader(n);
 
-        this -> converterR2ToR();
+        this -> converterR2ToR(n);
 
 
-        for(int i =0; i< this -> n; i++){
+        for(int i =0; i< n; i++){
             delete this ->container[i];
         }
         delete[] this -> container;
@@ -100,10 +99,6 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
     char Sprite::getCharToIgnore(){
         return this -> charToIgnore;
-    }
-
-    int Sprite::getN(){
-        return this -> n;
     }
 
     std::vector<Pixel> Sprite::getSprite(){

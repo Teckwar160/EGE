@@ -48,7 +48,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             }
                 break;
         };
-        position ->updatePositionSprite(sprite);
+        position ->updatePosition(sprite);
     }
 }
 #endif

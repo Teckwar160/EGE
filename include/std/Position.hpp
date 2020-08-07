@@ -27,38 +27,50 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
         public:
 
+            /**
+             * @brief Método constructor de position.
+             */
             Position();
 
+            /**
+             * @brief Método destructor de position.
+             */
             ~Position();
 
             /**
-             * @brief Metodo para iniciar la posicion del sprite.
-             * 
+             * @brief Metodo para iniciar la posicion de una entidad.
              * @param size Tamaño del arreglo de posiciones.
              * @param x Posición inicial de la entidad en x.
              * @param y Posición inicial de la entidad en y.
              */
             void positionInitializer(int size,int x,int y);
 
+            /**
+             * @brief Metodo para iniciar la posicion de le entidad con sprite.
+             * @param size Tamaño del arreglo de posiciones.
+             * @param sprite Vector con el sprite para calcular bien las posiciones en terminal.
+             * @param x Posición inicial de la entidad en x.
+             * @param y Posición inicial de la entidad en y.
+             */
             void positionInitiaizerSprite(int size,std::vector<Pixel> sprite,int x, int y);
 
             /**
              * @brief Método para obtener la posición de la entidad
-             * 
              * @return Vector con las coordenas de la entidad
              */
             std::vector<std::tuple<int,int>> getPosition();
 
+            /**
+             * @brief Método que retorna la posición inicial en la terminal.
+             * @return Tupla con la posición inicial en terminal.
+             */
             std::tuple<int,int> *getFisrtPosition();
 
             /**
-             * @brief Método para asignarle una posisición a la entidad.
-             * 
+             * @brief Método para actualizar la posisición a la entidad.
              * @param void Función para cambiar la posicion del elemento.
              */
-            void updatePosition();
-
-            void updatePositionSprite(std::vector<Pixel> sprite);
+            void updatePosition(std::vector<Pixel> sprite);
     };
 
     /**
@@ -78,7 +90,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             void positionInitializer(EGE::CORE::EntityId id,int x, int y);
 
             /**
-             * @brief Método que agrega una entidas a entities.
+             * @brief Método que agrega una entidades a entities.
              */
             int addEntity();
     }; 

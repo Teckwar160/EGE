@@ -19,6 +19,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @brief Método encargado de mover a una entidad.
              * @param key Tecla puslada por el usuario.
              * @param position Componenete de posición de una entidad.
+             * @param sprite Copia del sprite para calcular bien la posición.
              */
             void move(char key,Position *position,std::vector<Pixel> sprite);
             
