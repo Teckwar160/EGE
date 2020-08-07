@@ -83,16 +83,16 @@ int main(){
 
     /*Creamos a las entidades*/
     auto Nave1 = base.addEntity();
-    //auto enemy = nodriza.addEntity();
+    auto enemy = nodriza.addEntity();
 
     /*Agregamos e inicializamos sus componentes*/
     base.addComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(Nave1);
     base.spriteInitializer(Nave1,3,"nave");
     base.positionInitializer(Nave1,11,11);
 
-    //nodriza.addComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(enemy);
-    //nodriza.spriteInitializer(enemy,10,"tablero");
-    //nodriza.positionInitializer(enemy,10,10);
+    nodriza.addComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(enemy);
+    nodriza.spriteInitializer(enemy,10,"tablero");
+    nodriza.positionInitializer(enemy,10,10);
 
     /*Creamos el sistema de entrada*/
     EGE::STD::TERMINAL::WINDOWS::systemInput entrada;
@@ -101,12 +101,12 @@ int main(){
     EGE::STD::TERMINAL::WINDOWS::visualizeEntity<Mnave> view;
     EGE::STD::TERMINAL::WINDOWS::displacementEntity<Mnave> dp;
 
-    //EGE::STD::TERMINAL::WINDOWS::visualizeEntity<mEnemy> view2;
-    //EGE::STD::TERMINAL::WINDOWS::displacementEntity<mEnemy> dp2;
+    EGE::STD::TERMINAL::WINDOWS::visualizeEntity<mEnemy> view2;
+    EGE::STD::TERMINAL::WINDOWS::displacementEntity<mEnemy> dp2;
 
     /*Creamos el sistema de colision entre las entidades*/
-    //EGE::STD::TERMINAL::WINDOWS::systemGenericCollition<Mnave,mEnemy> col;
-    //EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
+    EGE::STD::TERMINAL::WINDOWS::systemGenericCollition<Mnave,mEnemy> col;
+    EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
 
     /*Inicalizamos a la  terminal y al metedo de salida del juego*/
     tm.terminalPersonalized(terminal,'-','|');
@@ -123,9 +123,9 @@ int main(){
         dp.update(Tecla,Nave1,&base,ARROWS);  
 
         /*Uso del sistema de colision*/
-        #if 0
+        #if 1
         if(Tecla != 0){
-            if(col.collitionSprite(Nave1,&base,&nodriza)){
+            if(col.update(Nave1,&base,&nodriza)){
                 dp.update(inverter.update(Tecla,ARROWS),Nave1,&base,ARROWS);
             }
         }
@@ -134,8 +134,8 @@ int main(){
         view.update(Nave1,&base);
 
         /*Movemos y pintamos al enemigo*/
-        //dp2.update(Tecla,enemy,&nodriza,WASD);  
-        //view2.update(enemy,&nodriza);
+        dp2.update(Tecla,enemy,&nodriza,WASD);  
+        view2.update(enemy,&nodriza);
 
 
         /*Espera del juego*/
