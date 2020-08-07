@@ -9,7 +9,9 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     void moveEntity<mType>::update(char tecla,EGE::CORE::EntityId id,mType *gameContext){
         auto controller = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(id);
         auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
-        controller ->move(tecla,position);
+        auto sprite = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Sprite>(id);
+
+        controller ->move(tecla,position,sprite -> getSprite());
     }
 }
 #endif

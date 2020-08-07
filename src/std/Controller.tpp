@@ -6,8 +6,8 @@
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
-    void Controller::move(char key,Position *position){
-        auto firstTuple = position -> getPositionInit();
+    void Controller::move(char key,Position *position,std::vector<Pixel> sprite){
+        auto firstTuple = position -> getFisrtPosition();
 
         switch(key){
             case 'w':
@@ -48,7 +48,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             }
                 break;
         };
-        position ->updatePosition();
+        position ->updatePositionSprite(sprite);
     }
 }
 #endif

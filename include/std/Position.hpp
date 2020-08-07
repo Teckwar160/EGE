@@ -23,6 +23,8 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             /**Vector de las tuplas de posicion de la entidad*/
             std::vector<std::tuple<int,int>> position;
 
+            std::tuple<int,int> firstPosition;
+
         public:
 
             Position();
@@ -47,7 +49,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              */
             std::vector<std::tuple<int,int>> getPosition();
 
-            std::tuple<int,int> *getPositionInit();
+            std::tuple<int,int> *getFisrtPosition();
 
             /**
              * @brief Método para asignarle una posisición a la entidad.
@@ -55,6 +57,8 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param void Función para cambiar la posicion del elemento.
              */
             void updatePosition();
+
+            void updatePositionSprite(std::vector<Pixel> sprite);
     };
 
     /**

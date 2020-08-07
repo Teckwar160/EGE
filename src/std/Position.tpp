@@ -21,6 +21,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
     void Position::positionInitiaizerSprite(int size, std::vector<Pixel> sprite, int x, int y){
         this -> size = size;
+        this -> firstPosition = std::make_pair(x,y);
 
         for(int i = 0; i<this -> size; i++){
             position.push_back(std::make_pair(sprite[i].getX() + x,sprite[i].getY()+y));
@@ -31,8 +32,9 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return this -> position; 
     }
 
-    std::tuple<int,int> *Position::getPositionInit(){
-        return &position[0];
+    std::tuple<int,int> *Position::getFisrtPosition(){
+        
+        return &this -> firstPosition;
     }
 
     void Position::updatePosition(){
@@ -44,6 +46,15 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             for(int j=0; j<this -> size; j++){
                 this -> position.push_back(std::make_pair(std::get<0>(newPosition)+j,std::get<1>(newPosition)+i));
             }
+        }
+    }
+
+    void Position::updatePositionSprite(std::vector<Pixel> sprite){
+
+        this -> position.clear();
+
+        for(int i=0; i< this -> size; i++){
+            position.push_back(std::make_pair(sprite[i].getX() + std::get<0>(this ->firstPosition),sprite[i].getY()+std::get<1>(this ->firstPosition)));
         }
     }
 

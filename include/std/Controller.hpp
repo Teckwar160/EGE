@@ -4,6 +4,9 @@
 #include <std/keyDefinition.hpp>
 #include <core/Component.hpp>
 #include <std/Position.hpp>
+#include <std/Pixel.tpp>
+#include <std/Sprite.tpp>
+#include <vector>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
     /**
@@ -17,7 +20,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param key Tecla puslada por el usuario.
              * @param position Componenete de posición de una entidad.
              */
-            void move(char key,Position *position);
+            void move(char key,Position *position,std::vector<Pixel> sprite);
             
     };
 }
