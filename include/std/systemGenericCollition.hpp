@@ -19,7 +19,16 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param mEntities Manager de entidades.
              * @return True si choco el jugador en caso contrario false.
              */
-            bool update(EGE::CORE::EntityId id,m1 *mPlayer, m2 *mEntities);
+            bool collition(EGE::CORE::EntityId id,m1 *mPlayer, m2 *mEntities);
+
+            /**
+             * @brief Método que verifica si otras entidades chocaron con el jugador y tambien nos dice que entidad fue.
+             * @param mPlayer Manager del jugador.
+             * @param mEntities Manager de entidades.
+             * @param collitionID Id de la entidad que choco  con el jugador.
+             * @return True si choco el jugador en caso contrario false.
+             */
+            bool collitionId(EGE::CORE::EntityId id,m1 *mPlayer, m2 *mEntities,EGE::CORE::EntityId *collitionId);
     };
 };
 

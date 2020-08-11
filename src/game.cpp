@@ -83,7 +83,7 @@ int main(){
     terminal.terminalPersonalized(gameterminal,'=','I');
     terminal.terminalDefault(gameterminal);
     char Tecla = 0;
-
+    int id;
     while(Tecla != 'c'){
 
         //Leer input
@@ -93,10 +93,14 @@ int main(){
         disPacman.update(Tecla,Pacman1,&player,ARROWS);
 
         //Revisar colisiones
-        if(colition.update(Pacman1,&player,&board)){
-            disPacman.update(inverter.update(Tecla,ARROWS),Pacman1,&player,ARROWS);
+        if(Tecla != 0){
+            if(colition.collitionId(Pacman1,&player,&board,&id)){
 
+                disPacman.update(inverter.update(Tecla,ARROWS),Pacman1,&player,ARROWS);
+
+            }
         }
+
         
         //Dibujamos
 

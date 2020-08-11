@@ -89,7 +89,7 @@ int main(){
         /*Uso del sistema de colision*/
         #if 1
         if(Tecla != 0){
-            if(col.update(Nave1,&base,&nodriza)){
+            if(col.collition(Nave1,&base,&nodriza)){
                 dp.update(inverter.update(Tecla,ARROWS),Nave1,&base,ARROWS);
             }
         }

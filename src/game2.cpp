@@ -104,7 +104,7 @@ int main(){
         /*Uso del sistema de colision*/
         #if 1
         if(Tecla != 0){
-            if(sCol.update(bomberMan,&mTablero,&mBomberMan)){
+            if(sCol.collition(bomberMan,&mTablero,&mBomberMan)){
                 dpBomberMan.update(inverter.update(Tecla,ARROWS),bomberMan,&mBomberMan,ARROWS);
             }
             else if(Tecla == 'e' or Tecla == 'E'){
