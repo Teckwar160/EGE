@@ -37,8 +37,8 @@ class managerTablero : public EGE::STD::TERMINAL::WINDOWS::mSprite<tablero>{};
 class managerBomberMan : public EGE::STD::TERMINAL::WINDOWS::mSprite<bomberMan>{
     public:
         void putBomb( int id ){
-            auto tempBomberMan = this-> template getEntity( id );
-            tempBomberMan.putBomb();
+            auto tempBomberMan = this-> template getEntity<bomberMan>( id );
+            tempBomberMan -> putBomb();
         }
 };
 
