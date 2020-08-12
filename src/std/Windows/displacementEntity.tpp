@@ -1,7 +1,7 @@
 #ifndef DISPLACEMENTENTITY_TPP
 #define DISPLACEMENTENTITY_TPP
 
-#include <std/displacementEntity.hpp>
+#include <std/Windows/displacementEntity.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

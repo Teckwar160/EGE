@@ -1,7 +1,7 @@
 #ifndef VISUALIZEENTITY_TPP
 #define VISUALIZEENTITY_TPP
 
-#include <std/visualizeEntity.hpp>
+#include <std/Windows/visualizeEntity.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

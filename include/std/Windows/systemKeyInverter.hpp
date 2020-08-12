@@ -3,7 +3,7 @@
 
 #include <core/System.hpp>
 #include <core/Alias.hpp>
-#include <std/keyDefinition.hpp>
+#include <std/Windows/keyDefinition.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

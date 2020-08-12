@@ -1,7 +1,7 @@
 #ifndef SYSTEMGENERICCOLLITION_TPP
 #define SYSTEMGENERICCOLLITION_TPP
 
-#include <std/systemGenericCollition.hpp>
+#include <std/Windows/systemGenericCollition.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
     

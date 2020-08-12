@@ -1,7 +1,7 @@
 #ifndef MOVEENTITY_TPP
 #define MOVEENTITY_TPP
 
-#include <std/moveEntity.hpp>
+#include <std/Windows/moveEntity.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

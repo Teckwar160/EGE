@@ -1,7 +1,7 @@
 #ifndef POSITION_TPP
 #define POSITION_TPP
 
-#include <std/Position.hpp>
+#include <std/Windows/Position.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

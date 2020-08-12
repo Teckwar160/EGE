@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <tuple>
-#include <std/Pixel.tpp>
+#include <std/Windows/Pixel.tpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

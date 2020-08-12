@@ -2,7 +2,7 @@
 #define INPUT_HPP
 
 #include <core/System.hpp>
-#include <std/WindowsTerminal.hpp>
+#include <std/Windows/WindowsTerminal.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

@@ -2,11 +2,11 @@
 #define DISPLACEMENTENTITY_HPP
 
 #include <core/System.hpp>
-#include <std/collitionTerminal.tpp>
-#include <std/moveEntity.tpp>
-#include <std/visualizeEntity.tpp>
+#include <std/Windows/collitionTerminal.tpp>
+#include <std/Windows/moveEntity.tpp>
+#include <std/Windows/visualizeEntity.tpp>
 #include <core/Alias.hpp>
-#include <std/systemKeyInverter.tpp>
+#include <std/Windows/systemKeyInverter.tpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

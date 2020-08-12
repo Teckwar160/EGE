@@ -1,11 +1,11 @@
 #ifndef CONTROLLER_HPP
 #define CONTROLLER_HPP
 
-#include <std/keyDefinition.hpp>
+#include <std/Windows/keyDefinition.hpp>
 #include <core/Component.hpp>
-#include <std/Position.hpp>
-#include <std/Pixel.tpp>
-#include <std/Sprite.tpp>
+#include <std/Windows/Position.hpp>
+#include <std/Windows/Pixel.tpp>
+#include <std/Windows/Sprite.tpp>
 #include <vector>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
