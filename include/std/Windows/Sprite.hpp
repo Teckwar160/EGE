@@ -85,6 +85,12 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @return Vector de tipo sprite.
              */
             std::vector<Pixel> getSprite();
+
+            /**
+             * @brief Método que permite modificar el sprite de la entidad. (Solo uso profesional no para usuario final).
+             * @param newSprite Nuevo sprite.
+             */
+            void editSprite(std::vector<Pixel> newSprite);
     };
 
     /**

@@ -11,5 +11,6 @@
 #include <std/Windows/systemKeyInverter.tpp>
 #include <std/Windows/visualizeEntity.tpp>
 #include <std/Windows/collitionTerminal.tpp>
+#include <std/Windows/systemScore.tpp>
 
 #endif

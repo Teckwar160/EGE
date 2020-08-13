@@ -103,6 +103,14 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return this -> sprite;
     }
 
+    void Sprite::editSprite(std::vector<Pixel> newSprite){
+        this -> sprite.clear();
+
+        for(auto i: newSprite){
+            this -> sprite.push_back(i);
+        }
+    }
+
     template<typename mType>
     void mSprite<mType>::spriteInitializer(EGE::CORE::EntityId id,int n,std::string nombre,char charToIgnore){
         auto sprite = this -> template getComponent<Sprite>(id);
