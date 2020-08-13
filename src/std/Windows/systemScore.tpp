@@ -28,32 +28,34 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     void systemScore<mType>::update(int points , EGE::CORE::EntityId id, mType *mBoard){
         this -> points += points;
 
-        if(this -> points <= 9999){
-            auto board = mBoard -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Sprite>(id);
-            auto spriteBoard = board -> getSprite();
-            
-            int thousands = this -> points/1000;
-            int hundreds = (this -> points - (thousands *1000))/100;
-            int tens = (this -> points - (thousands*1000 + hundreds*100))/10;
-            int units = this -> points -(thousands*1000 + hundreds*100 +tens*10);
+        if(this -> points > 9999){
+            this ->  points = 9999;
+        }
 
-            for(auto it  = spriteBoard.begin(); it != spriteBoard.end(); it++){
-                if(this -> score.getX() == it -> getX()){
-                    if(this -> score.getY() == it -> getY()){
-                        it -> setPixel('0'+ thousands);
-                        it++;
-                        it -> setPixel('0'+ hundreds);
-                        it++;
-                        it -> setPixel('0'+ tens);
-                        it++;
-                        it -> setPixel('0'+ units);
-                        break;
-                    }
+        auto board = mBoard -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Sprite>(id);
+        auto spriteBoard = board -> getSprite();
+            
+        int thousands = this -> points/1000;
+        int hundreds = (this -> points - (thousands *1000))/100;
+        int tens = (this -> points - (thousands*1000 + hundreds*100))/10;
+        int units = this -> points -(thousands*1000 + hundreds*100 +tens*10);
+
+        for(auto it  = spriteBoard.begin(); it != spriteBoard.end(); it++){
+            if(this -> score.getX() == it -> getX()){
+                if(this -> score.getY() == it -> getY()){
+                    it -> setPixel('0'+ thousands);
+                    it++;
+                    it -> setPixel('0'+ hundreds);
+                    it++;
+                    it -> setPixel('0'+ tens);
+                    it++;
+                    it -> setPixel('0'+ units);
+                    break;
                 }
             }
-
-            board -> editSprite(spriteBoard);
         }
+
+        board -> editSprite(spriteBoard);
     }
 }
 

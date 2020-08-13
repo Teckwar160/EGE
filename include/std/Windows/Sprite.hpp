@@ -127,9 +127,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             void positionInitializer(EGE::CORE::EntityId id,int x, int y);
 
             /**
-             * @brief Método que agrega una entidas a entities.
+             * @brief Método que agrega una entida a entities.
+             * @return Identificador de la entidad.
              */
-            int addEntity();
+            EGE::CORE::EntityId addEntity();
     };
 
 }
