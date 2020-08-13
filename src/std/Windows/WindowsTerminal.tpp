@@ -36,6 +36,12 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         SetConsoleCursorPosition(hcon,dwPos);
     }
 
+    void Terminal::setColor(unsigned short color){
+        HANDLE hcon;
+        hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hcon,color);
+    }
+
     void Terminal::hideCursor(){
         HANDLE hcon;
         hcon = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -73,6 +79,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         this -> gotoxy(this -> width,0); printf("%c",charCorner2);
         this -> gotoxy(0,this -> tall); printf("%c",charCorner3);
         this -> gotoxy(this -> width,this -> tall); printf("%c",charCorner4);	
+
     }
 
     int Terminal::getWidth(){
@@ -107,6 +114,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         auto terminal = entities.find(id);
         terminal -> second -> hideCursor();
         terminal -> second ->drawLimits(charHorizontal,charVertical,charCorner1,charCorner2,charCorner3,charCorner4);
+    }
+
+    void mTerminal::terminalSetColor(EGE::CORE::EntityId id, unsigned short color){
+        auto terminal = entities.find(id);
+        terminal -> second -> setColor(color);
     }
 }
 #endif

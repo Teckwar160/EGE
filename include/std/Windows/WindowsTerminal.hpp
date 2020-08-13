@@ -63,6 +63,12 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 		void gotoxy(int x, int y);
 
 		/**
+		 * @brief Método que define el color de los limites de la terminal y el fondo.
+		 * @param color Color de los limites y del fondo.
+		 */
+		void setColor(unsigned short color);
+
+		/**
 		 *@brief Métdodo que pinta los limites del tablero.
 		 *@param charHorizontal Caracter de las lineas horizontales del tablero.
 		 *@param charVertical Caracter de las lineas verticales del tablero.
@@ -96,10 +102,39 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 			/**Bandera que indica si ya se creo la terminal*/
 			bool isCreated = false;
 		public:
-			EGE::CORE::EntityId addEntity(int x, int y);
-			void terminalDefault(EGE::CORE::EntityId id);
-			void terminalPersonalized(EGE::CORE::EntityId id,char charHorizontal = 205,char charVertical = 186, char charCorner1 = 201, char charCorner2 = 187, char charCorner3 = 200, char charCorner4 = 188);
 
+			/**
+			 * @brief Método encargado de agregar una terminal al manager.
+			 * @param x Posición en x de la terminal.
+			 * @param y Posición en y de la terminal.
+			 * @return Identificador de la terminal.
+			 */
+			EGE::CORE::EntityId addEntity(int x, int y);
+
+			/**
+			 * @brief Método encargado de inicializr una terminal por default.
+			 * @param id Identificador de la terminal.
+			 */
+			void terminalDefault(EGE::CORE::EntityId id);
+
+			/**
+			 * @brief Método encargado de de inicializar una terminal que se puede personalizar los limites.
+			 * @param id Identificador de la terminal.
+			 * @param charHorizontal Caracter de las lineas horizontales del tablero.
+			 * @param charVertical Caracter de las lineas verticales del tablero.
+			 * @param charCorner1 Caracter de la esquina superior izquierda del tablero.
+			 * @param charCorner2 Caracter de la esquina superior derecha del tablero.
+			 * @param charCorner3 Caracter de la esquina inferiro izquierda del tablero.
+			 * @param charCorner4 Carcter de la esquina inferiro derecha del tablero.
+			 */
+			void terminalPersonalized(EGE::CORE::EntityId id,char charHorizontal = 205,char charVertical = 186, char charCorner1 = 201, char charCorner2 = 187, char charCorner3 = 200, char charCorner4 = 188);
+			
+			/**
+			 * @brief Método encargado de definir el color de los limites y del fondo de la terminal.
+			 * @param id Identificador de la terminal.
+			 * @param color Color de los limites y de la terminal.
+			 */
+			void terminalSetColor(EGE::CORE::EntityId id, unsigned short color);
 	};
 }
 #endif

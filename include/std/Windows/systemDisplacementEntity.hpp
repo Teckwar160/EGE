@@ -1,10 +1,10 @@
-#ifndef DISPLACEMENTENTITY_HPP
-#define DISPLACEMENTENTITY_HPP
+#ifndef SYSTEMDISPLACEMENTENTITY_HPP
+#define SYSTEMDISPLACEMENTENTITY_HPP
 
 #include <core/System.hpp>
 #include <std/Windows/collitionTerminal.tpp>
 #include <std/Windows/moveEntity.tpp>
-#include <std/Windows/visualizeEntity.tpp>
+#include <std/Windows/systemVisualizeEntity.tpp>
 #include <core/Alias.hpp>
 #include <std/Windows/systemKeyInverter.tpp>
 
@@ -14,7 +14,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
      * @class Sistema que mueve a las entidades siempre y cuando sean visibles.
      */
     template<typename mType>
-    class displacementEntity : public EGE::CORE::System<mType>{
+    class systemDisplacementEntity : public EGE::CORE::System<mType>{
         private:
             /**Arreglos de teclas permitidos por el sistema*/
             char  wasd[8] = {'w','W','a','A','s','S','d','D'};

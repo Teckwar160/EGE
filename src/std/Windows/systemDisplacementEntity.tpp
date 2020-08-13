@@ -1,14 +1,14 @@
-#ifndef DISPLACEMENTENTITY_TPP
-#define DISPLACEMENTENTITY_TPP
+#ifndef SYSTEMDISPLACEMENTENTITY_TPP
+#define SYSTEMDISPLACEMENTENTITY_TPP
 
-#include <std/Windows/displacementEntity.hpp>
+#include <std/Windows/systemDisplacementEntity.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename mType>
-    void displacementEntity<mType>::update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
+    void systemDisplacementEntity<mType>::update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
         EGE::STD::TERMINAL::WINDOWS::collitionTerminal<mType> collition;
-        EGE::STD::TERMINAL::WINDOWS::visualizeEntity<mType> view;
+        EGE::STD::TERMINAL::WINDOWS::systemVisualizeEntity<mType> view;
         EGE::STD::TERMINAL::WINDOWS::moveEntity<mType> move;
         EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
         bool flag = false;
@@ -31,7 +31,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
 
         if(flag){
-            view.update(id,gameContext,false);
+            view.view(id,gameContext,false);
             move.update(key,id,gameContext);
 
             if(collition.update(id,gameContext)){
