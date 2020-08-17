@@ -12,6 +12,12 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     void Position::positionInitializer(int size, int x, int y){
         this -> size = size;
 
+        this -> positionReset(x,y);
+    }
+
+    void Position::positionReset(int x, int y){
+        this -> position.clear();
+
         for(int i = 0; i <this -> size; ++i){
             for(int j = 0; j <this -> size; ++j){
                position.push_back(std::make_pair(x+j,y+i));
@@ -22,6 +28,13 @@ namespace EGE::STD::TERMINAL::WINDOWS{
     void Position::positionInitiaizerSprite(int size, std::vector<Pixel> sprite, int x, int y){
         this -> size = size;
         this -> firstPosition = std::make_pair(x,y);
+
+        this -> positionResetSprite(sprite,x,y);
+
+    }
+
+    void Position::positionResetSprite(std::vector<Pixel> sprite, int x, int y){
+        this -> position.clear();
 
         for(int i = 0; i<this -> size; i++){
             position.push_back(std::make_pair(sprite[i].getX() + x,sprite[i].getY()+y));

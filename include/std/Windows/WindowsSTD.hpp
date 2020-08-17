@@ -12,5 +12,6 @@
 #include <std/Windows/systemVisualizeEntity.tpp>
 #include <std/Windows/collitionTerminal.tpp>
 #include <std/Windows/systemScore.tpp>
+#include <std/Windows/systemPositionReset.tpp>
 
 #endif
