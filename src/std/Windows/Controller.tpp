@@ -7,7 +7,7 @@
 namespace EGE::STD::TERMINAL::WINDOWS{
 
     void Controller::move(char key,Position *position,std::vector<Pixel> sprite){
-        auto firstTuple = position -> getFisrtPosition();
+        auto firstTuple = position -> getFirstPosition();
 
         switch(key){
             case 'w':

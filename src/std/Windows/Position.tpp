@@ -45,7 +45,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
         return this -> position; 
     }
 
-    std::tuple<int,int> *Position::getFisrtPosition(){
+    std::tuple<int,int> *Position::getFirstPosition(){
         
         return &this -> firstPosition;
     }
