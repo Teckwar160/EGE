@@ -1,7 +1,7 @@
-#ifndef INPUT_TPP
-#define INPUT_TPP
+#ifndef SYSTEMINPUT_TPP
+#define SYSTEMINPUT_TPP
 
-#include <std/Windows/Input.hpp>
+#include <std/Windows/systemInput.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

@@ -1,5 +1,5 @@
-#ifndef WINDOWSTERMINAL
-#define WINDOWSTERMINAL
+#ifndef WINDOWSTERMINAL_HPP
+#define WINDOWSTERMINAL_HPP
 
 #include <core/Entity.hpp>
 #include <core/Manager.hpp>

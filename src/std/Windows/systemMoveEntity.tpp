@@ -1,12 +1,12 @@
-#ifndef MOVEENTITY_TPP
-#define MOVEENTITY_TPP
+#ifndef SYSTEMMOVEENTITY_TPP
+#define SYSTEMMOVEENTITY_TPP
 
-#include <std/Windows/moveEntity.hpp>
+#include <std/Windows/systemMoveEntity.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename mType>
-    void moveEntity<mType>::update(char tecla,EGE::CORE::EntityId id,mType *gameContext){
+    void systemMoveEntity<mType>::update(char tecla,EGE::CORE::EntityId id,mType *gameContext){
         auto controller = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Controller>(id);
         auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
         auto sprite = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Sprite>(id);

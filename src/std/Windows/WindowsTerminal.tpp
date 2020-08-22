@@ -1,5 +1,6 @@
-#if defined(_WIN32)
-/**!<Bibliotecas necesarias*/
+#ifndef WINDOWSTERMINAL_TPP
+#define WINDOWSTERMINAL_TPP
+
 #include <std/Windows/WindowsTerminal.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{

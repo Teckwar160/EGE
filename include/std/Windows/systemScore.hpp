@@ -1,5 +1,5 @@
-#ifndef SYSTEMSPRITE_HPP
-#define SYSTEMSPRITE_HPP
+#ifndef SYSTEMSCORE_HPP
+#define SYSTEMSCORE_HPP
 
 #include <std/Windows/Pixel.tpp>
 #include <core/Alias.hpp>
@@ -34,6 +34,12 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param mBoard Manager de la entidad que llevara el score.
              */
             void update(int points , EGE::CORE::EntityId id, mType *mBoard);
+
+            /**
+             * @brief Método que retorna la cantidad de puntos del score.
+             * @return Puntos del score.
+             */
+            int getPoints();
     };
 }
 

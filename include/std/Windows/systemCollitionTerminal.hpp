@@ -1,5 +1,5 @@
-#ifndef COLLITIONTERMINAL_HPP
-#define COLLITIONTERMINAL_HPP
+#ifndef SYSTEMCOLLITIONTERMINAL_HPP
+#define SYSTEMCOLLITIONTERMINAL_HPP
 
 #include <core/System.hpp>
 #include <core/Alias.hpp>
@@ -11,7 +11,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
      * @class Sistema que se encarga de verificar si una entidad sigue en el tablero del juego.
      */
     template<typename mType>
-    class collitionTerminal : public EGE::CORE::System<mType>{
+    class systemCollitionTerminal : public EGE::CORE::System<mType>{
         public:
             /**
              * @brief Método que verifica si la entidad sigue en el tablero.

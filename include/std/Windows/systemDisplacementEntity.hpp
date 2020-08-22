@@ -2,8 +2,8 @@
 #define SYSTEMDISPLACEMENTENTITY_HPP
 
 #include <core/System.hpp>
-#include <std/Windows/collitionTerminal.tpp>
-#include <std/Windows/moveEntity.tpp>
+#include <std/Windows/systemCollitionTerminal.tpp>
+#include <std/Windows/systemmoveEntity.tpp>
 #include <std/Windows/systemVisualizeEntity.tpp>
 #include <core/Alias.hpp>
 #include <std/Windows/systemKeyInverter.tpp>

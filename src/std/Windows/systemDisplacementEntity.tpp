@@ -7,9 +7,9 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename mType>
     bool systemDisplacementEntity<mType>::update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
-        EGE::STD::TERMINAL::WINDOWS::collitionTerminal<mType> collition;
+        EGE::STD::TERMINAL::WINDOWS::systemCollitionTerminal<mType> collition;
         EGE::STD::TERMINAL::WINDOWS::systemVisualizeEntity<mType> view;
-        EGE::STD::TERMINAL::WINDOWS::moveEntity<mType> move;
+        EGE::STD::TERMINAL::WINDOWS::systemMoveEntity<mType> move;
         EGE::STD::TERMINAL::WINDOWS::systemKeyInverter inverter;
         bool flag = false;
         bool isCollition;

@@ -1,12 +1,12 @@
-#ifndef COLLITIONTERMINAL_TPP
-#define COLLITIONTERMINAL_TPP
+#ifndef SYSTEMCOLLITIONTERMINAL_TPP
+#define SYSTEMCOLLITIONTERMINAL_TPP
 
-#include <std/Windows/collitionTerminal.hpp>
+#include <std/Windows/systemCollitionTerminal.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename mType>
-    bool collitionTerminal<mType>::update(EGE::CORE::EntityId id,mType *gameContext){
+    bool systemCollitionTerminal<mType>::update(EGE::CORE::EntityId id,mType *gameContext){
         auto tm = EGE::STD::TERMINAL::WINDOWS::Terminal::getTerminal();
         auto position = gameContext -> template getComponent<EGE::STD::TERMINAL::WINDOWS::Position>(id);
 

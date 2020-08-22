@@ -1,5 +1,5 @@
-#ifndef MOVEENTITY_HPP
-#define MOVEENTITY_HPP
+#ifndef SYSTEMMOVEENTITY_HPP
+#define SYSTEMMOVEENTITY_HPP
 
 #include <core/System.hpp>
 #include <core/Alias.hpp>
@@ -9,7 +9,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
      * @class Sistema encargado de otorgar movimiento a una entidad
      */
     template<typename mType>
-    class moveEntity : public EGE::CORE::System<mType>{
+    class systemMoveEntity : public EGE::CORE::System<mType>{
         public: 
             /**
              * @brief Método para actualizar la posición de la entidad.
