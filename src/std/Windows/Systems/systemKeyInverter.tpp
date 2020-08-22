@@ -1,7 +1,7 @@
 #ifndef SYSTEMKEYINVERTER_TPP
 #define SYSTEMKEYINVERTER_TPP
 
-#include <std/Windows/systemKeyInverter.hpp>
+#include <std/Windows/Systems/systemKeyInverter.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
     char systemKeyInverter::update(char key,EGE::CORE::ControlType control){

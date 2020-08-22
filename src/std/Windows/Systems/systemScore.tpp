@@ -1,7 +1,7 @@
 #ifndef SYSTEMSCORE_TPP
 #define SYSTEMSCORE_TPP
 
-#include <std/Windows/systemScore.hpp>
+#include <std/Windows/Systems/systemScore.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
     template<typename mType>

@@ -1,7 +1,7 @@
 #ifndef SYSTEMCOLLITIONTERMINAL_TPP
 #define SYSTEMCOLLITIONTERMINAL_TPP
 
-#include <std/Windows/systemCollitionTerminal.hpp>
+#include <std/Windows/Systems/systemCollitionTerminal.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

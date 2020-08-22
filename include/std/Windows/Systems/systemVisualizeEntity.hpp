@@ -2,7 +2,7 @@
 #define SYSTEMVISUALIZEENTITY_HPP
 
 #include <core/System.hpp>
-#include <std/Windows/Sprite.hpp>
+#include <std/Windows/Components/Sprite.hpp>
 #include <core/Alias.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{

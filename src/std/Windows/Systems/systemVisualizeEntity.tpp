@@ -1,7 +1,7 @@
 #ifndef SYSTEMVISUALIZEENTITY_TPP
 #define SYSTEMVISUALIZEENTITY_TPP
 
-#include <std/Windows/systemVisualizeEntity.hpp>
+#include <std/Windows/Systems/systemVisualizeEntity.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

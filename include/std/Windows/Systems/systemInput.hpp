@@ -1,8 +1,8 @@
-#ifndef INPUT_HPP
-#define INPUT_HPP
+#ifndef SYSTEMINPUT_HPP
+#define SYSTEMINPUT_HPP
 
 #include <core/System.hpp>
-#include <std/Windows/WindowsTerminal.hpp>
+#include <std/Windows/Others/WindowsTerminal.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

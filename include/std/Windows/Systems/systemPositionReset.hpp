@@ -3,7 +3,7 @@
 
 #include <core/System.hpp>
 #include <core/Alias.hpp>
-#include <std/Windows/Position.tpp>
+#include <std/Windows/Components/Position.tpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
     template <typename mType>

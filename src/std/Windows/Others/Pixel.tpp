@@ -1,7 +1,7 @@
 #ifndef PIXEL_TPP
 #define PIXEL_TPP
 
-#include <std/Windows/Pixel.hpp>
+#include <std/Windows/Others/Pixel.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

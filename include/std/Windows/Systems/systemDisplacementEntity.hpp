@@ -2,11 +2,11 @@
 #define SYSTEMDISPLACEMENTENTITY_HPP
 
 #include <core/System.hpp>
-#include <std/Windows/systemCollitionTerminal.tpp>
-#include <std/Windows/systemmoveEntity.tpp>
-#include <std/Windows/systemVisualizeEntity.tpp>
+#include <std/Windows/Systems/systemCollitionTerminal.tpp>
+#include <std/Windows/systems/systemmoveEntity.tpp>
+#include <std/Windows/Systems/systemVisualizeEntity.tpp>
 #include <core/Alias.hpp>
-#include <std/Windows/systemKeyInverter.tpp>
+#include <std/Windows/Systems/systemKeyInverter.tpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

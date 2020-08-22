@@ -2,10 +2,10 @@
 #define SPRITE_HPP
 
 #include <core/Component.tpp>
-#include <std/Windows/Pixel.tpp>
+#include <std/Windows/Others/Pixel.tpp>
 #include <core/Manager.tpp>
-#include <std/Windows/Controller.tpp>
-#include <std/Windows/WindowsTerminal.hpp>
+#include <std/Windows/Components/Controller.tpp>
+#include <std/Windows/Others/WindowsTerminal.hpp>
 #include <core/Alias.hpp>
 #include <vector>
 #include <fstream>

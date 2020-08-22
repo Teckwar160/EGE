@@ -1,7 +1,7 @@
 #ifndef SYSTEMPOSITIONRESET_TPP
 #define SYSTEMPOSITIONRESET_TPP
 
-#include <std/Windows/systemPositionReset.hpp>
+#include <std/Windows/Systems/systemPositionReset.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 

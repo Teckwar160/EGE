@@ -1,7 +1,7 @@
 #ifndef SYSTEMSCORE_HPP
 #define SYSTEMSCORE_HPP
 
-#include <std/Windows/Pixel.tpp>
+#include <std/Windows/Others/Pixel.tpp>
 #include <core/Alias.hpp>
 #include <vector>
 

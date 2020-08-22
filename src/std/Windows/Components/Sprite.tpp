@@ -1,7 +1,7 @@
 #ifndef SPRITE_TPP
 #define SPRITE_TPP
 
-#include <std/Windows/Sprite.hpp>
+#include <std/Windows/Components/Sprite.hpp>
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
