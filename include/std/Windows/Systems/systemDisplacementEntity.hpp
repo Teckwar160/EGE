@@ -26,9 +26,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @param id Identificador de la entidad que se movera.
              * @param gameContext Manager de la entidad en cuestión.
              * @param control Sistema de teclas que se usara para mover a la entidad.
-             * @return True si choco contra los marcos de la terminal en caso contrario false. 
+             * @param step Paso que dara la entidad en cada actualización.
+             * @return True si choco contra los marcos de la terminal en caso contrario false.
              */
-            bool update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control);
+            bool update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control,int step = 1);
     };
 }
 #endif

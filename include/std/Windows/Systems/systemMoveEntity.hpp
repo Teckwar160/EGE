@@ -15,9 +15,10 @@ namespace EGE::STD::TERMINAL::WINDOWS{
              * @brief Método para actualizar la posición de la entidad.
              * @param tecla Tecla que el usuario ingreso.
              * @param id Id de la entidad a la que se le actualizará el movimiento.
-             * @param *gameContext Manager de la entidad.
+             * @param step Pasos que dara la entidad en cada actualización.
+             * @param gameContext Manager de la entidad.
              */
-            void update(char tecla, EGE::CORE::EntityId id,mType *gameContext);
+            void update(char tecla, EGE::CORE::EntityId id,mType *gameContext, int step =1);
     };
 }
 #endif

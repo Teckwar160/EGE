@@ -6,7 +6,7 @@
 namespace EGE::STD::TERMINAL::WINDOWS{
 
     template<typename mType>
-    bool systemDisplacementEntity<mType>::update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control){
+    bool systemDisplacementEntity<mType>::update(char key,EGE::CORE::EntityId id,mType *gameContext,EGE::CORE::ControlType control, int step){
         EGE::STD::TERMINAL::WINDOWS::systemCollitionTerminal<mType> collition;
         EGE::STD::TERMINAL::WINDOWS::systemVisualizeEntity<mType> view;
         EGE::STD::TERMINAL::WINDOWS::systemMoveEntity<mType> move;
@@ -33,11 +33,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
 
         if(flag){
             view.view(id,gameContext,false);
-            move.update(key,id,gameContext);
+            move.update(key,id,gameContext,step);
             isCollition = collition.update(id,gameContext);
 
             if(isCollition){
-                move.update(inverter.update(key,control),id,gameContext);
+                move.update(inverter.update(key,control),id,gameContext,step);
             }
         }
 

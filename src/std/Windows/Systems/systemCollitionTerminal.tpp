@@ -21,11 +21,11 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             x = std::get<0>(i);
             y = std::get<1>(i);
 
-            if(y == 0 || y >= tall){
+            if(y <= 0 || y >= tall){
                 return true;
             }
 
-            if(x == 0 || x >= width){
+            if(x <= 0 || x >= width){
                 return true;
             }
         }

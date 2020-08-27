@@ -6,7 +6,7 @@
 
 namespace EGE::STD::TERMINAL::WINDOWS{
 
-    void Controller::move(char key,Position *position,std::vector<Pixel> sprite){
+    void Controller::move(char key,Position *position,std::vector<Pixel> sprite, int step){
         auto firstTuple = position -> getFirstPosition();
 
         switch(key){
@@ -15,7 +15,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             case UP:
             {
                 auto y = std::get<1>(*firstTuple);
-                y-=1;
+                y-=step;
                 *firstTuple = {std::get<0>(*firstTuple),y};
             }
                 break;
@@ -24,7 +24,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             case LEFT:
             {
                 auto x = std::get<0>(*firstTuple);
-                x-=1;
+                x-=step;
                 *firstTuple = {x,std::get<1>(*firstTuple)};
                 
             }
@@ -34,7 +34,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             case DOWN:
             {
                 auto y = std::get<1>(*firstTuple);
-                y+=1;
+                y+=step;
                 *firstTuple = {std::get<0>(*firstTuple),y};
             }
                 break;
@@ -43,7 +43,7 @@ namespace EGE::STD::TERMINAL::WINDOWS{
             case RIGHT:
             {
                 auto x = std::get<0>(*firstTuple);
-                x+=1;
+                x+=step;
                 *firstTuple = {x,std::get<1>(*firstTuple)};
             }
                 break;
