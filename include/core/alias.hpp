@@ -1,13 +1,15 @@
 #ifndef ALIAS_HPP
 #define ALIAS_HPP
 
+#include <stdint.h>
+
 /**Definiciones*/
 namespace EGE::CORE{
-    using EntityType = int;
-    using EntityId = int;
-    using SystemType = int;
-    using ComponentType = int;
-    using ManagerType = int;
+    using EntityType = uint16_t;
+    using EntityId = uint16_t;
+    using SystemType = uint16_t;
+    using ComponentType = uint16_t;
+    using ManagerType = uint16_t;
     using ControlType = char;
 }
 
